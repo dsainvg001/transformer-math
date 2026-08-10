@@ -1,0 +1,40 @@
+seed: 42
+precision: "float32"
+
+model:
+  context_len: 32
+  num_layers: 2
+  num_heads: 2
+  emb_dim: 16
+  mlp_dim: 32
+  pos_emb_type: "learned"
+
+data:
+  max_depth: 2
+  float_precision: 1
+  enabled_ops: ["+", "-", "*", "/", "sin", "cos", "abs", "sqrt"]
+  val_size: 50
+  test_size: 50
+
+training:
+  total_steps: 120
+  warmup_steps: 20
+  learning_rate: 0.001
+  batch_size: 8
+  max_grad_norm: 1.0
+  weight_decay: 0.01
+  eval_interval: 40
+  save_interval: 60
+  log_interval: 10
+  checkpoint_dir: "./checkpoints_cpu"
+  accuracy_epsilon: 0.05
+
+curriculum:
+  enabled: true
+  ema_alpha: 0.2
+  temperature: 1.0
+  floor_prob: 0.01
+  overfit_ratio: 3.0
+  overfit_train_threshold: 0.3
+  overfit_decay: 0.1
+  update_interval: 20
