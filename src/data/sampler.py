@@ -56,6 +56,9 @@ class ExpressionSampler:
         self.category_to_idx = {cat: i for i, cat in enumerate(self.categories)}
         self.idx_to_category = {i: cat for i, cat in enumerate(self.categories)}
         
+        # Threading lock for thread-safe random generator access across background workers
+        self._lock = threading.Lock()
+        
         # Set of held-out expressions to guarantee no overlap
         self.held_out_exprs = set()
         self.seen_train_exprs = set()
@@ -165,33 +168,36 @@ class ExpressionSampler:
         """
         Generates a single non-degenerate training sample.
         Deduplicates against held-out validation and test sets.
+        Thread-safe under multi-worker background prefetching.
         """
         if category_probs is None:
             category_probs = np.ones(len(self.categories)) / len(self.categories)
             
         for _ in range(100):
-            cat_idx = self.rng.choice(len(self.categories), p=category_probs)
-            cat = self.categories[cat_idx]
-            op, d_str = cat.split("_d")
-            depth = int(d_str)
-            
-            try:
-                expr_str, val = self.generator.generate_for_op(op, depth)
-                if expr_str in self.held_out_exprs:
+            with self._lock:
+                cat_idx = self.rng.choice(len(self.categories), p=category_probs)
+                cat = self.categories[cat_idx]
+                op, d_str = cat.split("_d")
+                depth = int(d_str)
+                
+                try:
+                    expr_str, val = self.generator.generate_for_op(op, depth)
+                    if expr_str in self.held_out_exprs:
+                        continue
+                    self.seen_train_exprs.add(expr_str)
+                    val_str = self.generator.format_result(val)
+                except Exception:
                     continue
-                self.seen_train_exprs.add(expr_str)
-                val_str = self.generator.format_result(val)
-                input_ids, loss_mask = self.tokenize_and_pad(expr_str, val_str)
-                return {
-                    "expr": expr_str,
-                    "val": val_str,
-                    "category": cat,
-                    "category_idx": cat_idx,
-                    "input_ids": input_ids,
-                    "loss_mask": loss_mask
-                }
-            except Exception:
-                continue
+
+            input_ids, loss_mask = self.tokenize_and_pad(expr_str, val_str)
+            return {
+                "expr": expr_str,
+                "val": val_str,
+                "category": cat,
+                "category_idx": cat_idx,
+                "input_ids": input_ids,
+                "loss_mask": loss_mask
+            }
         raise RuntimeError("Failed to generate valid sample from stream.")
 
     def stream_batches(
@@ -248,7 +254,10 @@ class ExpressionSampler:
                             break
                         except queue.Full:
                             continue
-                except Exception:
+                except Exception as e:
+                    import traceback
+                    print(f"Warning in prefetch worker thread: {e}", flush=True)
+                    traceback.print_exc()
                     continue
 
         threads = []
