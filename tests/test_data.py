@@ -85,10 +85,14 @@ def test_offline_dump_and_stream():
         
         # Read/Stream using offline loader
         offline_generator = sampler.stream_offline_dataset(tmpdir, batch_size=3, shuffle_shards=False)
-        batch = next(offline_generator)
-        assert batch["input_ids"].shape == (3, 32)
-        assert batch["loss_mask"].shape == (3, 31)
-        assert batch["category_idx"].shape == (3,)
-        
+        try:
+            batch = next(offline_generator)
+            assert batch["input_ids"].shape == (3, 32)
+            assert batch["loss_mask"].shape == (3, 31)
+            assert batch["category_idx"].shape == (3,)
+        finally:
+            offline_generator.close()
+            
     finally:
-        shutil.rmtree(tmpdir)
+        shutil.rmtree(tmpdir, ignore_errors=True)
+

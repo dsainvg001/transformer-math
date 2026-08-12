@@ -1,7 +1,6 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-checkpoints_cpu/
-checkpoints_gpu/
+checkpoints_*/
 test_offline_data/
 offline_dataset/

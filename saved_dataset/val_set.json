@@ -1,0 +1,252 @@
+[
+  {
+    "expr": "28+35.9",
+    "val": "63.9",
+    "category": "+_d1"
+  },
+  {
+    "expr": "4+(-9)",
+    "val": "-5",
+    "category": "+_d2"
+  },
+  {
+    "expr": "26.1-28.6",
+    "val": "-2.5",
+    "category": "-_d1"
+  },
+  {
+    "expr": "7-0",
+    "val": "7",
+    "category": "-_d2"
+  },
+  {
+    "expr": "(-7)*2.9",
+    "val": "-20.3",
+    "category": "*_d1"
+  },
+  {
+    "expr": "(-1.1)*(-6)",
+    "val": "6.6",
+    "category": "*_d2"
+  },
+  {
+    "expr": "2/8.4",
+    "val": "0.2",
+    "category": "/_d1"
+  },
+  {
+    "expr": "(-2.9)/10",
+    "val": "-0.3",
+    "category": "/_d2"
+  },
+  {
+    "expr": "sin(4.9)",
+    "val": "-1",
+    "category": "sin_d1"
+  },
+  {
+    "expr": "sin(log(4))",
+    "val": "1",
+    "category": "sin_d2"
+  },
+  {
+    "expr": "cos(-0.4)",
+    "val": "0.9",
+    "category": "cos_d1"
+  },
+  {
+    "expr": "cos(exp(-2.7))",
+    "val": "1",
+    "category": "cos_d2"
+  },
+  {
+    "expr": "18.3+43",
+    "val": "61.3",
+    "category": "+_d1"
+  },
+  {
+    "expr": "10+(-4)",
+    "val": "6",
+    "category": "+_d2"
+  },
+  {
+    "expr": "(-3)-30",
+    "val": "-33",
+    "category": "-_d1"
+  },
+  {
+    "expr": "(-8)-(-5.5)",
+    "val": "-2.5",
+    "category": "-_d2"
+  },
+  {
+    "expr": "1*(-1.3)",
+    "val": "-1.3",
+    "category": "*_d1"
+  },
+  {
+    "expr": "4*(-4)",
+    "val": "-16",
+    "category": "*_d2"
+  },
+  {
+    "expr": "12.2/4.2",
+    "val": "2.9",
+    "category": "/_d1"
+  },
+  {
+    "expr": "(-6)/6",
+    "val": "-1",
+    "category": "/_d2"
+  },
+  {
+    "expr": "sin(3.6)",
+    "val": "-0.4",
+    "category": "sin_d1"
+  },
+  {
+    "expr": "sin(20.5+28.1)",
+    "val": "-1",
+    "category": "sin_d2"
+  },
+  {
+    "expr": "cos(-0.5)",
+    "val": "0.9",
+    "category": "cos_d1"
+  },
+  {
+    "expr": "cos(cos(-4.5))",
+    "val": "1",
+    "category": "cos_d2"
+  },
+  {
+    "expr": "(-38.5)+17",
+    "val": "-21.5",
+    "category": "+_d1"
+  },
+  {
+    "expr": "7+5.3",
+    "val": "12.3",
+    "category": "+_d2"
+  },
+  {
+    "expr": "5.4-5.9",
+    "val": "-0.5",
+    "category": "-_d1"
+  },
+  {
+    "expr": "2-(-3)",
+    "val": "5",
+    "category": "-_d2"
+  },
+  {
+    "expr": "10*(-5)",
+    "val": "-50",
+    "category": "*_d1"
+  },
+  {
+    "expr": "(-5.3)*(-8.8)",
+    "val": "46.6",
+    "category": "*_d2"
+  },
+  {
+    "expr": "(-8.3)/(-2)",
+    "val": "4.2",
+    "category": "/_d1"
+  },
+  {
+    "expr": "1/3.3",
+    "val": "0.3",
+    "category": "/_d2"
+  },
+  {
+    "expr": "sin(-1.2)",
+    "val": "-0.9",
+    "category": "sin_d1"
+  },
+  {
+    "expr": "sin(exp(1.9))",
+    "val": "0.4",
+    "category": "sin_d2"
+  },
+  {
+    "expr": "cos(-4.2)",
+    "val": "-0.5",
+    "category": "cos_d1"
+  },
+  {
+    "expr": "cos(exp(-0.2))",
+    "val": "0.7",
+    "category": "cos_d2"
+  },
+  {
+    "expr": "(-33.9)+(-34.8)",
+    "val": "-68.7",
+    "category": "+_d1"
+  },
+  {
+    "expr": "4+(-1)",
+    "val": "3",
+    "category": "+_d2"
+  },
+  {
+    "expr": "(-12)-(-20)",
+    "val": "8",
+    "category": "-_d1"
+  },
+  {
+    "expr": "(-2.8)-(-7.6)",
+    "val": "4.8",
+    "category": "-_d2"
+  },
+  {
+    "expr": "(-3)*8.2",
+    "val": "-24.6",
+    "category": "*_d1"
+  },
+  {
+    "expr": "(-4.7)*5.6",
+    "val": "-26.3",
+    "category": "*_d2"
+  },
+  {
+    "expr": "8.7/3.1",
+    "val": "2.8",
+    "category": "/_d1"
+  },
+  {
+    "expr": "(-0.9)/(-3.9)",
+    "val": "0.2",
+    "category": "/_d2"
+  },
+  {
+    "expr": "sin(1)",
+    "val": "0.8",
+    "category": "sin_d1"
+  },
+  {
+    "expr": "sin(7.1*(-10))",
+    "val": "-1",
+    "category": "sin_d2"
+  },
+  {
+    "expr": "cos(2.8)",
+    "val": "-0.9",
+    "category": "cos_d1"
+  },
+  {
+    "expr": "cos(ln(8.7))",
+    "val": "-0.6",
+    "category": "cos_d2"
+  },
+  {
+    "expr": "13+8",
+    "val": "21",
+    "category": "+_d1"
+  },
+  {
+    "expr": "(-8.3)+(-9.2)",
+    "val": "-17.5",
+    "category": "+_d2"
+  }
+]

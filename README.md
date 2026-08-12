@@ -1,125 +1,162 @@
-# Mathematical Operations Learning with JAX and Flax
+# Mathematical Operations Learning with JAX & Flax
 
-This repository contains a complete, device-agnostic, CPU-to-GPU-scalable JAX codebase for training a Pre-LN Decoder-Only Transformer to perform mathematical operations (including arithmetic, trigonometry, log, exp, sqrt, and compositions). 
+[![JAX](https://img.shields.io/badge/JAX-0.4%2B-blue.svg)](https://github.com/google/jax)
+[![Flax](https://img.shields.io/badge/Flax-0.7%2B-red.svg)](https://github.com/google/flax)
+[![Optax](https://img.shields.io/badge/Optax-0.1%2B-orange.svg)](https://github.com/deepmind/optax)
+[![Codebase Memory Book](https://img.shields.io/badge/Documentation-Memory_Book-purple.svg)](MEMORY_BOOK.md)
 
-The training pipeline features an **on-the-fly, adaptive curriculum data generator** that updates sampling weights dynamically based on category-level training and validation losses.
+A device-agnostic, CPU-to-GPU-scalable **JAX/Flax** codebase for training a **Pre-LN Decoder-Only Transformer** to perform mathematical operations, including arithmetic, trigonometry, logarithms, exponentials, roots, and nested compositions.
 
----
+The training pipeline features an **on-the-fly, adaptive curriculum data generator** that dynamically updates sampling weights based on category-level training and validation losses, actively suppresses overfitted tasks, and prevents category starvation.
 
-## 1. Architecture Choice Justification: Decoder-Only Transformer
-
-We chose a **Decoder-Only Transformer** (with causal self-attention) rather than an Encoder-Decoder model for the following reasons:
-1. **Simplified Unified Representation:** It encodes both the prompt expression and the target answer in a single continuous sequence, separated by a special `SEP` token.
-2. **Standard and Scalable:** Decoder-only architectures (like LLaMA and GPT-style models) are the modern standard for symbolic reasoning. They scale more predictably and are easier to parallelize.
-3. **Loss Masking Efficiency:** By applying a binary `loss_mask`, we only calculate gradients and penalize the model for prediction tokens appearing *after* the `SEP` token (i.e., the target result and the `EOS` token). This gives the model the same conditional generation benefits as an encoder-decoder architecture with simpler, unified attention.
+> 📖 **Deep Dive Documentation**: For exhaustive architectural details, mathematical sequence representations, component maps, and design decisions, consult the **[Codebase Memory Book](MEMORY_BOOK.md)**.
 
 ---
 
-## 2. Directory Layout
+## 🛠 Key Features
+
+- **Unified Decoder Sequence Model**: Treats formula evaluation as sequence completion (`BOS <expr> SEP <result> EOS PAD...`) with target-only cross-entropy loss masking.
+- **Digit-by-Digit Tokenization**: Splits numbers into individual digit tokens to maintain a fixed 30-token vocabulary and force base-10 value representation learning.
+- **Adaptive Curriculum Engine**: Real-time Exponential Moving Average (EMA) tracking of per-task losses, Softmax sampling probability adjustment, overfit detection, and floor-probability starvation protection.
+- **Safe Symbolic Tree Generator**: Built-in SymPy integration for safe ground-truth calculation with domain bounds preventing zero division, complex outputs, overflow, and non-real numbers.
+- **Flexible Data Pipelines**: Live background-threaded batch streaming or zero-memory disk streaming from sharded `.jsonl` bulk datasets.
+- **Mixed Precision & Scalability**: Seamless switching between CPU development (`float32`, learned position embeddings) and high-throughput GPU training (`bfloat16`, sinusoidal position embeddings).
+
+---
+
+## 🏛 System Architecture
+
+### Sequence Layout & Masking
 
 ```text
-src/
-  tokenizer/
-    tokenizer.py   # Tokenizer class (digit-by-digit, fixed vocab)
-    vocab.json     # Small vocabulary mapping mathematical tokens
-  data/
-    generator.py   # Safe random mathematical expression generator
-    sampler.py     # ExpressionSampler for streaming, bulk dumping, & caching
-    curriculum.py  # CurriculumTracker for adaptive task weighting & overfitting detection
-  model/
-    transformer.py # Pre-LN Decoder-Only Transformer (Learned vs. Sinusoidal)
-  train.py         # Main CLI entry point for training
-  eval.py          # Greedy generator and validation accuracy / loss calculator
-scripts/
-  generate_dataset.py  # Sharded offline dataset generator
-configs/
-  cpu_dev.yaml     # Fast local CPU smoke-test config
-  gpu_train.yaml   # Scaled-up configuration for high-performance GPU training
-tests/             # Comprehensive unit test suite
+Input Sequence:   [BOS]  "s" "i" "n" "(" "0" "." "5" ")" [SEP]  "0" "." "5" [EOS] [PAD] ...
+Loss Mask:          0     0   0   0   0   0   0   0   0    0     1   1   1    1     0   ...
+                                                           ^
+                                                           └─ Gradients backpropagated ONLY here
+```
+
+### High-Level Data Flow
+
+```mermaid
+graph TD
+    A[ExpressionGenerator] -->|Tree Gen & SymPy Eval| B[ExpressionSampler]
+    B -->|Batch Streaming / Prefetch| C[CurriculumTracker]
+    C -->|Softmax Sampling Weights| B
+    B -->|Batches: input_ids, loss_mask| D[TransformerDecoder]
+    D -->|JIT Loss & Gradients| E[Optax AdamW Optimizer]
+    E -->|Update Parameters| D
+    E -->|Checkpointing| F[Orbax CheckpointManager]
+    D -->|Greedy Auto-Regressive Decoding| G[eval.py Evaluation]
+    G -->|Category Val Losses| C
 ```
 
 ---
 
-## 3. Setup Instructions
+## 📁 Directory Structure
 
-First, install the required packages in CPU-only mode:
+```text
+├── MEMORY_BOOK.md              # Complete codebase reference & architectural memory
+├── README.md                   # Project overview & quickstart guide
+├── requirements.txt            # System dependencies
+├── configs/
+│   ├── cpu_dev.yaml            # Fast local CPU smoke-test configuration
+│   └── gpu_train.yaml          # Scaled bfloat16 GPU production training config
+├── scripts/
+│   └── generate_dataset.py     # Sharded offline JSONL dataset generator
+├── src/
+│   ├── train.py                # Main CLI training entry point & JIT step functions
+│   ├── eval.py                 # Greedy auto-regressive decoder & accuracy evaluators
+│   ├── tokenizer/
+│   │   ├── tokenizer.py        # Tokenizer class (digit-by-digit, fixed 30-token vocab)
+│   │   └── vocab.json          # Vocabulary mapping dictionary
+│   ├── data/
+│   │   ├── generator.py        # ExpressionGenerator (tree generation & SymPy safety)
+│   │   ├── sampler.py          # ExpressionSampler (streaming, prefetching, offline sharding)
+│   │   └── curriculum.py       # CurriculumTracker (loss EMA, overfit mitigation, softmax weights)
+│   └── model/
+│       └── transformer.py      # TransformerDecoder (Flax Pre-LN, Learned vs. Sinusoidal)
+└── tests/                      # Pytest unit test suite
+    ├── test_tokenizer.py
+    ├── test_data.py
+    ├── test_curriculum.py
+    ├── test_model.py
+    └── test_train.py
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Installation
+
+Install dependencies for CPU-only mode:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-*(Note: For GPU training, install JAX with CUDA support instead: `pip install "jax[cuda12]"`)*
+*(For GPU acceleration, install JAX with CUDA support: `pip install "jax[cuda12]"`)*
 
 ---
 
-## 4. Run the CPU Smoke Test End-to-End
+### 2. CPU Smoke Test
 
-To ensure every code path (data generation, forward, backward, checkpoint saving/loading, and evaluation) works perfectly, execute the CPU smoke test:
+Run an end-to-end 120-step smoke test verifying data generation, forward/backward passes, adaptive curriculum updates, validation evaluation, and Orbax checkpointing:
 
 ```bash
 PYTHONPATH=. python3 src/train.py --config configs/cpu_dev.yaml --device_profile cpu_dev
 ```
 
-This tiny model and dataset will train for 120 steps, periodically logging progress, updating the curriculum tracker, evaluating on validation, and saving checkpoints in `./checkpoints_cpu`.
-
 ---
 
-## 5. Scaling to Real GPU Training
+### 3. GPU Production Training
 
-On a GPU, you can run the exact same entry points with the scaled config without any code changes:
+Scale up seamlessly to high-throughput GPU training with `bfloat16` mixed precision and sinusoidal position embeddings:
 
 ```bash
 PYTHONPATH=. python3 src/train.py --config configs/gpu_train.yaml --device_profile gpu_train
 ```
 
-Features active on GPU:
-- **bfloat16 Mixed Precision:** Enabled by default on GPU for high compute speed, keeping master parameters in float32.
-- **Sinusoidal Position Embeddings:** Scales up to longer context lengths.
-- **Multi-Device Compatibility:** Works seamlessly across single or multi-device backends.
+---
+
+## 🎯 Adaptive Curriculum Engine
+
+The `CurriculumTracker` manages task difficulty dynamically across `(operator, depth)` buckets (e.g. `sin_d1`, `+_d2`).
+
+1. **Loss Tracking**: Computes Exponential Moving Averages (EMA) of training and validation losses per category.
+2. **Overfitting Mitigation**: If $L_{train} < \text{threshold}$ and $L_{val} > L_{train} \times \text{ratio}$, effective loss is scaled down by $\text{overfit\_decay}$ ($0.1$) to prevent over-sampling memorized categories.
+3. **Softmax Weight Allocation**: Effective losses are mapped to sampling probabilities:
+   $$P_c \propto \exp\left(\frac{L^{eff}_c}{T}\right)$$
+4. **Starvation Protection**: Enforces a `floor_prob` baseline so solved tasks are periodically re-sampled.
 
 ---
 
-## 6. How the Adaptive Curriculum Works
+## 💾 Bulk Offline Dataset Generation
 
-The `CurriculumTracker` manages task-level difficulty dynamically.
-
-### Algorithm Flow
-1. **Dynamic Categories:** Each category represents an `(operator, depth)` pair (e.g. `sin_d1`, `+_d2`).
-2. **Running Loss Tracking:** It tracks the running train loss and validation loss per category using an Exponential Moving Average (EMA).
-3. **Overfitting Detection & Mitigation:** 
-   If a category's train loss is low (under `overfit_train_threshold`), but its validation loss is significantly larger than its train loss (e.g., by more than `overfit_ratio`), the category is flagged as **overfitted**. Its effective loss is scaled down by `overfit_decay` (e.g. `0.1`) to prevent wasting training steps memorizing it.
-4. **Softmax Sampling Weights:** Effective losses are converted into sampling weights using Softmax:
-   $$P_c \propto \exp\left(\frac{L^{eff}_c}{\text{temperature}}\right)$$
-5. **Starvation Prevention:** A `floor_prob` (e.g., `0.01`) is enforced so no category is completely starved, allowing the model to periodically recheck previously solved categories.
-
-### Tuning the Curriculum
-- To make the sampling more uniform/flat, **increase** the `temperature` or disable the curriculum entirely by setting `curriculum.enabled: false`.
-- To focus heavily on hard/high-loss tasks, **decrease** the `temperature` (e.g., `0.5` or `0.2`).
-- To adjust how long past performance is remembered, tweak `ema_alpha` (smaller `ema_alpha` retains history longer).
-
----
-
-## 7. Generating and Inspecting the Offline Bulk Dataset
-
-If you prefer static precomputed training rather than dynamic streaming, you can generate a sharded dataset to disk:
+To pre-compute static sharded JSONL datasets on disk:
 
 ```bash
-PYTHONPATH=. python3 scripts/generate_dataset.py --config configs/cpu_dev.yaml --output_dir ./offline_dataset --num_examples 1000 --shard_size 250
+PYTHONPATH=. python3 scripts/generate_dataset.py \
+    --config configs/cpu_dev.yaml \
+    --output_dir ./offline_dataset \
+    --num_examples 100000 \
+    --shard_size 10000
 ```
 
-This creates sharded `.jsonl` files (e.g. `shard_0000.jsonl` to `shard_0003.jsonl`). Each line is a simple JSON object containing:
-- `expr`: The generated mathematical expression (e.g., `sin(cos(0.5))`).
-- `val`: The evaluated exact result (e.g., `0.9`).
-- `category`: The category label (e.g., `sin_d2`).
-
-The dataset loader in `ExpressionSampler.stream_offline_dataset` can stream these shards directly from disk with zero memory footprint.
+The resulting dataset can be streamed with zero memory footprint using `ExpressionSampler.stream_offline_dataset`.
 
 ---
 
-## 8. Running Unit Tests
+## 🧪 Unit Testing
 
-The codebase includes comprehensive unit tests covering tokenization, expression safety/validity, dataset loaders, single train step NaNs, batch overfitting, and curriculum updates:
+Run the full unit test suite covering tokenization, data tree generation, curriculum weight shifts, model forward passes, NaN safeguards, and batch overfitting:
 
 ```bash
 python3 -m pytest tests
 ```
+
+---
+
+## 📚 Complete Codebase Memory
+
+For in-depth explanations of every module, hyperparameter matrix, API conventions, and developer guidelines, see **[MEMORY_BOOK.md](MEMORY_BOOK.md)**.

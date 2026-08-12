@@ -8,6 +8,7 @@ import jax
 import jax.numpy as jnp
 import optax
 from flax.training import train_state
+import flax.jax_utils as jutils
 import orbax.checkpoint as ocp
 from typing import Dict, Any, Tuple, Optional
 
@@ -84,7 +85,7 @@ class CustomTrainState(train_state.TrainState):
     pass
 
 # -------------------------------------------------------------
-# Core JIT-compiled Loss and Step Functions
+# Core JIT / pmap Loss and Step Functions
 # -------------------------------------------------------------
 def compute_loss(logits, targets, mask):
     """
@@ -104,12 +105,7 @@ def compute_loss(logits, targets, mask):
 @jax.jit
 def train_step(state: train_state.TrainState, batch: Dict[str, jnp.ndarray]):
     """
-    JIT-compiled single train step.
-    Computes gradients and updates the parameter weights.
-    Returns:
-        new_state: Updated TrainState
-        mean_loss: Training loss for this batch
-        seq_losses: JAX array of losses per sequence (for curriculum tracking)
+    JIT-compiled single train step for single-device execution.
     """
     input_ids = batch["input_ids"]
     loss_mask = batch["loss_mask"]
@@ -120,20 +116,16 @@ def train_step(state: train_state.TrainState, batch: Dict[str, jnp.ndarray]):
     def loss_fn(params):
         logits = state.apply_fn({"params": params}, inputs)
         
-        # Loss calculation
         one_hot = jax.nn.one_hot(targets, num_classes=logits.shape[-1])
         log_probs = jax.nn.log_softmax(logits, axis=-1)
-        token_losses = -jnp.sum(one_hot * log_probs, axis=-1) # (batch, seq - 1)
+        token_losses = -jnp.sum(one_hot * log_probs, axis=-1)
         
-        # Masked losses
         masked_losses = token_losses * loss_mask
         
-        # Overall optimization loss
         total_loss = jnp.sum(masked_losses)
         total_tokens = jnp.sum(loss_mask)
         mean_loss = jnp.where(total_tokens > 0, total_loss / total_tokens, 0.0)
         
-        # Per-sequence loss for curriculum tracking
         seq_sums = jnp.sum(masked_losses, axis=-1)
         seq_tokens = jnp.sum(loss_mask, axis=-1)
         seq_losses = jnp.where(seq_tokens > 0, seq_sums / seq_tokens, 0.0)
@@ -146,6 +138,49 @@ def train_step(state: train_state.TrainState, batch: Dict[str, jnp.ndarray]):
     new_state = state.apply_gradients(grads=grads)
     return new_state, mean_loss, seq_losses
 
+def make_parallel_train_step():
+    """
+    Creates a pmap-compiled multi-device train step function.
+    Synchronizes gradients across devices via jax.lax.pmean.
+    """
+    def parallel_step_fn(state: train_state.TrainState, batch: Dict[str, jnp.ndarray]):
+        input_ids = batch["input_ids"]
+        loss_mask = batch["loss_mask"]
+        
+        inputs = input_ids[:, :-1]
+        targets = input_ids[:, 1:]
+        
+        def loss_fn(params):
+            logits = state.apply_fn({"params": params}, inputs)
+            
+            one_hot = jax.nn.one_hot(targets, num_classes=logits.shape[-1])
+            log_probs = jax.nn.log_softmax(logits, axis=-1)
+            token_losses = -jnp.sum(one_hot * log_probs, axis=-1)
+            
+            masked_losses = token_losses * loss_mask
+            
+            total_loss = jnp.sum(masked_losses)
+            total_tokens = jnp.sum(loss_mask)
+            mean_loss = jnp.where(total_tokens > 0, total_loss / total_tokens, 0.0)
+            
+            seq_sums = jnp.sum(masked_losses, axis=-1)
+            seq_tokens = jnp.sum(loss_mask, axis=-1)
+            seq_losses = jnp.where(seq_tokens > 0, seq_sums / seq_tokens, 0.0)
+            
+            return mean_loss, (seq_losses, total_loss)
+            
+        grad_fn = jax.value_and_grad(loss_fn, has_aux=True)
+        (mean_loss, (seq_losses, total_loss)), grads = grad_fn(state.params)
+        
+        grads = jax.lax.pmean(grads, axis_name="batch")
+        mean_loss = jax.lax.pmean(mean_loss, axis_name="batch")
+        seq_losses = jax.lax.all_gather(seq_losses, axis_name="batch")
+        
+        new_state = state.apply_gradients(grads=grads)
+        return new_state, mean_loss, seq_losses
+
+    return jax.pmap(parallel_step_fn, axis_name="batch")
+
 # -------------------------------------------------------------
 # Main CLI Training Flow
 # -------------------------------------------------------------
@@ -154,7 +189,8 @@ def train(config: Dict[str, Any], device_profile: str):
     
     # 1. Device detection and logging
     devices = jax.devices()
-    print(f"JAX local device count: {jax.local_device_count()}")
+    num_devices = jax.local_device_count()
+    print(f"JAX local device count: {num_devices}")
     print(f"Available JAX devices: {devices}")
     
     # Define seeds
@@ -252,6 +288,19 @@ def train(config: Dict[str, Any], device_profile: str):
         tx=tx
     )
     
+    # Setup Multi-device pmap or single device
+    batch_size = config["training"]["batch_size"]
+    if num_devices > 1:
+        if batch_size % num_devices != 0:
+            raise ValueError(f"Batch size {batch_size} must be divisible by device count {num_devices}")
+        per_device_batch = batch_size // num_devices
+        print(f"Multi-device training ENABLED ({num_devices} devices, per-device batch size {per_device_batch})")
+        p_train_step = make_parallel_train_step()
+        replicated_state = jutils.replicate(state)
+    else:
+        per_device_batch = batch_size
+        print("Single-device training ENABLED")
+    
     # 7. Resume from Checkpoint if exists
     checkpoint_dir = config["training"].get("checkpoint_dir", "./checkpoints")
     checkpoint_manager = CheckpointManager(checkpoint_dir)
@@ -260,13 +309,14 @@ def train(config: Dict[str, Any], device_profile: str):
     if latest_step is not None:
         print(f"Resuming training from checkpoint step: {latest_step}")
         state = checkpoint_manager.restore(latest_step, state)
+        if num_devices > 1:
+            replicated_state = jutils.replicate(state)
         start_step = latest_step + 1
     else:
         print("No checkpoints found. Starting training from scratch.")
         start_step = 1
         
     # 8. Start training stream
-    batch_size = config["training"]["batch_size"]
     get_probs_fn = lambda: cur_tracker.get_probabilities()
     
     # We use a non-zero prefetch on GPU but tiny or zero on CPU to save memory and avoid hangs during fast shutdown.
@@ -291,12 +341,23 @@ def train(config: Dict[str, Any], device_profile: str):
         batch = next(train_stream)
         
         # Execute train step
-        state, loss_val, seq_losses_val = train_step(state, batch)
+        if num_devices > 1:
+            batch_reshaped = {
+                "input_ids": batch["input_ids"].reshape(num_devices, per_device_batch, -1),
+                "loss_mask": batch["loss_mask"].reshape(num_devices, per_device_batch, -1),
+                "category_idx": batch["category_idx"].reshape(num_devices, per_device_batch)
+            }
+            replicated_state, loss_arr, seq_losses_arr = p_train_step(replicated_state, batch_reshaped)
+            loss_val = float(loss_arr[0])
+            seq_losses_val = np.array(seq_losses_arr[0]).flatten()
+            cat_idxs = batch["category_idx"]
+        else:
+            state, loss_val, seq_losses_val = train_step(state, batch)
+            cat_idxs = batch["category_idx"]
         
         # Force evaluation to update loss EMA
         # Update curriculum train loss EMA
         if cur_enabled:
-            cat_idxs = batch["category_idx"]
             for cat_idx, seq_loss in zip(cat_idxs, seq_losses_val):
                 cur_tracker.update_train_loss(int(cat_idx), float(seq_loss))
                 
@@ -318,9 +379,10 @@ def train(config: Dict[str, Any], device_profile: str):
         # Periodic Evaluation on validation set
         if step % eval_interval == 0 or step == total_steps:
             print(f"\n--- Running Evaluation at Step {step} ---")
+            current_state = jutils.unreplicate(replicated_state) if num_devices > 1 else state
             eval_metrics = evaluate_on_dataset(
                 model=model,
-                params=state.params,
+                params=current_state.params,
                 tokenizer=tokenizer,
                 dataset=sampler.val_set,
                 context_len=context_len,
@@ -344,7 +406,8 @@ def train(config: Dict[str, Any], device_profile: str):
         # Periodic Checkpoint saving
         if step % save_interval == 0 or step == total_steps:
             print(f"Saving checkpoint at step {step}...")
-            checkpoint_manager.save(step, state)
+            current_state = jutils.unreplicate(replicated_state) if num_devices > 1 else state
+            checkpoint_manager.save(step, current_state)
             print("Checkpoint saved successfully.")
             
     # Clean up and wait for asynchronous checkpointing to finish
