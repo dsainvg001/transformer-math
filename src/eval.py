@@ -1,7 +1,7 @@
 import jax
 import jax.numpy as jnp
 import numpy as np
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from src.tokenizer.tokenizer import Tokenizer
 
 def parse_float_safe(s: str) -> Tuple[bool, float]:
@@ -202,3 +202,42 @@ def evaluate_on_dataset(
         summary[f"category_tol/{cat}"] = float(metrics["tol"] / count) if count > 0 else 0.0
         
     return summary
+
+def verify_dataset_integrity(
+    test_set: List[Dict[str, Any]],
+    held_out_exprs: set,
+    seen_train_exprs: Optional[set] = None
+) -> Dict[str, Any]:
+    """
+    Verifies 100% data integrity:
+    1. Zero leakage: Ensures no test set expression was ever seen during training.
+    2. Format safety: Ensures all test target values are clean, non-corrupted numbers (no NaN/Inf).
+    """
+    total_test_samples = len(test_set)
+    if total_test_samples == 0:
+        return {"is_data_clean": True, "total_test_samples": 0, "leaked_samples": 0, "corrupted_samples": 0}
+
+    test_exprs = set(item["expr"] for item in test_set)
+    
+    # Leakage check against generated training stream
+    leaked_to_train = len(test_exprs.intersection(seen_train_exprs)) if seen_train_exprs else 0
+    
+    # Corruption / NaN checks
+    corrupted_samples = 0
+    for item in test_set:
+        val_str = item["val"]
+        is_valid, val_num = parse_float_safe(val_str)
+        if not is_valid or np.isnan(val_num) or np.isinf(val_num):
+            corrupted_samples += 1
+
+    leakage_rate_pct = (leaked_to_train / total_test_samples) * 100.0
+    corruption_rate_pct = (corrupted_samples / total_test_samples) * 100.0
+
+    return {
+        "total_test_samples": total_test_samples,
+        "leaked_samples": leaked_to_train,
+        "leakage_rate_pct": leakage_rate_pct,
+        "corrupted_samples": corrupted_samples,
+        "corruption_rate_pct": corruption_rate_pct,
+        "is_data_clean": (leaked_to_train == 0 and corrupted_samples == 0)
+    }

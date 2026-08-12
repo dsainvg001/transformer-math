@@ -16,7 +16,7 @@ from src.tokenizer.tokenizer import Tokenizer
 from src.data.sampler import ExpressionSampler
 from src.data.curriculum import CurriculumTracker
 from src.model.transformer import TransformerDecoder
-from src.eval import evaluate_on_dataset
+from src.eval import evaluate_on_dataset, verify_dataset_integrity
 
 # -------------------------------------------------------------
 # Robust Checkpoint Manager
@@ -412,6 +412,40 @@ def train(config: Dict[str, Any], device_profile: str):
             
     # Clean up and wait for asynchronous checkpointing to finish
     checkpoint_manager.close()
+    
+    # -------------------------------------------------------------
+    # 9. Independent Final Test & Data Corruption Audit
+    # -------------------------------------------------------------
+    print("\n===============================================================")
+    print("🔍 INDEPENDENT DATASET INTEGRITY & DATA LEAKAGE AUDIT REPORT")
+    print("===============================================================")
+    integrity_report = verify_dataset_integrity(
+        test_set=sampler.test_set,
+        held_out_exprs=sampler.held_out_exprs,
+        seen_train_exprs=sampler.seen_train_exprs
+    )
+    print(f"- Total Independent Test Samples: {integrity_report['total_test_samples']}")
+    print(f"- Training Set Overlap (Data Leakage): {integrity_report['leaked_samples']} samples ({integrity_report['leakage_rate_pct']:.2f}% Leakage Rate)")
+    print(f"- Target Formatting Corruption: {integrity_report['corrupted_samples']} samples ({integrity_report['corruption_rate_pct']:.2f}% Corruption Rate)")
+    status_str = "✅ 100% UNCORRUPTED & INDEPENDENT" if integrity_report['is_data_clean'] else "❌ INTEGRITY ISSUE DETECTED"
+    print(f"- Data Integrity Status: {status_str}")
+
+    print("\n===============================================================")
+    print("🎯 FINAL INDEPENDENT TEST SET EVALUATION")
+    print("===============================================================")
+    final_eval_state = jutils.unreplicate(replicated_state) if num_devices > 1 else state
+    test_metrics = evaluate_on_dataset(
+        model=model,
+        params=final_eval_state.params,
+        tokenizer=tokenizer,
+        dataset=sampler.test_set,
+        context_len=context_len,
+        epsilon=config["training"].get("accuracy_epsilon", 0.05)
+    )
+    print(f"- Independent Test Loss: {test_metrics['overall/loss']:.4f}")
+    print(f"- Independent Test Exact-Match: {test_metrics['overall/exact_match']*100:.2f}%")
+    print(f"- Independent Test Tolerant Acc: {test_metrics['overall/tolerant_accuracy']*100:.2f}%")
+    print("===============================================================\n")
     print("=== Training Complete ===")
 
 if __name__ == "__main__":

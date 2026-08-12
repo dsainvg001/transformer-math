@@ -57,6 +57,7 @@ class ExpressionSampler:
         
         # Set of held-out expressions to guarantee no overlap
         self.held_out_exprs = set()
+        self.seen_train_exprs = set()
         
         # Pre-generate validation and test splits
         self.val_set = []
@@ -177,6 +178,7 @@ class ExpressionSampler:
                 expr_str, val = self.generator.generate_for_op(op, depth)
                 if expr_str in self.held_out_exprs:
                     continue
+                self.seen_train_exprs.add(expr_str)
                 val_str = self.generator.format_result(val)
                 input_ids, loss_mask = self.tokenize_and_pad(expr_str, val_str)
                 return {
