@@ -7,3 +7,4 @@ sympy>=1.12
 pytest>=7.0
 matplotlib>=3.5.0
 ipython>=8.0.0
+huggingface_hub>=0.20.0
