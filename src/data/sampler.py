@@ -210,20 +210,20 @@ class ExpressionSampler:
                 yield self._collate_batch(batch_size, probs)
 
     def _collate_batch(self, batch_size: int, probs: Optional[np.ndarray]) -> Dict[str, np.ndarray]:
-        input_ids_batch = []
-        loss_mask_batch = []
-        cat_idx_batch = []
+        input_ids_batch = np.empty((batch_size, self.context_len), dtype=np.int32)
+        loss_mask_batch = np.empty((batch_size, self.context_len - 1), dtype=np.float32)
+        cat_idx_batch = np.empty(batch_size, dtype=np.int32)
         
-        for _ in range(batch_size):
+        for i in range(batch_size):
             sample = self.generate_single_sample(probs)
-            input_ids_batch.append(sample["input_ids"])
-            loss_mask_batch.append(sample["loss_mask"])
-            cat_idx_batch.append(sample["category_idx"])
+            input_ids_batch[i] = sample["input_ids"]
+            loss_mask_batch[i] = sample["loss_mask"]
+            cat_idx_batch[i] = sample["category_idx"]
             
         return {
-            "input_ids": np.stack(input_ids_batch, axis=0),
-            "loss_mask": np.stack(loss_mask_batch, axis=0),
-            "category_idx": np.array(cat_idx_batch, dtype=np.int32)
+            "input_ids": input_ids_batch,
+            "loss_mask": loss_mask_batch,
+            "category_idx": cat_idx_batch
         }
 
     def _stream_batches_prefetch(

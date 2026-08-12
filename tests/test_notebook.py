@@ -39,6 +39,7 @@ def test_notebook_structure_and_execution():
         lines = "".join(cell["source"])
         # Skip git clone call in test
         lines = lines.replace('subprocess.run(["git", "clone"', '# subprocess.run(["git", "clone"')
+        lines = lines.replace('DEBUG_MODE = False', 'DEBUG_MODE = True')
         full_code += lines + "\n\n"
         
     global_scope = {}

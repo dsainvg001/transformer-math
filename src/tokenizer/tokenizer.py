@@ -73,18 +73,78 @@ class Tokenizer:
 
     def encode(self, text: str, add_bos: bool = False, add_eos: bool = False) -> List[int]:
         """
-        Encodes a math expression text into a list of token IDs.
+        Encodes a math expression text into a list of token IDs using a high-speed single-pass scanner.
         """
-        tokens = self.tokenize_string(text)
-        ids = []
-        if add_bos:
-            ids.append(self.bos_id)
-        for t in tokens:
-            if t in self.vocab:
-                ids.append(self.vocab[t])
+        vocab = self.vocab
+        ids = [self.bos_id] if add_bos else []
+        i = 0
+        n = len(text)
+        while i < n:
+            c = text[i]
+            if c.isspace():
+                i += 1
+                continue
+            
+            # Check multi-char functions first
+            if c in 'sctlnea':
+                if text.startswith('sin', i):
+                    ids.append(vocab['sin'])
+                    i += 3
+                    continue
+                elif text.startswith('cos', i):
+                    ids.append(vocab['cos'])
+                    i += 3
+                    continue
+                elif text.startswith('tan', i):
+                    ids.append(vocab['tan'])
+                    i += 3
+                    continue
+                elif text.startswith('log', i):
+                    ids.append(vocab['log'])
+                    i += 3
+                    continue
+                elif text.startswith('exp', i):
+                    ids.append(vocab['exp'])
+                    i += 3
+                    continue
+                elif text.startswith('abs', i):
+                    ids.append(vocab['abs'])
+                    i += 3
+                    continue
+                elif text.startswith('sqrt', i):
+                    ids.append(vocab['sqrt'])
+                    i += 4
+                    continue
+                elif text.startswith('ln', i):
+                    ids.append(vocab['ln'])
+                    i += 2
+                    continue
+            
+            # Special tokens check
+            if c in 'PBES':
+                if text.startswith('PAD', i):
+                    ids.append(vocab['PAD'])
+                    i += 3
+                    continue
+                elif text.startswith('BOS', i):
+                    ids.append(vocab['BOS'])
+                    i += 3
+                    continue
+                elif text.startswith('EOS', i):
+                    ids.append(vocab['EOS'])
+                    i += 3
+                    continue
+                elif text.startswith('SEP', i):
+                    ids.append(vocab['SEP'])
+                    i += 3
+                    continue
+
+            if c in vocab:
+                ids.append(vocab[c])
+                i += 1
             else:
-                # If we hit an unknown character/token, we raise ValueError or skip. Let's raise.
-                raise ValueError(f"Token '{t}' from text '{text}' is not in vocabulary.")
+                raise ValueError(f"Token '{c}' from text '{text}' is not in vocabulary.")
+
         if add_eos:
             ids.append(self.eos_id)
         return ids
