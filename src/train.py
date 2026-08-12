@@ -26,20 +26,20 @@ class CheckpointManager:
     Manages saving and loading of model checkpoints with Orbax.
     Backward-compatible and robust across Orbax API shifts.
     """
-    def __init__(self, directory: str):
+    def __init__(self, directory: str, max_to_keep: int = 3):
         self.directory = os.path.abspath(directory)
         os.makedirs(self.directory, exist_ok=True)
         # Setup checkpointer and manager
         try:
             self.mngr = ocp.CheckpointManager(
                 self.directory,
-                options=ocp.CheckpointManagerOptions(max_to_keep=3)
+                options=ocp.CheckpointManagerOptions(max_to_keep=max_to_keep)
             )
         except Exception:
             self.mngr = ocp.CheckpointManager(
                 self.directory,
                 ocp.StandardCheckpointer(),
-                options=ocp.CheckpointManagerOptions(max_to_keep=3)
+                options=ocp.CheckpointManagerOptions(max_to_keep=max_to_keep)
             )
 
     def save(self, step: int, state):
