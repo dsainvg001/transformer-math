@@ -235,7 +235,7 @@ notebook = {
     "from src.data.sampler import ExpressionSampler\n",
     "from src.data.curriculum import CurriculumTracker\n",
     "from src.model.transformer import TransformerDecoder\n",
-    "from src.train import CheckpointManager, CustomTrainState, train_step, make_parallel_train_step\n",
+    "from src.train import make_parallel_train_step, train_step, CheckpointManager, RobustCheckpointManager, CustomTrainState\n",
     "from src.eval import evaluate_on_dataset\n",
     "\n",
     "# Initialize Tokenizer and Sampler\n",

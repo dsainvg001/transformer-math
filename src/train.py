@@ -77,6 +77,8 @@ class CheckpointManager:
         except Exception:
             pass
 
+RobustCheckpointManager = CheckpointManager
+
 # -------------------------------------------------------------
 # TrainState Definition
 # -------------------------------------------------------------

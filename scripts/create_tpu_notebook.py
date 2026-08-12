@@ -215,7 +215,7 @@ notebook = {
     "from src.data.sampler import ExpressionSampler\n",
     "from src.data.curriculum import CurriculumTracker\n",
     "from src.model.transformer import TransformerDecoder\n",
-    "from src.train import make_parallel_train_step, train_step, RobustCheckpointManager, CustomTrainState\n",
+    "from src.train import make_parallel_train_step, train_step, CheckpointManager, RobustCheckpointManager, CustomTrainState\n",
     "from src.eval import evaluate_on_dataset\n",
     "\n",
     "seed = config[\"seed\"]\n",
