@@ -10,7 +10,7 @@ class ExpressionGenerator:
     for a wide range of operations, including arithmetic and transcendental functions.
     Ensures non-degenerate distributions with controllable depth and operand domains.
     """
-    def __init__(self, seed: int = 42, max_depth: int = 3, float_precision: int = 1):
+    def __init__(self, seed: int = 42, max_depth: int = 3, float_precision: int = 1, enabled_ops=None):
         self.rng = np.random.default_rng(seed)
         self.max_depth = max_depth
         self.float_precision = float_precision
@@ -18,6 +18,12 @@ class ExpressionGenerator:
         # Registry for operations
         self.op_registry = {}
         self._setup_default_registry()
+        
+        # Restrict recursive tree building to enabled ops only
+        if enabled_ops is not None:
+            self._enabled_op_list = [op for op in enabled_ops if op in self.op_registry]
+        else:
+            self._enabled_op_list = list(self.op_registry.keys())
 
     def _setup_default_registry(self):
         # Register Arithmetic
@@ -159,7 +165,7 @@ class ExpressionGenerator:
         else:
             # depth > 1
             if arity == 1:
-                child_op = self.rng.choice(list(self.op_registry.keys()))
+                child_op = self.rng.choice(self._enabled_op_list)
                 child_str, child_sym = self._build_tree(child_op, depth - 1)
                 expr_str = f"{op_name}({child_str})"
                 sym_expr = sympy_fn(child_sym)
@@ -183,7 +189,7 @@ class ExpressionGenerator:
                     l_str_wrapped = f"({l_str})" if (isinstance(l_val, (int, float)) and l_val < 0) else l_str
                     l_sym = sp.sympify(l_val)
                 else:
-                    left_op = self.rng.choice(list(self.op_registry.keys()))
+                    left_op = self.rng.choice(self._enabled_op_list)
                     l_str, l_sym = self._build_tree(left_op, d_left)
                     l_str_wrapped = f"({l_str})"
                 
@@ -196,7 +202,7 @@ class ExpressionGenerator:
                     r_str_wrapped = f"({r_str})" if (isinstance(r_val, (int, float)) and r_val < 0) else r_str
                     r_sym = sp.sympify(r_val)
                 else:
-                    right_op = self.rng.choice(list(self.op_registry.keys()))
+                    right_op = self.rng.choice(self._enabled_op_list)
                     r_str, r_sym = self._build_tree(right_op, d_right)
                     r_str_wrapped = f"({r_str})"
                 
@@ -209,7 +215,7 @@ class ExpressionGenerator:
         Generates a valid mathematical expression for the given operator/function and depth.
         Ensures value is within non-degenerate range.
         """
-        for _ in range(200):
+        for _ in range(50):  # Reduced from 200 to avoid long stalls on Kaggle
             try:
                 tree_str, sympy_expr = self._build_tree(op_name, depth)
                 val_complex = sympy_expr.evalf()

@@ -37,7 +37,8 @@ class ExpressionSampler:
         self.generator = ExpressionGenerator(
             seed=seed,
             max_depth=max_depth,
-            float_precision=float_precision
+            float_precision=float_precision,
+            enabled_ops=enabled_ops
         )
         
         # Determine all enabled operations
@@ -259,13 +260,26 @@ class ExpressionSampler:
 
         try:
             while True:
-                # Yield from queue
-                yield batch_queue.get()
-                batch_queue.task_done()
+                # Use timeout so we don't hang forever if all worker threads die
+                while True:
+                    try:
+                        batch = batch_queue.get(timeout=30)
+                        batch_queue.task_done()
+                        yield batch
+                        break
+                    except queue.Empty:
+                        # Check if all workers have died; if so raise to surface the hang
+                        alive = any(t.is_alive() for t in threads)
+                        if not alive:
+                            raise RuntimeError(
+                                "All prefetch worker threads have died. "
+                                "Check generate_single_sample for errors."
+                            )
+                        continue
         finally:
             stop_event.set()
             for t in threads:
-                t.join(timeout=0.2)
+                t.join(timeout=0.5)
 
     # -------------------------------------------------------------
     # Offline Dump and Streaming Loader
@@ -289,9 +303,12 @@ class ExpressionSampler:
                 for _ in range(examples_this_shard):
                     # Use flat distribution for offline data dump
                     sample = self.generate_single_sample(None)
-                    # Simple deduplication
-                    while sample["expr"] in seen_exprs:
+                    # Deduplication with bounded retries to avoid infinite loop
+                    max_dedup_retries = 50
+                    retries = 0
+                    while sample["expr"] in seen_exprs and retries < max_dedup_retries:
                         sample = self.generate_single_sample(None)
+                        retries += 1
                     seen_exprs.add(sample["expr"])
                     
                     data_item = {

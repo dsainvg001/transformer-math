@@ -4,6 +4,15 @@ import numpy as np
 from typing import List, Dict, Any, Tuple, Optional
 from src.tokenizer.tokenizer import Tokenizer
 
+# Cache jitted model.apply per model instance to avoid re-JIT on every evaluate_on_dataset call
+_jit_cache: Dict[int, Any] = {}
+
+def _get_jitted_apply(model):
+    key = id(model)
+    if key not in _jit_cache:
+        _jit_cache[key] = jax.jit(model.apply)
+    return _jit_cache[key]
+
 def parse_float_safe(s: str) -> Tuple[bool, float]:
     """
     Safely parses a string into a float.
@@ -121,9 +130,8 @@ def evaluate_on_dataset(
     overall_em = 0
     overall_tol = 0
     
-    # We will also evaluate token-level loss on the evaluation set
-    # Using a mini-batch approach to compute evaluation loss
-    model_apply_fn = jax.jit(model.apply)
+    # Use cached jit to avoid re-compilation on every eval call
+    model_apply_fn = _get_jitted_apply(model)
     
     eval_losses = []
     
