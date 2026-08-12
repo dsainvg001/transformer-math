@@ -13,8 +13,8 @@ data:
   max_depth: 3
   float_precision: 1
   enabled_ops: ["+", "-", "*", "/", "^", "sin", "cos", "tan", "log", "ln", "exp", "sqrt", "abs"]
-  val_size: 1000
-  test_size: 1000
+  val_size: 128
+  test_size: 8192
 
 training:
   total_steps: 50000

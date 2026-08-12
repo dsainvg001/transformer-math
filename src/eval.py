@@ -98,11 +98,13 @@ def evaluate_on_dataset(
     tokenizer: Tokenizer,
     dataset: List[Dict[str, Any]],
     context_len: int,
-    epsilon: float = 0.05
+    epsilon: float = 0.05,
+    max_eval_samples: Optional[int] = None
 ) -> Dict[str, Any]:
     """
     Evaluates the model over an entire dataset (e.g. val_set or test_set).
     Computes token loss, overall and per-category accuracies.
+    If max_eval_samples is specified, sub-samples the dataset for fast periodic validation.
     """
     category_metrics = {}
     
@@ -110,6 +112,12 @@ def evaluate_on_dataset(
     if total_samples == 0:
         return {}
         
+    eval_dataset = dataset
+    if max_eval_samples is not None and max_eval_samples < total_samples:
+        step_stride = max(1, total_samples // max_eval_samples)
+        eval_dataset = dataset[::step_stride][:max_eval_samples]
+        
+    eval_count = len(eval_dataset)
     overall_em = 0
     overall_tol = 0
     
@@ -119,7 +127,7 @@ def evaluate_on_dataset(
     
     eval_losses = []
     
-    for item in dataset:
+    for item in eval_dataset:
         expr_str = item["expr"]
         target_str = item["val"]
         cat = item["category"]
@@ -190,8 +198,8 @@ def evaluate_on_dataset(
     summary = {
         "overall/loss": float(np.mean(eval_losses)),
         "overall/perplexity": float(np.exp(np.mean(eval_losses))),
-        "overall/exact_match": float(overall_em / total_samples),
-        "overall/tolerant_accuracy": float(overall_tol / total_samples),
+        "overall/exact_match": float(overall_em / eval_count),
+        "overall/tolerant_accuracy": float(overall_tol / eval_count),
     }
     
     # Calculate per-category stats

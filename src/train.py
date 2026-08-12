@@ -386,7 +386,8 @@ def train(config: Dict[str, Any], device_profile: str):
                 tokenizer=tokenizer,
                 dataset=sampler.val_set,
                 context_len=context_len,
-                epsilon=config["training"].get("accuracy_epsilon", 0.05)
+                epsilon=config["training"].get("accuracy_epsilon", 0.05),
+                max_eval_samples=128
             )
             print(f"Validation loss: {eval_metrics['overall/loss']:.4f}")
             print(f"Exact-Match accuracy: {eval_metrics['overall/exact_match']*100:.2f}%")
