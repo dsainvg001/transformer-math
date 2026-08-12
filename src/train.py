@@ -140,15 +140,22 @@ def train_step(state: train_state.TrainState, batch: Dict[str, jnp.ndarray]):
     new_state = state.apply_gradients(grads=grads)
     return new_state, mean_loss, seq_losses
 
-def make_parallel_train_step():
+def make_parallel_train_step(model=None):
     """
     Creates a pmap-compiled multi-device train step function.
     Synchronizes gradients across devices via jax.lax.pmean.
+    Supports both:
+      1. parallel_step(state, batch_dict)
+      2. parallel_step(state, input_ids, loss_mask)
     """
-    def parallel_step_fn(state: train_state.TrainState, batch: Dict[str, jnp.ndarray]):
-        input_ids = batch["input_ids"]
-        loss_mask = batch["loss_mask"]
-        
+    def parallel_step_fn(state: train_state.TrainState, arg1: Any, arg2: Any = None):
+        if arg2 is None:
+            input_ids = arg1["input_ids"]
+            loss_mask = arg1["loss_mask"]
+        else:
+            input_ids = arg1
+            loss_mask = arg2
+
         inputs = input_ids[:, :-1]
         targets = input_ids[:, 1:]
         
@@ -349,7 +356,7 @@ def train(config: Dict[str, Any], device_profile: str):
                 "loss_mask": batch["loss_mask"].reshape(num_devices, per_device_batch, -1),
                 "category_idx": batch["category_idx"].reshape(num_devices, per_device_batch)
             }
-            replicated_state, loss_arr, seq_losses_arr = p_train_step(replicated_state, batch_reshaped)
+            replicated_state, loss_arr, seq_losses_arr = p_train_step(replicated_state, batch_reshaped["input_ids"], batch_reshaped["loss_mask"])
             loss_val = float(loss_arr[0])
             seq_losses_val = np.array(seq_losses_arr[0]).flatten()
             cat_idxs = batch["category_idx"]

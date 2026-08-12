@@ -54,8 +54,8 @@ def test_multi_gpu_train_step():
         "loss_mask": jnp.array(loss_mask)
     }
     
-    p_step = make_parallel_train_step()
-    new_replicated_state, mean_loss, seq_losses = p_step(replicated_state, batch)
+    p_step = make_parallel_train_step(model)
+    new_replicated_state, mean_loss, seq_losses = p_step(replicated_state, jnp.array(input_ids), jnp.array(loss_mask))
     
     # Single device unreplicate
     unreplicated_state = jutils.unreplicate(new_replicated_state)
