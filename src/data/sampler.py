@@ -250,8 +250,12 @@ class ExpressionSampler:
                 except Exception:
                     continue
 
-        t = threading.Thread(target=producer, daemon=True)
-        t.start()
+        threads = []
+        num_workers = min(4, os.cpu_count() or 2)
+        for _ in range(num_workers):
+            t = threading.Thread(target=producer, daemon=True)
+            t.start()
+            threads.append(t)
 
         try:
             while True:
@@ -260,7 +264,8 @@ class ExpressionSampler:
                 batch_queue.task_done()
         finally:
             stop_event.set()
-            t.join(timeout=1.0)
+            for t in threads:
+                t.join(timeout=0.2)
 
     # -------------------------------------------------------------
     # Offline Dump and Streaming Loader

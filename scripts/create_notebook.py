@@ -335,7 +335,7 @@ notebook = {
     "train_stream = sampler.stream_batches(\n",
     "    batch_size=batch_size,\n",
     "    get_probs_fn=cur_tracker.get_probabilities if cur_enabled else None,\n",
-    "    prefetch_size=2 if num_devices > 1 else 0\n",
+    "    prefetch_size=20\n",
     ")\n",
     "\n",
     "log_interval = config[\"training\"].get(\"log_interval\", 10)\n",
