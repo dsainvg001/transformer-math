@@ -111,7 +111,7 @@ class TransformerDecoder(nn.Module):
         for _ in range(self.num_layers):
             x = TransformerBlock(
                 num_heads=self.num_heads,
-                qkv_features=self.emb_dim // self.num_heads,
+                qkv_features=self.emb_dim,
                 mlp_dim=self.mlp_dim,
                 dtype=self.dtype,
                 param_dtype=self.param_dtype
