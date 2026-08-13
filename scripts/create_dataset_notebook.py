@@ -1,0 +1,141 @@
+import json
+import os
+
+notebook = {
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 1: Environment Setup, Dependencies & Repository Cloning\n",
+    "import os\n",
+    "import sys\n",
+    "import subprocess\n",
+    "\n",
+    "print(\"[SETUP] Setting up Kaggle CPU Data Generator Environment...\")\n",
+    "subprocess.run([sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"huggingface_hub\", \"sympy\"], check=True)\n",
+    "\n",
+    "repo_url = \"https://github.com/dsainvg001/transformer-math.git\"\n",
+    "repo_dir = \"transformer-math\"\n",
+    "\n",
+    "if not os.path.exists(repo_dir):\n",
+    "    print(f\"[GIT] Cloning repository from {repo_url}...\")\n",
+    "    subprocess.run([\"git\", \"clone\", repo_url], check=True)\n",
+    "else:\n",
+    "    print(f\"[GIT] Repository {repo_dir} already present.\")\n",
+    "\n",
+    "if os.path.exists(repo_dir):\n",
+    "    os.chdir(repo_dir)\n",
+    "    if os.getcwd() not in sys.path:\n",
+    "        sys.path.insert(0, os.getcwd())\n",
+    "\n",
+    "print(f\"[PATH] Current Directory: {os.getcwd()}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 2: Hugging Face Authentication Token Configuration\n",
+    "from getpass import getpass\n",
+    "\n",
+    "hf_token = os.environ.get(\"HFTOKEN\") or os.environ.get(\"HF_TOKEN\")\n",
+    "\n",
+    "# Check for Kaggle Secrets if running inside Kaggle Notebook\n",
+    "if not hf_token:\n",
+    "    try:\n",
+    "        from kaggle_secrets import UserSecretsClient\n",
+    "        user_secrets = UserSecretsClient()\n",
+    "        hf_token = user_secrets.get_secret(\"HFTOKEN\") or user_secrets.get_secret(\"HF_TOKEN\")\n",
+    "    except Exception:\n",
+    "        pass\n",
+    "\n",
+    "# Fallback to interactive input if token is not set in environment or secrets\n",
+    "if not hf_token:\n",
+    "    print(\"[AUTH] HFTOKEN not detected in environment or Kaggle Secrets.\")\n",
+    "    hf_token = getpass(\"Enter your Hugging Face Write Token: \")\n",
+    "\n",
+    "os.environ[\"HFTOKEN\"] = hf_token\n",
+    "print(f\"[AUTH] Hugging Face Token Configured (Length: {len(hf_token)} chars).\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 3: Dataset Generation Settings (Kaggle CPU Session)\n",
+    "DEBUG_MODE = False  # Set to True for a 1-minute 10k test run\n",
+    "\n",
+    "REPO_ID = \"durgasai299792458/mathmetics-dataset\"\n",
+    "SHARD_SIZE = 100000  # 100,000 data points per shard\n",
+    "NUM_SAMPLES = 250000000 if not DEBUG_MODE else 10000\n",
+    "OUTPUT_DIR = \"/kaggle/working/hf_shards\"\n",
+    "\n",
+    "import multiprocessing as mp\n",
+    "num_workers = mp.cpu_count()\n",
+    "\n",
+    "print(\"=========================================================================\")\n",
+    "print(f\"[CONFIG] Kaggle CPU Session Dataset Generator\")\n",
+    "print(\"=========================================================================\")\n",
+    "print(f\"- Target Dataset Repo: {REPO_ID}\")\n",
+    "print(f\"- Total Target Samples: {NUM_SAMPLES}\")\n",
+    "print(f\"- Shard Size: {SHARD_SIZE} samples/shard\")\n",
+    "print(f\"- CPU Cores Available: {num_workers}\")\n",
+    "print(f\"- Output Directory: {OUTPUT_DIR}\")\n",
+    "print(f\"- Debug Mode: {DEBUG_MODE}\")\n",
+    "print(\"=========================================================================\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 4: Launch High-Throughput 250M Dataset Generation & Sharded Upload\n",
+    "cmd = [\n",
+    "    sys.executable, \"generate_dataset.py\",\n",
+    "    \"--num-samples\", str(NUM_SAMPLES),\n",
+    "    \"--shard-size\", str(SHARD_SIZE),\n",
+    "    \"--repo-id\", REPO_ID,\n",
+    "    \"--output-dir\", OUTPUT_DIR,\n",
+    "    \"--num-workers\", str(num_workers)\n",
+    "]\n",
+    "\n",
+    "if DEBUG_MODE:\n",
+    "    cmd.append(\"--debug\")\n",
+    "\n",
+    "print(f\"[EXECUTE] Running: {' '.join(cmd)}\", flush=True)\n",
+    "proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)\n",
+    "\n",
+    "# Stream output logs in real-time\n",
+    "for line in proc.stdout:\n",
+    "    print(line, end=\"\", flush=True)\n",
+    "\n",
+    "proc.wait()\n",
+    "if proc.returncode == 0:\n",
+    "    print(f\"\\n[SUCCESS] Dataset successfully generated and uploaded to https://huggingface.co/datasets/{REPO_ID}\")\n",
+    "else:\n",
+    "    print(f\"\\n[ERROR] Generation script exited with return code {proc.returncode}\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
+
+with open("generate_dataset_kaggle.ipynb", "w", encoding="utf-8") as f:
+    json.dump(notebook, f, indent=1)
+
+print("generate_dataset_kaggle.ipynb successfully created!")

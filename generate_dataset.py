@@ -37,12 +37,13 @@ def extract_ops_used(expr_str: str, all_ops: List[str] = ALL_OPS) -> List[str]:
 def _worker_generate_chunk(args_tuple: Tuple[int, List[str], int, int, int]) -> List[Dict[str, Any]]:
     """
     Worker function executed in parallel CPU processes.
-    Generates a chunk of math expressions uniformly distributed over all op x depth categories.
+    Generates an exact chunk of math expressions uniformly distributed over categories.
+    Guaranteed high-throughput execution without stalls.
     """
     worker_id, categories, chunk_size, max_depth, float_precision = args_tuple
     
-    # Initialize a per-worker generator with a unique seed for independent random generation
-    seed = (int(time.time() * 1000) + worker_id * 10007) % (2**31 - 1)
+    # Initialize worker-specific seed with pid and timestamp
+    seed = (int(time.time() * 1000) + worker_id * 10007 + os.getpid()) % (2**31 - 1)
     generator = ExpressionGenerator(
         seed=seed,
         max_depth=max_depth,
@@ -53,9 +54,9 @@ def _worker_generate_chunk(args_tuple: Tuple[int, List[str], int, int, int]) -> 
     samples = []
     num_categories = len(categories)
     
-    for i in range(chunk_size):
-        # Uniform round-robin distribution over all category combinations (ops x depth)
-        cat = categories[(worker_id + i) % num_categories]
+    while len(samples) < chunk_size:
+        idx = len(samples)
+        cat = categories[(worker_id + idx) % num_categories]
         op, d_str = cat.split("_d")
         depth = int(d_str)
         
@@ -102,7 +103,7 @@ class DatasetGeneratorManager:
         
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Build category list: 13 ops x 3 depths = 39 uniform categories
+        # Build category list: 13 ops x depths = uniform categories
         self.max_depth = 3 if not debug_mode else 2
         self.float_precision = 1
         self.categories = [f"{op}_d{d}" for op in ALL_OPS for d in range(1, self.max_depth + 1)]
@@ -251,11 +252,13 @@ for sample in dataset["train"]:
                 if items_needed <= 0:
                     break
                     
-                chunk_per_worker = max(100, items_needed // self.num_workers)
-                tasks = [
-                    (w_id, self.categories, chunk_per_worker, self.max_depth, self.float_precision)
-                    for w_id in range(self.num_workers)
-                ]
+                chunk_per_worker = items_needed // self.num_workers
+                remainder = items_needed % self.num_workers
+                
+                tasks = []
+                for w_id in range(self.num_workers):
+                    size_for_worker = chunk_per_worker + (1 if w_id < remainder else 0)
+                    tasks.append((w_id, self.categories, size_for_worker, self.max_depth, self.float_precision))
                 
                 # Run parallel generation across CPU worker processes
                 shard_samples = []
@@ -263,9 +266,6 @@ for sample in dataset["train"]:
                 for res in results:
                     shard_samples.extend(res)
                     
-                # Trim to exact shard size needed
-                shard_samples = shard_samples[:items_needed]
-                
                 # Write shard to JSONL file
                 with open(shard_path, "w", encoding="utf-8") as f:
                     for item in shard_samples:
@@ -274,23 +274,31 @@ for sample in dataset["train"]:
                 samples_generated += len(shard_samples)
                 elapsed = time.time() - start_time
                 rate = samples_generated / max(elapsed, 1e-5)
+                eta_sec = (self.num_samples - samples_generated) / max(rate, 1e-5)
                 
-                print(f"[SHARD] [Shard {shard_idx+1}/{total_shards}] Created {shard_name} ({len(shard_samples):,} samples) | Speed: {rate:,.0f} samples/sec")
+                print(f"[SHARD] [Shard {shard_idx+1}/{total_shards}] Created {shard_name} ({len(shard_samples):,} samples) | Speed: {rate:,.0f} samples/sec | ETA: {eta_sec/60:.1f} min")
                 
-                # Upload shard to Hugging Face Hub
+                # Upload shard to Hugging Face Hub with retry
                 if self.api and not self.skip_upload:
-                    try:
-                        print(f"[UPLOAD] Uploading {shard_name} to Hugging Face ({self.repo_id})...", flush=True)
-                        self.api.upload_file(
-                            path_or_fileobj=shard_path,
-                            path_in_repo=f"data/{shard_name}",
-                            repo_id=self.repo_id,
-                            repo_type="dataset"
-                        )
-                        self._record_uploaded_shard(shard_name)
-                        print(f"[OK] Successfully uploaded {shard_name} to Hugging Face.")
-                    except Exception as e:
-                        print(f"[ERROR] Failed to upload {shard_name}: {e}")
+                    max_retries = 3
+                    for attempt in range(max_retries):
+                        try:
+                            print(f"[UPLOAD] Uploading {shard_name} to Hugging Face ({self.repo_id})...", flush=True)
+                            self.api.upload_file(
+                                path_or_fileobj=shard_path,
+                                path_in_repo=f"data/{shard_name}",
+                                repo_id=self.repo_id,
+                                repo_type="dataset"
+                            )
+                            self._record_uploaded_shard(shard_name)
+                            print(f"[OK] Successfully uploaded {shard_name} to Hugging Face.")
+                            break
+                        except Exception as e:
+                            if attempt < max_retries - 1:
+                                print(f"[RETRY] Upload {shard_name} failed ({e}). Retrying in 2s...")
+                                time.sleep(2)
+                            else:
+                                print(f"[ERROR] Failed to upload {shard_name} after {max_retries} retries: {e}")
 
         total_elapsed = time.time() - start_time
         print("\n=========================================================================")
@@ -322,7 +330,7 @@ def main():
         "--shard-size",
         type=int,
         default=None,
-        help="Number of samples per JSONL shard file (default: 500,000 for prod, 5,000 for debug)."
+        help="Number of samples per JSONL shard file (default: 100,000 for prod, 5,000 for debug)."
     )
     parser.add_argument(
         "--output-dir",
@@ -333,8 +341,8 @@ def main():
     parser.add_argument(
         "--repo-id",
         type=str,
-        default="dsain/transformer-math-250m",
-        help="Hugging Face Dataset repository ID (default: dsain/transformer-math-250m)."
+        default="durgasai299792458/mathmetics-dataset",
+        help="Hugging Face Dataset repository ID (default: durgasai299792458/mathmetics-dataset)."
     )
     parser.add_argument(
         "--hf-token",
@@ -360,10 +368,10 @@ def main():
     if args.debug:
         num_samples = args.num_samples or 10000
         shard_size = args.shard_size or 5000
-        repo_id = args.repo_id if args.repo_id != "dsain/transformer-math-250m" else "dsain/transformer-math-debug"
+        repo_id = args.repo_id if args.repo_id != "durgasai299792458/mathmetics-dataset" else "durgasai299792458/mathmetics-dataset-debug"
     else:
         num_samples = args.num_samples or 250000000
-        shard_size = args.shard_size or 500000
+        shard_size = args.shard_size or 100000
         repo_id = args.repo_id
         
     # Read token from environment variable HFTOKEN or HF_TOKEN

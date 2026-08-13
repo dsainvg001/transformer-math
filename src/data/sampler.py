@@ -184,6 +184,8 @@ class ExpressionSampler:
                     expr_str, val = self.generator.generate_for_op(op, depth)
                     if expr_str in self.held_out_exprs:
                         continue
+                    if expr_str in self.seen_train_exprs and _ < 50:
+                        continue
                     self.seen_train_exprs.add(expr_str)
                     val_str = self.generator.format_result(val)
                 except Exception:

@@ -47,3 +47,17 @@ def test_notebook_structure_and_execution():
     
     assert global_scope.get("DEBUG_MODE") is True
     assert os.path.exists(global_scope.get("dataset_save_dir", "."))
+
+def test_dataset_kaggle_notebook():
+    notebook_path = "generate_dataset_kaggle.ipynb"
+    assert os.path.exists(notebook_path), "generate_dataset_kaggle.ipynb does not exist"
+    
+    with open(notebook_path, "r", encoding="utf-8") as f:
+        nb = json.load(f)
+        
+    assert nb["nbformat"] == 4
+    assert len(nb["cells"]) >= 4
+    
+    full_text = json.dumps(nb)
+    assert "durgasai299792458/mathmetics-dataset" in full_text
+    assert "100000" in full_text

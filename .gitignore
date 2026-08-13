@@ -4,3 +4,4 @@ __pycache__/
 checkpoints_*/
 test_offline_data/
 offline_dataset/
+hf_dataset_shards/
