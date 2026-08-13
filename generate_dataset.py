@@ -268,8 +268,8 @@ for sample in dataset["train"]:
 
     def _flush_batch_upload(self, force: bool = False):
         """
-        Uploads accumulated local JSONL shards in batches using upload_folder
-        to avoid Hugging Face rate limits (HTTP 429).
+        Uploads accumulated local JSONL shards using upload_large_folder
+        to handle massive datasets and avoid Hugging Face rate limits (HTTP 429).
         """
         if not self.api or self.skip_upload:
             return
@@ -286,25 +286,33 @@ for sample in dataset["train"]:
         if not unuploaded and not force:
             return
 
-        print(f"\n[HF BATCH UPLOAD] Syncing {len(unuploaded)} pending shard(s) to {self.repo_id}...", flush=True)
+        print(f"\n[HF LARGE FOLDER UPLOAD] Syncing {len(unuploaded)} pending shard(s) to {self.repo_id}...", flush=True)
         max_retries = 3
         for attempt in range(max_retries):
             try:
-                self.api.upload_folder(
-                    folder_path=self.output_dir,
-                    path_in_repo="data",
-                    repo_id=self.repo_id,
-                    repo_type="dataset",
-                    allow_patterns="shard_*.jsonl",
-                    commit_message=f"Batch upload {len(unuploaded)} shard(s) ({time.strftime('%Y-%m-%d %H:%M:%S')})"
-                )
+                if hasattr(self.api, "upload_large_folder"):
+                    self.api.upload_large_folder(
+                        repo_id=self.repo_id,
+                        folder_path=self.output_dir,
+                        repo_type="dataset",
+                        allow_patterns="shard_*.jsonl"
+                    )
+                else:
+                    self.api.upload_folder(
+                        folder_path=self.output_dir,
+                        path_in_repo="data",
+                        repo_id=self.repo_id,
+                        repo_type="dataset",
+                        allow_patterns="shard_*.jsonl",
+                        commit_message=f"Batch upload {len(unuploaded)} shard(s) ({time.strftime('%Y-%m-%d %H:%M:%S')})"
+                    )
                 for shard_name in unuploaded:
                     self._record_uploaded_shard(shard_name)
                 self.last_upload_time = time.time()
-                print(f"[HF BATCH UPLOAD OK] Successfully synced batch to Hugging Face Hub!")
+                print(f"[HF LARGE FOLDER UPLOAD OK] Successfully synced batch to Hugging Face Hub!")
                 break
             except Exception as e:
-                print(f"[HF BATCH UPLOAD WARNING] Attempt {attempt+1}/{max_retries} failed ({e}).")
+                print(f"[HF LARGE FOLDER UPLOAD WARNING] Attempt {attempt+1}/{max_retries} failed ({e}).")
                 if attempt < max_retries - 1:
                     time.sleep(15)
 
