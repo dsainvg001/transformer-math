@@ -1,0 +1,160 @@
+import json
+import os
+
+notebook = {
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 1: Environment Setup, Dependencies & Repository Cloning\n",
+    "import os\n",
+    "import sys\n",
+    "import subprocess\n",
+    "\n",
+    "print(\"[SETUP] Setting up Kaggle CPU Data Generator Environment (3,500 Shards Multi-Phase Dataset)...\")\n",
+    "subprocess.run([sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"huggingface_hub\", \"sympy\"], check=True)\n",
+    "\n",
+    "repo_url = \"https://github.com/dsainvg001/transformer-math.git\"\n",
+    "repo_dir = \"transformer-math\"\n",
+    "\n",
+    "if not os.path.exists(repo_dir):\n",
+    "    print(f\"[GIT] Cloning repository from {repo_url}...\")\n",
+    "    subprocess.run([\"git\", \"clone\", repo_url], check=True)\n",
+    "else:\n",
+    "    print(f\"[GIT] Repository {repo_dir} already present.\")\n",
+    "\n",
+    "if os.path.exists(repo_dir):\n",
+    "    os.chdir(repo_dir)\n",
+    "    if os.getcwd() not in sys.path:\n",
+    "        sys.path.insert(0, os.getcwd())\n",
+    "\n",
+    "print(f\"[PATH] Current Directory: {os.getcwd()}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 2: Hugging Face Authentication Token Configuration\n",
+    "from getpass import getpass\n",
+    "\n",
+    "hf_token = os.environ.get(\"HFTOKEN\") or os.environ.get(\"HF_TOKEN\")\n",
+    "\n",
+    "# Check for Kaggle Secrets if running inside Kaggle Notebook\n",
+    "if not hf_token:\n",
+    "    try:\n",
+    "        from kaggle_secrets import UserSecretsClient\n",
+    "        user_secrets = UserSecretsClient()\n",
+    "        hf_token = user_secrets.get_secret(\"HFTOKEN\") or user_secrets.get_secret(\"HF_TOKEN\")\n",
+    "    except Exception:\n",
+    "        pass\n",
+    "\n",
+    "# Fallback to interactive input if token is not set in environment or secrets\n",
+    "if not hf_token:\n",
+    "    print(\"[AUTH] HFTOKEN not detected in environment or Kaggle Secrets.\")\n",
+    "    hf_token = getpass(\"Enter your Hugging Face Write Token: \")\n",
+    "\n",
+    "os.environ[\"HFTOKEN\"] = hf_token\n",
+    "print(f\"[AUTH] Hugging Face Token Configured (Length: {len(hf_token)} chars).\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 3: Multi-Phase Dataset Generation Settings (3,500 Shards Total)\n",
+    "DEBUG_MODE = False  # Set to True for a quick test run\n",
+    "REPO_ID = \"durgasai299792458/mathmetics-dataset-custom\"\n",
+    "SHARD_SIZE = 100000 if not DEBUG_MODE else 1000\n",
+    "OUTPUT_DIR = \"/kaggle/working/hf_custom_shards\"\n",
+    "\n",
+    "import multiprocessing as mp\n",
+    "num_workers = mp.cpu_count()\n",
+    "\n",
+    "# 3-Phase Specs:\n",
+    "# Phase 1: 1500 shards, Ints only (int_ratio=1.0), Depths 1-3 (Offset 0 -> 1499)\n",
+    "# Phase 2: 1500 shards, Floats (int_ratio=0.0), Depths 4-6 (Offset 1500 -> 2999)\n",
+    "# Phase 3: 500 shards, Ints only (int_ratio=1.0), Depths 4-6 (Offset 3000 -> 3499)\n",
+    "phases = [\n",
+    "    {\"name\": \"Phase 1: Int-Only Depths 1-3\", \"shards\": 1500 if not DEBUG_MODE else 2, \"offset\": 0, \"min_d\": 1, \"max_d\": 3, \"int_ratio\": 1.0},\n",
+    "    {\"name\": \"Phase 2: Float Depths 4-6\", \"shards\": 1500 if not DEBUG_MODE else 2, \"offset\": 1500 if not DEBUG_MODE else 2, \"min_d\": 4, \"max_d\": 6, \"int_ratio\": 0.0},\n",
+    "    {\"name\": \"Phase 3: Int-Only Depths 4-6\", \"shards\": 500 if not DEBUG_MODE else 1, \"offset\": 3000 if not DEBUG_MODE else 4, \"min_d\": 4, \"max_d\": 6, \"int_ratio\": 1.0}\n",
+    "]\n",
+    "\n",
+    "print(\"=========================================================================\")\n",
+    "print(f\"[CONFIG] 3-Phase Custom Dataset Generator (3,500 Total Shards)\")\n",
+    "print(\"=========================================================================\")\n",
+    "print(f\"- Repository: {REPO_ID}\")\n",
+    "print(f\"- Shard Size: {SHARD_SIZE:,} samples/shard\")\n",
+    "print(f\"- Phase 1: 1,500 shards (Ints Only, Depths 1-3)\")\n",
+    "print(f\"- Phase 2: 1,500 shards (Floats Only, Depths 4-6)\")\n",
+    "print(f\"- Phase 3: 500 shards (Ints Only, Depths 4-6)\")\n",
+    "print(f\"- CPU Workers: {num_workers}\")\n",
+    "print(f\"- Debug Mode: {DEBUG_MODE}\")\n",
+    "print(\"=========================================================================\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 4: Execute 3-Phase Dataset Generation & Upload\n",
+    "for phase in phases:\n",
+    "    print(f\"\\n=========================================================================\")\n",
+    "    print(f\"[EXECUTE] Starting {phase['name']}\")\n",
+    "    print(f\"- Target Shards: {phase['shards']:,} (Offset: {phase['offset']})\")\n",
+    "    print(f\"- Depth Range: {phase['min_d']} to {phase['max_d']}\")\n",
+    "    print(f\"- Int Ratio: {int(phase['int_ratio'] * 100)}%\")\n",
+    "    print(f\"=========================================================================\\n\")\n",
+    "    \n",
+    "    cmd = [\n",
+    "        sys.executable, \"generate_dataset.py\",\n",
+    "        \"--num-shards\", str(phase[\"shards\"]),\n",
+    "        \"--shard-size\", str(SHARD_SIZE),\n",
+    "        \"--shard-offset\", str(phase[\"offset\"]),\n",
+    "        \"--min-depth\", str(phase[\"min_d\"]),\n",
+    "        \"--max-depth\", str(phase[\"max_d\"]),\n",
+    "        \"--int-ratio\", str(phase[\"int_ratio\"]),\n",
+    "        \"--repo-id\", REPO_ID,\n",
+    "        \"--output-dir\", OUTPUT_DIR,\n",
+    "        \"--num-workers\", str(num_workers)\n",
+    "    ]\n",
+    "    if DEBUG_MODE:\n",
+    "        cmd.append(\"--debug\")\n",
+    "        \n",
+    "    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)\n",
+    "    for line in proc.stdout:\n",
+    "        print(line, end=\"\", flush=True)\n",
+    "    proc.wait()\n",
+    "    if proc.returncode != 0:\n",
+    "        print(f\"[ERROR] {phase['name']} failed with return code {proc.returncode}\")\n",
+    "        sys.exit(proc.returncode)\n",
+    "\n",
+    "print(f\"\\n=========================================================================\")\n",
+    "print(f\"[SUCCESS] All 3 Phases Complete! Total 3,500 Shards uploaded to https://huggingface.co/datasets/{REPO_ID}\")\n",
+    "print(f\"=========================================================================\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
+
+with open("generate_deep_dataset_kaggle.ipynb", "w", encoding="utf-8") as f:
+    json.dump(notebook, f, indent=1)
+
+print("generate_deep_dataset_kaggle.ipynb successfully created!")

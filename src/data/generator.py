@@ -1,19 +1,28 @@
 import math
 import numpy as np
 import sympy as sp
-from typing import Dict, Any, Callable, Tuple, List, Union
+from typing import Dict, Any, Callable, Tuple, List, Union, Optional
 
 class ExpressionGenerator:
     """
     Random mathematical expression generator.
     Produces syntactically and semantically valid math expressions
     for a wide range of operations, including arithmetic and transcendental functions.
-    Ensures non-degenerate distributions with controllable depth and operand domains.
+    Ensures non-degenerate distributions with controllable depth (up to depth 6)
+    and controllable int vs float operand ratio.
     """
-    def __init__(self, seed: int = 42, max_depth: int = 3, float_precision: int = 1, enabled_ops=None):
+    def __init__(
+        self,
+        seed: int = 42,
+        max_depth: int = 3,
+        float_precision: int = 1,
+        enabled_ops: Optional[List[str]] = None,
+        int_ratio: float = 0.5
+    ):
         self.rng = np.random.default_rng(seed)
         self.max_depth = max_depth
         self.float_precision = float_precision
+        self.int_ratio = int_ratio
         
         # Registry for operations
         self.op_registry = {}
@@ -63,9 +72,10 @@ class ExpressionGenerator:
         }
 
     # Domain samplers for leaf nodes (numbers)
-    def _sample_number(self, num_type: str = "both", low: float = -10.0, high: float = 10.0) -> Union[int, float]:
+    def _sample_number(self, num_type: str = "both", low: float = -50.0, high: float = 50.0) -> Union[int, float]:
         if num_type == "both":
-            num_type = self.rng.choice(["int", "float"])
+            is_int = float(self.rng.random()) < self.int_ratio
+            num_type = "int" if is_int else "float"
         
         if num_type == "int":
             return int(self.rng.integers(int(low), int(high) + 1))
@@ -79,14 +89,14 @@ class ExpressionGenerator:
         return x, y
 
     def _domain_mul(self) -> Tuple[Union[int, float], Union[int, float]]:
-        x = self._sample_number("both", -10.0, 10.0)
-        y = self._sample_number("both", -10.0, 10.0)
+        x = self._sample_number("both", -20.0, 20.0)
+        y = self._sample_number("both", -20.0, 20.0)
         return x, y
 
     def _domain_div(self) -> Tuple[Union[int, float], Union[int, float]]:
-        x = self._sample_number("both", -20.0, 20.0)
-        y_type = self.rng.choice(["int", "float"])
-        if y_type == "int":
+        x = self._sample_number("both", -50.0, 50.0)
+        is_int = float(self.rng.random()) < self.int_ratio
+        if is_int:
             y = int(self.rng.choice([i for i in range(-10, 11) if i != 0]))
         else:
             y = float(self.rng.choice([
@@ -104,10 +114,10 @@ class ExpressionGenerator:
         return float(self._sample_number("float", -2 * math.pi, 2 * math.pi))
 
     def _domain_log(self) -> float:
-        return float(self._sample_number("float", 0.1, 20.0))
+        return float(self._sample_number("float", 0.1, 50.0))
 
     def _domain_sqrt(self) -> float:
-        return float(self._sample_number("float", 0.0, 50.0))
+        return float(self._sample_number("float", 0.0, 100.0))
 
     def _domain_exp(self) -> float:
         return float(self._sample_number("float", -3.0, 3.0))
@@ -137,7 +147,7 @@ class ExpressionGenerator:
 
     def _build_tree(self, op_name: str, depth: int) -> Tuple[str, float]:
         """
-        Builds expression tree recursively with fast Python evaluation and strict domain safety.
+        Builds expression tree recursively with fast Python evaluation and strict domain safety up to depth 6.
         """
         op_info = self.op_registry[op_name]
         arity = op_info["arity"]
@@ -202,7 +212,7 @@ class ExpressionGenerator:
 
             # Generate left child
             if d_left == 1:
-                l_val = self._sample_number("both", -10.0, 10.0)
+                l_val = self._sample_number("both", -20.0, 20.0)
                 l_str = self._format_number(l_val)
                 l_str_wrapped = f"({l_str})" if (isinstance(l_val, (int, float)) and l_val < 0) else l_str
             else:
@@ -212,7 +222,7 @@ class ExpressionGenerator:
 
             # Generate right child
             if d_right == 1:
-                r_val = self._sample_number("both", -10.0, 10.0)
+                r_val = self._sample_number("both", -20.0, 20.0)
                 r_str = self._format_number(r_val)
                 r_str_wrapped = f"({r_str})" if (isinstance(r_val, (int, float)) and r_val < 0) else r_str
             else:
@@ -232,6 +242,11 @@ class ExpressionGenerator:
                 exp_choice = int(self.rng.choice([-2, -1, 1, 2, 3]))
                 r_val = exp_choice
                 r_str_wrapped = str(exp_choice)
+
+            # Prevent overflow for deep multiplications or additions
+            if abs(l_val) > 1e4 or abs(r_val) > 1e4:
+                l_val = l_val / 10.0 if abs(l_val) > 1e4 else l_val
+                l_str_wrapped = f"({l_str})/10"
 
             expr_str = f"{l_str_wrapped}{op_name}{r_str_wrapped}"
             res_val = float(py_fn(l_val, r_val))

@@ -34,13 +34,13 @@ def extract_ops_used(expr_str: str, all_ops: List[str] = ALL_OPS) -> List[str]:
     found.sort(key=lambda op: expr_str.find(op))
     return found
 
-def _worker_generate_chunk(args_tuple: Tuple[int, List[str], int, int, int]) -> List[Dict[str, Any]]:
+def _worker_generate_chunk(args_tuple: Tuple[int, List[str], int, int, int, float]) -> List[Dict[str, Any]]:
     """
     Worker function executed in parallel CPU processes.
     Generates an exact chunk of math expressions uniformly distributed over categories.
     Guaranteed high-throughput execution without stalls.
     """
-    worker_id, categories, chunk_size, max_depth, float_precision = args_tuple
+    worker_id, categories, chunk_size, max_depth, float_precision, int_ratio = args_tuple
     
     # Initialize worker-specific seed with pid and timestamp
     seed = (int(time.time() * 1000) + worker_id * 10007 + os.getpid()) % (2**31 - 1)
@@ -48,7 +48,8 @@ def _worker_generate_chunk(args_tuple: Tuple[int, List[str], int, int, int]) -> 
         seed=seed,
         max_depth=max_depth,
         float_precision=float_precision,
-        enabled_ops=ALL_OPS
+        enabled_ops=ALL_OPS,
+        int_ratio=int_ratio
     )
     
     samples = []
@@ -90,7 +91,11 @@ class DatasetGeneratorManager:
         hf_token: Optional[str],
         num_workers: int,
         debug_mode: bool,
-        skip_upload: bool
+        skip_upload: bool,
+        min_depth: int = 1,
+        max_depth: Optional[int] = None,
+        int_ratio: float = 0.5,
+        shard_offset: int = 0
     ):
         self.num_samples = num_samples
         self.shard_size = shard_size
@@ -100,13 +105,16 @@ class DatasetGeneratorManager:
         self.num_workers = max(1, num_workers)
         self.debug_mode = debug_mode
         self.skip_upload = skip_upload
+        self.min_depth = min_depth
+        self.max_depth = max_depth if max_depth is not None else (3 if not debug_mode else 2)
+        self.int_ratio = int_ratio
+        self.shard_offset = shard_offset
+        self.float_precision = 1
         
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Build category list: 13 ops x depths = uniform categories
-        self.max_depth = 3 if not debug_mode else 2
-        self.float_precision = 1
-        self.categories = [f"{op}_d{d}" for op in ALL_OPS for d in range(1, self.max_depth + 1)]
+        # Build category list: ops x depth range
+        self.categories = [f"{op}_d{d}" for op in ALL_OPS for d in range(self.min_depth, self.max_depth + 1)]
         
         # Manifest file for tracking uploaded shards across resumes
         self.manifest_path = os.path.join(self.output_dir, "uploaded_shards.txt")
@@ -174,7 +182,7 @@ size_categories:
 - {"10K-100K" if self.debug_mode else "100M-1B"}
 ---
 
-# Transformer Math Dataset ({'DEBUG Mode' if self.debug_mode else '250M Production Shards'})
+# Transformer Math Dataset ({'DEBUG Mode' if self.debug_mode else f'{self.num_samples:,} Samples Sharded'})
 
 High-precision synthetic mathematical expression dataset generated for training sequence-to-sequence math Transformers in JAX/Flax.
 
@@ -183,7 +191,8 @@ High-precision synthetic mathematical expression dataset generated for training 
 - **Total Samples**: {self.num_samples:,}
 - **Shard Format**: JSONL sharded files ({self.shard_size:,} samples per shard)
 - **Supported Operations**: `+`, `-`, `*`, `/`, `^`, `sin`, `cos`, `tan`, `log`, `ln`, `exp`, `sqrt`, `abs`
-- **Max Expression Depth**: {self.max_depth}
+- **Expression Depth Range**: Depth {self.min_depth} to {self.max_depth}
+- **Integer Operand Ratio**: {int(self.int_ratio * 100)}%
 
 ## Data Fields
 
@@ -191,7 +200,7 @@ Each line in the `.jsonl` shard files is a JSON object with the following fields
 
 - `expr` (`str`): Syntactically valid mathematical expression (e.g. `"sin((3.5))+cos((1.2))"`)
 - `val` (`str`): Target evaluated numerical result formatted to precision (e.g. `"0.6"`)
-- `category` (`str`): Operation-depth category bucket (e.g. `"sin_d2"`)
+- `category` (`str`): Operation-depth category bucket (e.g. `"sin_d4"`)
 - `ops_used` (`list[str]`): List of mathematical functions/operators present in the expression (e.g. `["sin", "+", "cos"]`)
 
 ## Usage Example
@@ -227,7 +236,9 @@ for sample in dataset["train"]:
         print(f"[START] Math Transformer Dataset Generator ({'DEBUG MODE' if self.debug_mode else 'PRODUCTION MODE'})")
         print("=========================================================================")
         print(f"- Target Samples: {self.num_samples:,}")
-        print(f"- Shard Size: {self.shard_size:,} samples/shard ({total_shards} total shards)")
+        print(f"- Shard Size: {self.shard_size:,} samples/shard ({total_shards} total shards, offset: {self.shard_offset})")
+        print(f"- Depth Range: {self.min_depth} to {self.max_depth}")
+        print(f"- Integer Operand Ratio: {int(self.int_ratio * 100)}%")
         print(f"- CPU Worker Processes: {self.num_workers}")
         print(f"- Output Directory: {self.output_dir}")
         print(f"- Hugging Face Repo: {self.repo_id}")
@@ -239,7 +250,8 @@ for sample in dataset["train"]:
         
         with mp.Pool(processes=self.num_workers) as pool:
             for shard_idx in range(total_shards):
-                shard_name = f"shard_{shard_idx:05d}.jsonl"
+                actual_shard_idx = self.shard_offset + shard_idx
+                shard_name = f"shard_{actual_shard_idx:05d}.jsonl"
                 shard_path = os.path.join(self.output_dir, shard_name)
                 
                 # Check if this shard was already generated and uploaded in a previous run
@@ -258,7 +270,7 @@ for sample in dataset["train"]:
                 tasks = []
                 for w_id in range(self.num_workers):
                     size_for_worker = chunk_per_worker + (1 if w_id < remainder else 0)
-                    tasks.append((w_id, self.categories, size_for_worker, self.max_depth, self.float_precision))
+                    tasks.append((w_id, self.categories, size_for_worker, self.max_depth, self.float_precision, self.int_ratio))
                 
                 # Run parallel generation across CPU worker processes
                 shard_samples = []
@@ -312,25 +324,60 @@ for sample in dataset["train"]:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate 250M Math Transformer dataset shards and upload to Hugging Face Hub."
+        description="Generate Math Transformer dataset shards and upload to Hugging Face Hub."
     )
     parser.add_argument(
         "--debug", "--debug-mode",
         action="store_true",
         dest="debug",
-        help="Run in fast debug mode (generates 10,000 samples for quick validation)."
+        help="Run in fast debug mode (generates small sample set for validation)."
     )
     parser.add_argument(
         "--num-samples",
         type=int,
         default=None,
-        help="Total number of math expression samples to generate (default: 250,000,000 for prod, 10,000 for debug)."
+        help="Total number of math expression samples to generate."
+    )
+    parser.add_argument(
+        "--num-shards",
+        type=int,
+        default=None,
+        help="Target number of total JSONL shard files (e.g. 1500, 500)."
     )
     parser.add_argument(
         "--shard-size",
         type=int,
         default=None,
-        help="Number of samples per JSONL shard file (default: 100,000 for prod, 5,000 for debug)."
+        help="Number of samples per JSONL shard file (default: 100,000)."
+    )
+    parser.add_argument(
+        "--shard-offset",
+        type=int,
+        default=0,
+        help="Starting index offset for shard filenames (e.g., 1500 produces shard_01500.jsonl)."
+    )
+    parser.add_argument(
+        "--min-depth",
+        type=int,
+        default=1,
+        help="Minimum expression tree depth (default: 1)."
+    )
+    parser.add_argument(
+        "--max-depth",
+        type=int,
+        default=None,
+        help="Maximum expression tree depth (default: 3 for standard, 6 for deep)."
+    )
+    parser.add_argument(
+        "--int-ratio",
+        type=float,
+        default=0.5,
+        help="Ratio of integer vs float operands (1.0 = int only, 0.0 = float only, default: 0.5)."
+    )
+    parser.add_argument(
+        "--int-focused",
+        action="store_true",
+        help="Shortcut for --int-ratio 0.8."
     )
     parser.add_argument(
         "--output-dir",
@@ -341,8 +388,8 @@ def main():
     parser.add_argument(
         "--repo-id",
         type=str,
-        default="durgasai299792458/mathmetics-dataset",
-        help="Hugging Face Dataset repository ID (default: durgasai299792458/mathmetics-dataset)."
+        default=None,
+        help="Hugging Face Dataset repository ID."
     )
     parser.add_argument(
         "--hf-token",
@@ -364,17 +411,22 @@ def main():
     
     args = parser.parse_args()
     
+    # Int ratio selection
+    int_ratio = 0.8 if args.int_focused else args.int_ratio
+    
     # Resolve default sample count and shard size based on debug mode
     if args.debug:
-        num_samples = args.num_samples or 10000
         shard_size = args.shard_size or 5000
-        repo_id = args.repo_id if args.repo_id != "durgasai299792458/mathmetics-dataset" else "durgasai299792458/mathmetics-dataset-debug"
+        num_shards = args.num_shards or 2
+        num_samples = args.num_samples or (shard_size * num_shards)
+        default_repo = "durgasai299792458/mathmetics-dataset-debug"
     else:
-        num_samples = args.num_samples or 250000000
         shard_size = args.shard_size or 100000
-        repo_id = args.repo_id
+        num_shards = args.num_shards or 3500
+        num_samples = args.num_samples or (shard_size * num_shards)
+        default_repo = "durgasai299792458/mathmetics-dataset-custom"
         
-    # Read token from environment variable HFTOKEN or HF_TOKEN
+    repo_id = args.repo_id or default_repo
     hf_token = args.hf_token or os.environ.get("HFTOKEN") or os.environ.get("HF_TOKEN")
     
     manager = DatasetGeneratorManager(
@@ -385,7 +437,11 @@ def main():
         hf_token=hf_token,
         num_workers=args.num_workers,
         debug_mode=args.debug,
-        skip_upload=args.skip_upload
+        skip_upload=args.skip_upload,
+        min_depth=args.min_depth,
+        max_depth=args.max_depth,
+        int_ratio=int_ratio,
+        shard_offset=args.shard_offset
     )
     
     manager.generate_and_upload()
