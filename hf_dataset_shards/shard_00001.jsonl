@@ -1,1000 +1,1000 @@
-{"expr": "49+14", "val": "63", "category": "+_d1", "ops_used": ["+"]}
-{"expr": "(-10)+(-19)", "val": "-29", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(exp(sin(8*(-15))))+(2+6)", "val": "8.6", "category": "+_d3", "ops_used": ["exp", "sin", "*", "-", "+"]}
-{"expr": "(-18)-(-24)", "val": "6", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-6)-(-1)", "val": "-5", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(-17)-(10-(-19))", "val": "-46", "category": "-_d3", "ops_used": ["-"]}
-{"expr": "2*(-16)", "val": "-32", "category": "*_d1", "ops_used": ["*", "-"]}
-{"expr": "10*(-10)", "val": "-100", "category": "*_d2", "ops_used": ["*", "-"]}
-{"expr": "(sqrt((-3)*(-11)))*(log(log(41.5)))", "val": "7.6", "category": "*_d3", "ops_used": ["sqrt", "-", "*", "log"]}
-{"expr": "(-39)/(-2)", "val": "19.5", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-4)/(-3)", "val": "1.3", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(-9)/(log(abs(42/(-5))+0.1))", "val": "-4.2", "category": "/_d3", "ops_used": ["-", "/", "log", "abs", "+"]}
-{"expr": "5^3", "val": "125", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "1^3", "val": "1", "category": "^_d2", "ops_used": ["^"]}
-{"expr": "(exp(cos(4.7)))^3", "val": "1", "category": "^_d3", "ops_used": ["exp", "cos", "^"]}
-{"expr": "sin(3.8)", "val": "-0.6", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(exp(-2.7))", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "exp", "-"]}
-{"expr": "sin(12*(-10))", "val": "-0.6", "category": "sin_d3", "ops_used": ["sin", "*", "-"]}
-{"expr": "cos(4.7)", "val": "0", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(8/(-1))", "val": "-0.1", "category": "cos_d2", "ops_used": ["cos", "/", "-"]}
-{"expr": "cos((-4)-10)", "val": "0.1", "category": "cos_d3", "ops_used": ["cos", "-"]}
-{"expr": "tan(-5.3)", "val": "1.5", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(sin(abs(4)))", "val": "-0.9", "category": "tan_d2", "ops_used": ["tan", "sin", "abs"]}
-{"expr": "tan(sin(1-12))", "val": "1.6", "category": "tan_d3", "ops_used": ["tan", "sin", "-"]}
-{"expr": "log(40.3)", "val": "3.7", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(cos(-0.8))", "val": "-0.4", "category": "log_d2", "ops_used": ["log", "cos", "-"]}
-{"expr": "log(abs(sin(ln(37.2)))+0.1)", "val": "-0.6", "category": "log_d3", "ops_used": ["log", "abs", "sin", "ln", "+"]}
-{"expr": "ln(49)", "val": "3.9", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(8+50)", "val": "4.1", "category": "ln_d2", "ops_used": ["ln", "+"]}
-{"expr": "ln(exp(log(18)))", "val": "2.9", "category": "ln_d3", "ops_used": ["ln", "exp", "log"]}
-{"expr": "exp(2.9)", "val": "18.2", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(sin(ln(35.4)))", "val": "0.7", "category": "exp_d2", "ops_used": ["exp", "sin", "ln"]}
-{"expr": "exp(cos(sqrt(75)))", "val": "0.5", "category": "exp_d3", "ops_used": ["exp", "cos", "sqrt"]}
-{"expr": "sqrt(68.1)", "val": "8.3", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(abs(sin(-0.4)))", "val": "0.6", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "sin", "-"]}
-{"expr": "sqrt(13-9)", "val": "2", "category": "sqrt_d3", "ops_used": ["sqrt", "-"]}
-{"expr": "abs(-33)", "val": "33", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(12+31)", "val": "43", "category": "abs_d2", "ops_used": ["abs", "+"]}
-{"expr": "abs(log(log(38.9)))", "val": "1.3", "category": "abs_d3", "ops_used": ["abs", "log"]}
-{"expr": "(-5)+(-14)", "val": "-19", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "14+10", "val": "24", "category": "+_d2", "ops_used": ["+"]}
-{"expr": "(-5)+(8/(-8))", "val": "-6", "category": "+_d3", "ops_used": ["-", "+", "/"]}
-{"expr": "(-38)-44", "val": "-82", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "2-14", "val": "-12", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "((-2)+(-7))-(tan(sin((-48)+(-38))))", "val": "-10.3", "category": "-_d3", "ops_used": ["-", "+", "tan", "sin"]}
-{"expr": "13*4", "val": "52", "category": "*_d1", "ops_used": ["*"]}
-{"expr": "(-8)+18", "val": "10", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(9+5)+(log(abs(cos(-4.5))+0.1))", "val": "12.8", "category": "+_d3", "ops_used": ["+", "log", "abs", "cos", "-"]}
-{"expr": "(-30)-35", "val": "-65", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-12)-13", "val": "-25", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "((-5)-11)-(ln(log(41.2)))", "val": "-17.3", "category": "-_d3", "ops_used": ["-", "ln", "log"]}
-{"expr": "4*(-12)", "val": "-48", "category": "*_d1", "ops_used": ["*", "-"]}
-{"expr": "17*10", "val": "170", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "((-20)*15)*((-20)/(-20))", "val": "-300", "category": "*_d3", "ops_used": ["-", "*", "/"]}
-{"expr": "(-32)/(-3)", "val": "10.7", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "17/3", "val": "5.7", "category": "/_d2", "ops_used": ["/"]}
-{"expr": "(11+(-14))/(abs(cos(2.8)))", "val": "-3.2", "category": "/_d3", "ops_used": ["+", "-", "/", "abs", "cos"]}
-{"expr": "5^2", "val": "25", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-14)+0.1)^1", "val": "14.1", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(abs(-17)+0.1)^2", "val": "292.4", "category": "^_d3", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "sin(-4.6)", "val": "1", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(26+(-38))", "val": "0.5", "category": "sin_d2", "ops_used": ["sin", "+", "-"]}
-{"expr": "sin(18+(-3))", "val": "0.7", "category": "sin_d3", "ops_used": ["sin", "+", "-"]}
-{"expr": "cos(0)", "val": "1", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(tan(-1.2))", "val": "-0.8", "category": "cos_d2", "ops_used": ["cos", "tan", "-"]}
-{"expr": "cos(ln(abs(-89)))", "val": "-0.2", "category": "cos_d3", "ops_used": ["cos", "ln", "abs", "-"]}
-{"expr": "tan(1.5)", "val": "14.1", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(sqrt(62)))", "val": "1.6", "category": "tan_d2", "ops_used": ["tan", "sin", "sqrt"]}
-{"expr": "tan(sin((-6)+(-9)))", "val": "-0.8", "category": "tan_d3", "ops_used": ["tan", "sin", "-", "+"]}
-{"expr": "log(15.2)", "val": "2.7", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log((-26)-(-39))", "val": "2.6", "category": "log_d2", "ops_used": ["log", "-"]}
-{"expr": "log(exp(tan(-2.9)))", "val": "0.2", "category": "log_d3", "ops_used": ["log", "exp", "tan", "-"]}
-{"expr": "ln(30.3)", "val": "3.4", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(33-(-8))", "val": "3.7", "category": "ln_d2", "ops_used": ["ln", "-"]}
-{"expr": "ln((-9)+15)", "val": "1.8", "category": "ln_d3", "ops_used": ["ln", "-", "+"]}
-{"expr": "exp(-1.5)", "val": "0.2", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(sin(13+46))", "val": "1.9", "category": "exp_d2", "ops_used": ["exp", "sin", "+"]}
-{"expr": "exp(abs(tan(1.1)))", "val": "7.1", "category": "exp_d3", "ops_used": ["exp", "abs", "tan"]}
-{"expr": "sqrt(45.5)", "val": "6.7", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(sin(-5.5))", "val": "0.8", "category": "sqrt_d2", "ops_used": ["sqrt", "sin", "-"]}
-{"expr": "sqrt(tan(sin(abs(13))))", "val": "0.7", "category": "sqrt_d3", "ops_used": ["sqrt", "tan", "sin", "abs"]}
-{"expr": "abs(-17)", "val": "17", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(3^3)", "val": "27", "category": "abs_d2", "ops_used": ["abs", "^"]}
-{"expr": "abs(ln(exp(-0.1)))", "val": "0.1", "category": "abs_d3", "ops_used": ["abs", "ln", "exp", "-"]}
-{"expr": "26+20", "val": "46", "category": "+_d1", "ops_used": ["+"]}
-{"expr": "11+(-18)", "val": "-7", "category": "+_d2", "ops_used": ["+", "-"]}
-{"expr": "1+(tan(sin(sqrt(27.2))))", "val": "-0.2", "category": "+_d3", "ops_used": ["+", "tan", "sin", "sqrt"]}
-{"expr": "(-31)-(-9)", "val": "-22", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-2)-20", "val": "-22", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(ln(31-(-9)))-(12/(-5))", "val": "6.1", "category": "-_d3", "ops_used": ["ln", "-", "/"]}
-{"expr": "(-15)*(-14)", "val": "210", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-6)*(-15)", "val": "90", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(cos((-47)/(-1)))+(cos(46-(-12)))", "val": "-0.9", "category": "+_d3", "ops_used": ["cos", "-", "/", "+"]}
-{"expr": "11-18", "val": "-7", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "8-(-11)", "val": "19", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "17-(7/(-20))", "val": "17.4", "category": "-_d3", "ops_used": ["-", "/"]}
-{"expr": "13*(-18)", "val": "-234", "category": "*_d1", "ops_used": ["*", "-"]}
-{"expr": "5*17", "val": "85", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "(-12)*(18+(-19))", "val": "12", "category": "*_d3", "ops_used": ["-", "*", "+"]}
-{"expr": "(-13)/10", "val": "-1.3", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "12/(-3)", "val": "-4", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(log(tan(-2.6)))/(17*16)", "val": "0", "category": "/_d3", "ops_used": ["log", "tan", "-", "/", "*"]}
-{"expr": "2^(-2)", "val": "0.2", "category": "^_d1", "ops_used": ["^", "-"]}
-{"expr": "(abs(-18)+0.1)^2", "val": "327.6", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(ln(abs((-50)+7)+0.1))^3", "val": "53.3", "category": "^_d3", "ops_used": ["ln", "abs", "-", "+", "^"]}
-{"expr": "sin(4.7)", "val": "-1", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin((-27)+22)", "val": "1", "category": "sin_d2", "ops_used": ["sin", "-", "+"]}
-{"expr": "sin(exp(sin(2^3)))", "val": "0.4", "category": "sin_d3", "ops_used": ["sin", "exp", "^"]}
-{"expr": "cos(4.8)", "val": "0.1", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(sin(3))", "val": "1", "category": "cos_d2", "ops_used": ["cos", "sin"]}
-{"expr": "cos(12/1)", "val": "0.8", "category": "cos_d3", "ops_used": ["cos", "/"]}
-{"expr": "tan(-0.2)", "val": "-0.2", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(sin(38/(-10)))", "val": "0.7", "category": "tan_d2", "ops_used": ["tan", "sin", "/", "-"]}
-{"expr": "tan(sin(1+(-18)))", "val": "1.4", "category": "tan_d3", "ops_used": ["tan", "sin", "+", "-"]}
-{"expr": "log(3)", "val": "1.1", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(log(42.6))", "val": "1.3", "category": "log_d2", "ops_used": ["log"]}
-{"expr": "log(sin(13*15))", "val": "-1.5", "category": "log_d3", "ops_used": ["log", "sin", "*"]}
-{"expr": "ln(5.8)", "val": "1.8", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs((-38)+(-30))+0.1)", "val": "4.2", "category": "ln_d2", "ops_used": ["ln", "abs", "-", "+"]}
-{"expr": "ln(cos(cos(-0.2)))", "val": "-0.6", "category": "ln_d3", "ops_used": ["ln", "cos", "-"]}
-{"expr": "exp(-2.6)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(sin(abs(-23)))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "sin", "abs", "-"]}
-{"expr": "exp(tan(sin(sqrt(80.3))))", "val": "1.6", "category": "exp_d3", "ops_used": ["exp", "tan", "sin", "sqrt"]}
-{"expr": "sqrt(56.3)", "val": "7.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(tan(0.1))", "val": "0.3", "category": "sqrt_d2", "ops_used": ["sqrt", "tan"]}
-{"expr": "sqrt(log(18+7))", "val": "1.8", "category": "sqrt_d3", "ops_used": ["sqrt", "log", "+"]}
-{"expr": "abs(60)", "val": "60", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(15*11)", "val": "165", "category": "abs_d2", "ops_used": ["abs", "*"]}
-{"expr": "abs(tan(sin(exp(1))))", "val": "0.4", "category": "abs_d3", "ops_used": ["abs", "tan", "sin", "exp"]}
-{"expr": "(-10)+(-41)", "val": "-51", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "(-11)+(-3)", "val": "-14", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(14-(-10))+(7+13)", "val": "44", "category": "+_d3", "ops_used": ["-", "+"]}
-{"expr": "37-14", "val": "23", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-8)-5", "val": "-13", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(3*(-7))-(cos(cos(-3.7)))", "val": "-21.7", "category": "-_d3", "ops_used": ["*", "-", "cos"]}
-{"expr": "9*(-2)", "val": "-18", "category": "*_d1", "ops_used": ["*", "-"]}
-{"expr": "2*18", "val": "36", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "(tan(cos(-4.1)))*(abs(cos(3.1)))", "val": "-0.6", "category": "*_d3", "ops_used": ["tan", "cos", "-", "*", "abs"]}
-{"expr": "(-4)-(-27)", "val": "23", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-4)-6", "val": "-10", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(tan(sin(sqrt(37.1))))-(cos(4^(-2)))", "val": "-1.2", "category": "-_d3", "ops_used": ["tan", "sin", "sqrt", "-", "cos", "^"]}
-{"expr": "5*19", "val": "95", "category": "*_d1", "ops_used": ["*"]}
-{"expr": "3*(-3)", "val": "-9", "category": "*_d2", "ops_used": ["*", "-"]}
-{"expr": "((abs(0)+0.1)^-1)*(exp(sin(ln(26.9))))", "val": "8.6", "category": "*_d3", "ops_used": ["abs", "+", "^", "-", "*", "exp", "sin", "ln"]}
-{"expr": "(-3)/7", "val": "-0.4", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-9)/(-10)", "val": "0.9", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(sqrt(exp(0.5)))/(log(sqrt(74.1)))", "val": "0.6", "category": "/_d3", "ops_used": ["sqrt", "exp", "/", "log"]}
-{"expr": "0^3", "val": "0", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-13)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(log(26+(-12)))^-1", "val": "0.4", "category": "^_d3", "ops_used": ["log", "+", "-", "^"]}
-{"expr": "sin(-3)", "val": "-0.1", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(exp(-1.3))", "val": "0.3", "category": "sin_d2", "ops_used": ["sin", "exp", "-"]}
-{"expr": "sin(log(tan(3.7)))", "val": "-0.5", "category": "sin_d3", "ops_used": ["sin", "log", "tan"]}
-{"expr": "cos(-5.5)", "val": "0.7", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos((-17)+(-26))", "val": "0.6", "category": "cos_d2", "ops_used": ["cos", "-", "+"]}
-{"expr": "cos(sin(abs(-9)))", "val": "0.9", "category": "cos_d3", "ops_used": ["cos", "sin", "abs", "-"]}
-{"expr": "tan(-2.1)", "val": "1.7", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(sin(abs(96)))", "val": "1.5", "category": "tan_d2", "ops_used": ["tan", "sin", "abs"]}
-{"expr": "tan(sin((-11)-19))", "val": "1.5", "category": "tan_d3", "ops_used": ["tan", "sin", "-"]}
-{"expr": "log(48.2)", "val": "3.9", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs((-16)*13)+0.1)", "val": "5.3", "category": "log_d2", "ops_used": ["log", "abs", "-", "*", "+"]}
-{"expr": "log(abs(tan(0^3))+0.1)", "val": "-2.3", "category": "log_d3", "ops_used": ["log", "abs", "tan", "^", "+"]}
-{"expr": "ln(19.7)", "val": "3", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(ln(38))", "val": "1.3", "category": "ln_d2", "ops_used": ["ln"]}
-{"expr": "ln(abs(sin((-6)-28))+0.1)", "val": "-0.5", "category": "ln_d3", "ops_used": ["ln", "abs", "sin", "-", "+"]}
-{"expr": "exp(-1.3)", "val": "0.3", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(sin(abs(93)))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "sin", "abs"]}
-{"expr": "exp(sin((-7)+16))", "val": "1.5", "category": "exp_d3", "ops_used": ["exp", "sin", "-", "+"]}
-{"expr": "sqrt(93.7)", "val": "9.7", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(tan(-2.1))", "val": "1.3", "category": "sqrt_d2", "ops_used": ["sqrt", "tan", "-"]}
-{"expr": "sqrt(sqrt(14+45))", "val": "2.8", "category": "sqrt_d3", "ops_used": ["sqrt", "+"]}
-{"expr": "abs(12)", "val": "12", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(ln(34.3))", "val": "3.5", "category": "abs_d2", "ops_used": ["abs", "ln"]}
-{"expr": "abs(tan(sin(abs(-24))))", "val": "1.3", "category": "abs_d3", "ops_used": ["abs", "tan", "sin", "-"]}
-{"expr": "14+(-38)", "val": "-24", "category": "+_d1", "ops_used": ["+", "-"]}
-{"expr": "(-12)+(-10)", "val": "-22", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(cos(abs(20)))+(ln(abs((-31)/6)+0.1))", "val": "2.1", "category": "+_d3", "ops_used": ["cos", "abs", "+", "ln", "-", "/"]}
-{"expr": "(-23)-48", "val": "-71", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-11)-(-4)", "val": "-7", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "((-16)*5)-((-5)+(-1))", "val": "-74", "category": "-_d3", "ops_used": ["-", "*", "+"]}
-{"expr": "(-14)*(-9)", "val": "126", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "12*5", "val": "60", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "(cos(sqrt(77.5)))*(sqrt(abs((-4)-17)))", "val": "-3.7", "category": "*_d3", "ops_used": ["cos", "sqrt", "*", "abs", "-"]}
-{"expr": "(-30)/9", "val": "-3.3", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-1)-(-13)", "val": "12", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(15/(-20))-(abs(sin(3.8)))", "val": "-1.4", "category": "-_d3", "ops_used": ["/", "-", "abs", "sin"]}
-{"expr": "(-4)*18", "val": "-72", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-2)*12", "val": "-24", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(ln(sin(-4.6)))*((abs(-9)+0.1)^3)", "val": "-4.8", "category": "*_d3", "ops_used": ["ln", "sin", "-", "*", "abs", "+", "^"]}
-{"expr": "48/3", "val": "16", "category": "/_d1", "ops_used": ["/"]}
-{"expr": "3/17", "val": "0.2", "category": "/_d2", "ops_used": ["/"]}
-{"expr": "(3/7)/((-20)/(-13))", "val": "0.3", "category": "/_d3", "ops_used": ["/", "-"]}
-{"expr": "2^(-1)", "val": "0.5", "category": "^_d1", "ops_used": ["^", "-"]}
-{"expr": "(abs(-6)+0.1)^2", "val": "37.2", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(sin(sqrt(86.3)))^2", "val": "0", "category": "^_d3", "ops_used": ["sin", "sqrt", "^"]}
-{"expr": "sin(5.9)", "val": "-0.4", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(sin(-5.7))", "val": "0.5", "category": "sin_d2", "ops_used": ["sin", "-"]}
-{"expr": "sin(2*18)", "val": "-1", "category": "sin_d3", "ops_used": ["sin", "*"]}
-{"expr": "cos(-0.8)", "val": "0.7", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos((-38)-12)", "val": "1", "category": "cos_d2", "ops_used": ["cos", "-"]}
-{"expr": "cos(ln(log(40.1)))", "val": "0.3", "category": "cos_d3", "ops_used": ["cos", "ln", "log"]}
-{"expr": "tan(0.5)", "val": "0.5", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(26+1))", "val": "1.4", "category": "tan_d2", "ops_used": ["tan", "sin", "+"]}
-{"expr": "tan(sin(tan(sin(abs(8)))))", "val": "1.6", "category": "tan_d3", "ops_used": ["tan", "sin", "abs"]}
-{"expr": "log(12.6)", "val": "2.5", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs(-87))", "val": "4.5", "category": "log_d2", "ops_used": ["log", "abs", "-"]}
-{"expr": "log(log(log(21.4)))", "val": "0.1", "category": "log_d3", "ops_used": ["log"]}
-{"expr": "ln(22.8)", "val": "3.1", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(exp(-0.9))", "val": "-0.9", "category": "ln_d2", "ops_used": ["ln", "exp", "-"]}
-{"expr": "ln(4*18)", "val": "4.3", "category": "ln_d3", "ops_used": ["ln", "*"]}
-{"expr": "exp(0.1)", "val": "1.1", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(sin(40/(-4)))", "val": "1.7", "category": "exp_d2", "ops_used": ["exp", "sin", "/", "-"]}
-{"expr": "exp(exp(exp(-2.9)))", "val": "2.9", "category": "exp_d3", "ops_used": ["exp", "-"]}
-{"expr": "sqrt(73.2)", "val": "8.6", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(20*7)", "val": "11.8", "category": "sqrt_d2", "ops_used": ["sqrt", "*"]}
-{"expr": "sqrt((abs(-20)+0.1)^-1)", "val": "0.2", "category": "sqrt_d3", "ops_used": ["sqrt", "abs", "-", "+", "^"]}
-{"expr": "abs(100)", "val": "100", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs((-10)/(-3))", "val": "3.3", "category": "abs_d2", "ops_used": ["abs", "-", "/"]}
-{"expr": "abs(17*0)", "val": "0", "category": "abs_d3", "ops_used": ["abs", "*"]}
-{"expr": "24+9", "val": "33", "category": "+_d1", "ops_used": ["+"]}
-{"expr": "6+(-18)", "val": "-12", "category": "+_d2", "ops_used": ["+", "-"]}
-{"expr": "(-8)+(19-7)", "val": "4", "category": "+_d3", "ops_used": ["-", "+"]}
-{"expr": "14-40", "val": "-26", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "8-3", "val": "5", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(sin(abs(-58)))-(sin(ln(1.5)))", "val": "0.6", "category": "-_d3", "ops_used": ["sin", "abs", "-", "ln"]}
-{"expr": "(-7)*15", "val": "-105", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "11*(-16)", "val": "-176", "category": "*_d2", "ops_used": ["*", "-"]}
-{"expr": "(exp(sin(abs(-89))))*9", "val": "21.3", "category": "*_d3", "ops_used": ["exp", "sin", "abs", "-", "*"]}
-{"expr": "30/(-4)", "val": "-7.5", "category": "/_d1", "ops_used": ["/", "-"]}
-{"expr": "17/(-20)", "val": "-0.8", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(abs(tan(0.1)))-(cos(tan(0.4)))", "val": "-0.8", "category": "-_d3", "ops_used": ["abs", "tan", "-", "cos"]}
-{"expr": "6*(-15)", "val": "-90", "category": "*_d1", "ops_used": ["*", "-"]}
-{"expr": "(-9)*(-18)", "val": "162", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(16*(-14))*(sqrt(tan(3.4)))", "val": "-115.2", "category": "*_d3", "ops_used": ["*", "-", "sqrt", "tan"]}
-{"expr": "(-3)/6", "val": "-0.5", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "10/(-5)", "val": "-2", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(sqrt(abs(79)))/(sqrt((-9)/(-10)))", "val": "9.4", "category": "/_d3", "ops_used": ["sqrt", "abs", "/", "-"]}
-{"expr": "2^3", "val": "8", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-20)+0.1)^2", "val": "404", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(abs((-18)/1)+0.1)^3", "val": "5929.7", "category": "^_d3", "ops_used": ["abs", "-", "/", "+", "^"]}
-{"expr": "sin(2.4)", "val": "0.7", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(log(17.5))", "val": "0.3", "category": "sin_d2", "ops_used": ["sin", "log"]}
-{"expr": "sin((-3)*13)", "val": "-1", "category": "sin_d3", "ops_used": ["sin", "-", "*"]}
-{"expr": "cos(-5)", "val": "0.3", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(sqrt(74))", "val": "-0.7", "category": "cos_d2", "ops_used": ["cos", "sqrt"]}
-{"expr": "cos(exp((-40)+40))", "val": "0.5", "category": "cos_d3", "ops_used": ["cos", "exp", "-", "+"]}
-{"expr": "tan(1.2)", "val": "2.6", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(exp(2.6)))", "val": "1", "category": "tan_d2", "ops_used": ["tan", "sin", "exp"]}
-{"expr": "tan(sin((-5)+(-9)))", "val": "-1.5", "category": "tan_d3", "ops_used": ["tan", "sin", "-", "+"]}
-{"expr": "log(47.5)", "val": "3.9", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(3^(-2))", "val": "-2.2", "category": "log_d2", "ops_used": ["log", "^", "-"]}
-{"expr": "log((-10)*(-8))", "val": "4.4", "category": "log_d3", "ops_used": ["log", "-", "*"]}
-{"expr": "ln(31.2)", "val": "3.4", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(34))", "val": "3.5", "category": "ln_d2", "ops_used": ["ln", "abs"]}
-{"expr": "ln(abs((-15)+4)+0.1)", "val": "2.4", "category": "ln_d3", "ops_used": ["ln", "abs", "-", "+"]}
-{"expr": "exp(0.2)", "val": "1.2", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(sin(ln(27.2)))", "val": "0.9", "category": "exp_d2", "ops_used": ["exp", "sin", "ln"]}
-{"expr": "exp(sin(2*2))", "val": "0.5", "category": "exp_d3", "ops_used": ["exp", "sin", "*"]}
-{"expr": "sqrt(73)", "val": "8.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(abs(sin(-2.2)))", "val": "0.9", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "sin", "-"]}
-{"expr": "sqrt(sin(exp(0.7)))", "val": "1", "category": "sqrt_d3", "ops_used": ["sqrt", "sin", "exp"]}
-{"expr": "abs(90)", "val": "90", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(abs(-77))", "val": "77", "category": "abs_d2", "ops_used": ["abs", "-"]}
-{"expr": "abs(sin(cos(-3.2)))", "val": "0.8", "category": "abs_d3", "ops_used": ["abs", "sin", "cos", "-"]}
-{"expr": "21+49", "val": "70", "category": "+_d1", "ops_used": ["+"]}
-{"expr": "19+(-1)", "val": "18", "category": "+_d2", "ops_used": ["+", "-"]}
-{"expr": "((-4)/13)+((-12)/4)", "val": "-3.3", "category": "+_d3", "ops_used": ["-", "/", "+"]}
-{"expr": "44-(-46)", "val": "90", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "20-7", "val": "13", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(abs(sin(2.6)))-(cos((-26)/(-5)))", "val": "0", "category": "-_d3", "ops_used": ["abs", "sin", "-", "cos", "/"]}
-{"expr": "(-8)*20", "val": "-160", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "7*11", "val": "77", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "(2/5)*(5/12)", "val": "0.2", "category": "*_d3", "ops_used": ["/", "*"]}
-{"expr": "22/(-3)", "val": "-7.3", "category": "/_d1", "ops_used": ["/", "-"]}
-{"expr": "(-20)/9", "val": "-2.2", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(exp(cos(0.5)))/(tan(cos(-0.5)))", "val": "2", "category": "/_d3", "ops_used": ["exp", "cos", "/", "tan", "-"]}
-{"expr": "(-4)*(-15)", "val": "60", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-14)*(-17)", "val": "238", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(13^3)*(-16)", "val": "-35152", "category": "*_d3", "ops_used": ["^", "*", "-"]}
-{"expr": "(-39)/(-3)", "val": "13", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "19/(-8)", "val": "-2.4", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(log(abs(sin(4.4))+0.1))/(11+7)", "val": "0", "category": "/_d3", "ops_used": ["log", "abs", "sin", "+", "/"]}
-{"expr": "3^1", "val": "3", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(0)+0.1)^1", "val": "0.1", "category": "^_d2", "ops_used": ["abs", "+", "^"]}
-{"expr": "4^3", "val": "64", "category": "^_d3", "ops_used": ["^"]}
-{"expr": "sin(-0.3)", "val": "-0.3", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(abs(67))", "val": "-0.9", "category": "sin_d2", "ops_used": ["sin", "abs"]}
-{"expr": "sin(log(tan(-5.1)))", "val": "0.8", "category": "sin_d3", "ops_used": ["sin", "log", "tan", "-"]}
-{"expr": "cos(4.1)", "val": "-0.6", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(log(39.3))", "val": "-0.9", "category": "cos_d2", "ops_used": ["cos", "log"]}
-{"expr": "cos(log(abs(cos(3.6))+0.1))", "val": "1", "category": "cos_d3", "ops_used": ["cos", "log", "abs", "+"]}
-{"expr": "tan(1)", "val": "1.6", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(cos(5.6))", "val": "1", "category": "tan_d2", "ops_used": ["tan", "cos"]}
-{"expr": "tan(sin(sqrt(sqrt(29.9))))", "val": "0.9", "category": "tan_d3", "ops_used": ["tan", "sin", "sqrt"]}
-{"expr": "log(9.4)", "val": "2.2", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(ln(10))", "val": "0.8", "category": "log_d2", "ops_used": ["log", "ln"]}
-{"expr": "log(abs((-19)/4)+0.1)", "val": "1.6", "category": "log_d3", "ops_used": ["log", "abs", "-", "/", "+"]}
-{"expr": "ln(41.8)", "val": "3.7", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(cos(-3.9))+0.1)", "val": "-0.2", "category": "ln_d2", "ops_used": ["ln", "abs", "cos", "-", "+"]}
-{"expr": "ln(16^3)", "val": "8.3", "category": "ln_d3", "ops_used": ["ln", "^"]}
-{"expr": "exp(-0.4)", "val": "0.7", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(sin((-40)+17))", "val": "2.3", "category": "exp_d2", "ops_used": ["exp", "sin", "-", "+"]}
-{"expr": "exp(abs(tan(-3.2)))", "val": "1.1", "category": "exp_d3", "ops_used": ["exp", "abs", "tan", "-"]}
-{"expr": "sqrt(84.4)", "val": "9.2", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(3^1)", "val": "1.7", "category": "sqrt_d2", "ops_used": ["sqrt", "^"]}
-{"expr": "sqrt(sin(0^3))", "val": "0", "category": "sqrt_d3", "ops_used": ["sqrt", "sin", "^"]}
-{"expr": "abs(62)", "val": "62", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(log(36.3))", "val": "3.6", "category": "abs_d2", "ops_used": ["abs", "log"]}
-{"expr": "abs((-3)-(-6))", "val": "3", "category": "abs_d3", "ops_used": ["abs", "-"]}
-{"expr": "10+(-6)", "val": "4", "category": "+_d1", "ops_used": ["+", "-"]}
-{"expr": "(-18)+19", "val": "1", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(log(ln(39.6)))+(cos(23-29))", "val": "2.3", "category": "+_d3", "ops_used": ["log", "ln", "+", "cos", "-"]}
-{"expr": "41-50", "val": "-9", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-16)-20", "val": "-36", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(log((-17)*(-14)))-((abs(-4)+0.1)^-2)", "val": "5.4", "category": "-_d3", "ops_used": ["log", "-", "*", "abs", "+", "^"]}
-{"expr": "(-5)*7", "val": "-35", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-5)*(-19)", "val": "95", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "((-12)+(-2))*(ln(abs(-58)))", "val": "-56.8", "category": "*_d3", "ops_used": ["-", "+", "*", "ln", "abs"]}
-{"expr": "(-15)/(-6)", "val": "2.5", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "3/(-8)", "val": "-0.4", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(abs(abs(-68)))/(cos(sin(-0.3)))", "val": "71.1", "category": "/_d3", "ops_used": ["abs", "-", "/", "cos", "sin"]}
-{"expr": "1^(-1)", "val": "1", "category": "^_d1", "ops_used": ["^", "-"]}
-{"expr": "(-18)*(-10)", "val": "180", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(ln(abs(-40)))*(sin(exp(-1)))", "val": "1.3", "category": "*_d3", "ops_used": ["ln", "abs", "-", "*", "sin", "exp"]}
-{"expr": "32/5", "val": "6.4", "category": "/_d1", "ops_used": ["/"]}
-{"expr": "(-6)/(-14)", "val": "0.4", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(ln(abs(cos(3.3))+0.1))/(1)", "val": "0.1", "category": "/_d3", "ops_used": ["ln", "abs", "cos", "+", "/"]}
-{"expr": "3^2", "val": "9", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-4)+0.1)^2", "val": "16.8", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(sqrt(31+10))^1", "val": "6.4", "category": "^_d3", "ops_used": ["sqrt", "+", "^"]}
-{"expr": "sin(-2.4)", "val": "-0.7", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(exp(2.9))", "val": "-0.6", "category": "sin_d2", "ops_used": ["sin", "exp"]}
-{"expr": "sin(sqrt(exp(-0.5)))", "val": "0.7", "category": "sin_d3", "ops_used": ["sin", "sqrt", "exp", "-"]}
-{"expr": "cos(-2.6)", "val": "-0.9", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(sqrt(84.5))", "val": "-1", "category": "cos_d2", "ops_used": ["cos", "sqrt"]}
-{"expr": "cos(19+(-11))", "val": "-0.1", "category": "cos_d3", "ops_used": ["cos", "+", "-"]}
-{"expr": "tan(-5.1)", "val": "2.4", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(sin(abs(-39)))", "val": "1.4", "category": "tan_d2", "ops_used": ["tan", "sin", "abs", "-"]}
-{"expr": "tan(sin(abs(abs(-71))))", "val": "1.4", "category": "tan_d3", "ops_used": ["tan", "sin", "abs", "-"]}
-{"expr": "log(30.2)", "val": "3.4", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs((-17)*18)+0.1)", "val": "5.7", "category": "log_d2", "ops_used": ["log", "abs", "-", "*", "+"]}
-{"expr": "log(abs((-5)*20))", "val": "4.6", "category": "log_d3", "ops_used": ["log", "abs", "-", "*"]}
-{"expr": "ln(2.3)", "val": "0.8", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(-63))", "val": "4.1", "category": "ln_d2", "ops_used": ["ln", "abs", "-"]}
-{"expr": "ln(abs((-19)+9)+0.1)", "val": "2.3", "category": "ln_d3", "ops_used": ["ln", "abs", "-", "+"]}
-{"expr": "exp(2.3)", "val": "10", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(sin((-18)+35))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "sin", "-", "+"]}
-{"expr": "exp(exp(sin(tan(-1.3))))", "val": "4.8", "category": "exp_d3", "ops_used": ["exp", "sin", "tan", "-"]}
-{"expr": "sqrt(49.9)", "val": "7.1", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(abs(-68))", "val": "8.2", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "-"]}
-{"expr": "sqrt(ln(abs((-30)+(-41))+0.1))", "val": "2.1", "category": "sqrt_d3", "ops_used": ["sqrt", "ln", "abs", "-", "+"]}
-{"expr": "abs(-78)", "val": "78", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(cos(0.5))", "val": "0.9", "category": "abs_d2", "ops_used": ["abs", "cos"]}
-{"expr": "abs(sqrt(ln(4.5)))", "val": "1.2", "category": "abs_d3", "ops_used": ["abs", "sqrt", "ln"]}
-{"expr": "(-16)+7", "val": "-9", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "(-5)+(-13)", "val": "-18", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(2+(-10))+(sin((-29)+(-44)))", "val": "-7.3", "category": "+_d3", "ops_used": ["+", "-", "sin"]}
-{"expr": "38-(-3)", "val": "41", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "18-19", "val": "-1", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(13/1)-(15^1)", "val": "-2", "category": "-_d3", "ops_used": ["/", "-", "^"]}
-{"expr": "0*14", "val": "0", "category": "*_d1", "ops_used": ["*"]}
-{"expr": "(-8)*19", "val": "-152", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(log(37+1))*((-16)+15)", "val": "-3.6", "category": "*_d3", "ops_used": ["log", "+", "*", "-"]}
-{"expr": "35/1", "val": "35", "category": "/_d1", "ops_used": ["/"]}
-{"expr": "12/(-4)", "val": "-3", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(sin(20*(-20)))/(3^2)", "val": "0.1", "category": "/_d3", "ops_used": ["sin", "*", "-", "/", "^"]}
-{"expr": "2^3", "val": "8", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-19)+0.1)^2", "val": "364.8", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(log(abs(53)))*(log(log(15.3)))", "val": "4", "category": "*_d3", "ops_used": ["log", "abs", "*"]}
-{"expr": "(-3)/8", "val": "-0.4", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "7/4", "val": "1.8", "category": "/_d2", "ops_used": ["/"]}
-{"expr": "((-1)-(-11))/(cos(4^1))", "val": "-15.3", "category": "/_d3", "ops_used": ["-", "/", "cos", "^"]}
-{"expr": "4^2", "val": "16", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-5)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(sin(4^(-1)))^3", "val": "0", "category": "^_d3", "ops_used": ["sin", "^", "-"]}
-{"expr": "sin(-4.4)", "val": "1", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(1^3)", "val": "0.8", "category": "sin_d2", "ops_used": ["sin", "^"]}
-{"expr": "sin((abs(-4)+0.1)^1)", "val": "-0.8", "category": "sin_d3", "ops_used": ["sin", "abs", "-", "+", "^"]}
+{"expr": "44+9.5", "val": "53.5", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "18.1+(-0.6)", "val": "17.5", "category": "+_d2", "ops_used": ["+", "-"]}
+{"expr": "5.4-45", "val": "-39.6", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "15.1-(-16)", "val": "31.1", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "18*(-8)", "val": "-144", "category": "*_d1", "ops_used": ["*", "-"]}
+{"expr": "8.1*9", "val": "72.9", "category": "*_d2", "ops_used": ["*"]}
+{"expr": "3.3/1.3", "val": "2.5", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "8/(-8)", "val": "-1", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "1^3", "val": "1", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "3^-2", "val": "0.1", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(4.6)", "val": "-1", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(ln(10.1))", "val": "0.7", "category": "sin_d2", "ops_used": ["sin", "ln"]}
 {"expr": "cos(1.3)", "val": "0.3", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(ln(12.5))", "val": "-0.8", "category": "cos_d2", "ops_used": ["cos", "ln"]}
-{"expr": "cos(abs(sqrt(66.3)))", "val": "-0.3", "category": "cos_d3", "ops_used": ["cos", "abs", "sqrt"]}
-{"expr": "tan(3.3)", "val": "0.2", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(exp(-1.6))", "val": "0.2", "category": "tan_d2", "ops_used": ["tan", "exp", "-"]}
-{"expr": "tan(sin(sqrt(abs(39+(-47)))))", "val": "0.3", "category": "tan_d3", "ops_used": ["tan", "sin", "sqrt", "abs", "+", "-"]}
-{"expr": "log(49.2)", "val": "3.9", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(sin(2))", "val": "-0.1", "category": "log_d2", "ops_used": ["log", "sin"]}
-{"expr": "log(exp(sin((-47)-26)))", "val": "0.7", "category": "log_d3", "ops_used": ["log", "exp", "sin", "-"]}
-{"expr": "ln(28.3)", "val": "3.3", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs((-10)/3)+0.1)", "val": "1.2", "category": "ln_d2", "ops_used": ["ln", "abs", "-", "/", "+"]}
-{"expr": "ln(abs(tan(sin((-5)*(-16))))+0.1)", "val": "0.5", "category": "ln_d3", "ops_used": ["ln", "abs", "tan", "sin", "-", "*", "+"]}
-{"expr": "exp(-0.4)", "val": "0.7", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(sin(13+(-20)))", "val": "0.5", "category": "exp_d2", "ops_used": ["exp", "sin", "+", "-"]}
-{"expr": "exp(sin((-1)-(-10)))", "val": "1.5", "category": "exp_d3", "ops_used": ["exp", "sin", "-"]}
-{"expr": "sqrt(77.9)", "val": "8.8", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(11+27)", "val": "6.2", "category": "sqrt_d2", "ops_used": ["sqrt", "+"]}
-{"expr": "sqrt(ln(log(47.4)))", "val": "1.2", "category": "sqrt_d3", "ops_used": ["sqrt", "ln", "log"]}
-{"expr": "abs(-11)", "val": "11", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(sin(-4.4))", "val": "1", "category": "abs_d2", "ops_used": ["abs", "sin", "-"]}
-{"expr": "abs(tan(sin(tan(4.2))))", "val": "1.5", "category": "abs_d3", "ops_used": ["abs", "tan", "sin"]}
-{"expr": "21+47", "val": "68", "category": "+_d1", "ops_used": ["+"]}
-{"expr": "(-9)+(-10)", "val": "-19", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(18^1)+((abs(-13)+0.1)^1)", "val": "31.1", "category": "+_d3", "ops_used": ["^", "+", "abs", "-"]}
-{"expr": "(-46)-42", "val": "-88", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-6)-20", "val": "-26", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(abs(sqrt(34.9)))-(cos(log(4.3)))", "val": "5.8", "category": "-_d3", "ops_used": ["abs", "sqrt", "-", "cos", "log"]}
-{"expr": "(-4)*3", "val": "-12", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-4)*(-4)", "val": "16", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(20*11)*(sin(exp(1.9)))", "val": "86.2", "category": "*_d3", "ops_used": ["*", "sin", "exp"]}
-{"expr": "46/(-2)", "val": "-23", "category": "/_d1", "ops_used": ["/", "-"]}
-{"expr": "0/20", "val": "0", "category": "/_d2", "ops_used": ["/"]}
-{"expr": "(abs(exp(-0.3)))/(sqrt(sqrt(54.9)))", "val": "0.3", "category": "/_d3", "ops_used": ["abs", "exp", "-", "/", "sqrt"]}
-{"expr": "0^1", "val": "0", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "16^-2", "val": "0", "category": "^_d2", "ops_used": ["^", "-"]}
-{"expr": "(ln(abs((-27)-(-25))+0.1))^2", "val": "0.6", "category": "^_d3", "ops_used": ["ln", "abs", "-", "+", "^"]}
-{"expr": "30/6", "val": "5", "category": "/_d1", "ops_used": ["/"]}
-{"expr": "19/18", "val": "1.1", "category": "/_d2", "ops_used": ["/"]}
-{"expr": "(log(abs((-21)+(-49))+0.1))/((-20)-(-12))", "val": "-0.5", "category": "/_d3", "ops_used": ["log", "abs", "-", "+", "/"]}
-{"expr": "2^3", "val": "8", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-17)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(abs(tan(sin(exp(1.2))))+0.1)^2", "val": "0.1", "category": "^_d3", "ops_used": ["abs", "tan", "sin", "exp", "+", "^"]}
-{"expr": "sin(4)", "val": "-0.8", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(2*(-18))", "val": "1", "category": "sin_d2", "ops_used": ["sin", "*", "-"]}
-{"expr": "sin(sqrt(exp(-2.2)))", "val": "0.3", "category": "sin_d3", "ops_used": ["sin", "sqrt", "exp", "-"]}
-{"expr": "cos(0.6)", "val": "0.8", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(cos(-1.5))", "val": "1", "category": "cos_d2", "ops_used": ["cos", "-"]}
-{"expr": "cos((-8)/(-7))", "val": "0.4", "category": "cos_d3", "ops_used": ["cos", "-", "/"]}
-{"expr": "tan(3.4)", "val": "0.3", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(50/(-10)))", "val": "1.4", "category": "tan_d2", "ops_used": ["tan", "sin", "/", "-"]}
-{"expr": "tan(sin(16*(-13)))", "val": "-0.7", "category": "tan_d3", "ops_used": ["tan", "sin", "*", "-"]}
-{"expr": "log(36.5)", "val": "3.6", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(3^(-2))", "val": "-2.2", "category": "log_d2", "ops_used": ["log", "^", "-"]}
-{"expr": "log(tan(sin(sqrt(70.6))))", "val": "0.1", "category": "log_d3", "ops_used": ["log", "tan", "sin", "sqrt"]}
-{"expr": "ln(0.8)", "val": "-0.2", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(sqrt(75.8))", "val": "2.2", "category": "ln_d2", "ops_used": ["ln", "sqrt"]}
-{"expr": "ln(ln(abs(sin(4.6))+0.1))", "val": "-2.4", "category": "ln_d3", "ops_used": ["ln", "abs", "sin", "+"]}
-{"expr": "exp(-0.3)", "val": "0.7", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(sin(tan(1.4)))", "val": "0.6", "category": "exp_d2", "ops_used": ["exp", "sin", "tan"]}
-{"expr": "exp(log(exp(-0.9)))", "val": "0.4", "category": "exp_d3", "ops_used": ["exp", "log", "-"]}
-{"expr": "sqrt(12.2)", "val": "3.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(sqrt(73.2))", "val": "2.9", "category": "sqrt_d2", "ops_used": ["sqrt"]}
-{"expr": "sqrt(abs((-8)*13))", "val": "10.2", "category": "sqrt_d3", "ops_used": ["sqrt", "abs", "-", "*"]}
-{"expr": "abs(-62)", "val": "62", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(sqrt(77.6))", "val": "8.8", "category": "abs_d2", "ops_used": ["abs", "sqrt"]}
-{"expr": "abs(sqrt(16*13))", "val": "14.4", "category": "abs_d3", "ops_used": ["abs", "sqrt", "*"]}
-{"expr": "1+(-21)", "val": "-20", "category": "+_d1", "ops_used": ["+", "-"]}
-{"expr": "8+(-6)", "val": "2", "category": "+_d2", "ops_used": ["+", "-"]}
-{"expr": "(exp(tan(-5.5)))+(-11)", "val": "-8.3", "category": "+_d3", "ops_used": ["exp", "tan", "-", "+"]}
-{"expr": "(-8)-(-22)", "val": "14", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-8)-(-2)", "val": "-6", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(17+1)-16", "val": "2", "category": "-_d3", "ops_used": ["+", "-"]}
-{"expr": "(-1)*(-16)", "val": "16", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-18)*17", "val": "-306", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(abs(sqrt(93.6)))*(15-11)", "val": "38.7", "category": "*_d3", "ops_used": ["abs", "sqrt", "*", "-"]}
-{"expr": "(-23)/(-3)", "val": "7.7", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "0/(-2)", "val": "0", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(exp(cos(0.3)))/(2/4)", "val": "5.2", "category": "/_d3", "ops_used": ["exp", "cos", "/"]}
-{"expr": "4^1", "val": "4", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-8)+0.1)^2", "val": "65.6", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(abs(9/(-5))+0.1)^3", "val": "6.9", "category": "^_d3", "ops_used": ["abs", "/", "-", "+", "^"]}
-{"expr": "sin(5.6)", "val": "-0.6", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "(-16)/(-17)", "val": "0.9", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(tan(sin((-45)-(-40))))/(exp(exp(-0.6)))", "val": "0.8", "category": "/_d3", "ops_used": ["tan", "sin", "-", "/", "exp"]}
-{"expr": "5^1", "val": "5", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-12)+0.1)^2", "val": "146.4", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(15*6)^3", "val": "729000", "category": "^_d3", "ops_used": ["*", "^"]}
-{"expr": "sin(-5.3)", "val": "0.8", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin((-16)-(-38))", "val": "0", "category": "sin_d2", "ops_used": ["sin", "-"]}
-{"expr": "sin(exp(sin(tan(1.5))))", "val": "0.4", "category": "sin_d3", "ops_used": ["sin", "exp", "tan"]}
-{"expr": "cos(-6)", "val": "1", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(sqrt(23.7))", "val": "0.2", "category": "cos_d2", "ops_used": ["cos", "sqrt"]}
-{"expr": "cos(sin(6*(-13)))", "val": "0.9", "category": "cos_d3", "ops_used": ["cos", "sin", "*", "-"]}
+{"expr": "cos(sqrt(8.6))", "val": "-1", "category": "cos_d2", "ops_used": ["cos", "sqrt"]}
+{"expr": "tan(-5.7)", "val": "0.7", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(0.7^(-2)))", "val": "1.2", "category": "tan_d2", "ops_used": ["tan", "sin", "^", "-"]}
+{"expr": "log(14.8)", "val": "2.7", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(sqrt(13.2))", "val": "1.3", "category": "log_d2", "ops_used": ["log", "sqrt"]}
+{"expr": "ln(6.2)", "val": "1.8", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln((-1)-(-14))", "val": "2.6", "category": "ln_d2", "ops_used": ["ln", "-"]}
+{"expr": "exp(-2.2)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin((-14)*(-5.2)))", "val": "0.6", "category": "exp_d2", "ops_used": ["exp", "sin", "-", "*"]}
+{"expr": "sqrt(0.2)", "val": "0.4", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(sin(0.4))", "val": "0.6", "category": "sqrt_d2", "ops_used": ["sqrt", "sin"]}
+{"expr": "abs(67)", "val": "67", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(abs(-75.6))", "val": "75.6", "category": "abs_d2", "ops_used": ["abs", "-"]}
+{"expr": "(-29)+(-0.8)", "val": "-29.8", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-3)+11", "val": "8", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-23.9)-49.1", "val": "-73", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "2.2-17", "val": "-14.8", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-14)*(-4.7)", "val": "65.8", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "5*(-13)", "val": "-65", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "(-26)/(-4.5)", "val": "5.8", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-20)/(-13.9)", "val": "1.4", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "1^3", "val": "1", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "(abs(-19.3)+0.1)^-1", "val": "0.1", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(-4)", "val": "0.8", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(0^1)", "val": "0", "category": "sin_d2", "ops_used": ["sin", "^"]}
+{"expr": "cos(-2.5)", "val": "-0.8", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(12.2/(-2))", "val": "1", "category": "cos_d2", "ops_used": ["cos", "/", "-"]}
 {"expr": "tan(6.1)", "val": "-0.2", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(17-4))", "val": "0.4", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
-{"expr": "tan(sin(abs(-4)))", "val": "-0.9", "category": "tan_d3", "ops_used": ["tan", "sin", "abs", "-"]}
-{"expr": "log(48.4)", "val": "3.9", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(exp(0.7))", "val": "0.7", "category": "log_d2", "ops_used": ["log", "exp"]}
-{"expr": "log(sin(tan(-1.4)))", "val": "-0.8", "category": "log_d3", "ops_used": ["log", "sin", "tan", "-"]}
-{"expr": "ln(23.3)", "val": "3.1", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(17*(-12))+0.1)", "val": "5.3", "category": "ln_d2", "ops_used": ["ln", "abs", "*", "-", "+"]}
-{"expr": "ln(cos(cos(1.7)))", "val": "0", "category": "ln_d3", "ops_used": ["ln", "cos"]}
-{"expr": "exp(2.7)", "val": "14.9", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(tan(5.1))", "val": "0.1", "category": "exp_d2", "ops_used": ["exp", "tan"]}
-{"expr": "exp(log(tan(-1.8)))", "val": "4.3", "category": "exp_d3", "ops_used": ["exp", "log", "tan", "-"]}
-{"expr": "sqrt(45.5)", "val": "6.7", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(exp(1.4))", "val": "2", "category": "sqrt_d2", "ops_used": ["sqrt", "exp"]}
-{"expr": "sqrt(sin(cos(-6.3)))", "val": "0.9", "category": "sqrt_d3", "ops_used": ["sqrt", "sin", "cos", "-"]}
-{"expr": "abs(71)", "val": "71", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(sqrt(35.7))", "val": "6", "category": "abs_d2", "ops_used": ["abs", "sqrt"]}
-{"expr": "abs(exp(sin(exp(1.1))))", "val": "1.1", "category": "abs_d3", "ops_used": ["abs", "exp", "sin"]}
-{"expr": "15+(-41)", "val": "-26", "category": "+_d1", "ops_used": ["+", "-"]}
-{"expr": "(-13)+(-9)", "val": "-22", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(log(abs(6*(-3))+0.1))+(sqrt((-15)-(-30)))", "val": "6.8", "category": "+_d3", "ops_used": ["log", "abs", "*", "-", "+", "sqrt"]}
-{"expr": "39-(-49)", "val": "88", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "13-13", "val": "0", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "((-1)/12)-(-13)", "val": "12.9", "category": "-_d3", "ops_used": ["-", "/"]}
-{"expr": "(-11)*13", "val": "-143", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-14)*(-12)", "val": "168", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(sqrt(abs((-11)/8)))*(-8)", "val": "-9.4", "category": "*_d3", "ops_used": ["sqrt", "abs", "-", "/", "*"]}
-{"expr": "(-39)/5", "val": "-7.8", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-18)/(-17)", "val": "1.1", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(tan(sin(4^1)))/(8-3)", "val": "-0.2", "category": "/_d3", "ops_used": ["tan", "sin", "^", "/", "-"]}
-{"expr": "3^3", "val": "27", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "13^-2", "val": "0", "category": "^_d2", "ops_used": ["^", "-"]}
-{"expr": "((-10)/(-15))^2", "val": "0.4", "category": "^_d3", "ops_used": ["-", "/", "^"]}
-{"expr": "sin(-3.4)", "val": "0.3", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "9/(ln(abs((-50)-(-26))+0.1))", "val": "2.8", "category": "/_d3", "ops_used": ["/", "ln", "abs", "-", "+"]}
-{"expr": "5^(-1)", "val": "0.2", "category": "^_d1", "ops_used": ["^", "-"]}
-{"expr": "5^-1", "val": "0.2", "category": "^_d2", "ops_used": ["^", "-"]}
-{"expr": "(sin(exp(2.6)))^2", "val": "0.6", "category": "^_d3", "ops_used": ["sin", "exp", "^"]}
-{"expr": "sin(5.8)", "val": "-0.5", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(cos(0.6))", "val": "0.7", "category": "sin_d2", "ops_used": ["sin", "cos"]}
-{"expr": "sin(tan(sin(4^2)))", "val": "-0.3", "category": "sin_d3", "ops_used": ["sin", "tan", "^"]}
-{"expr": "cos(2.3)", "val": "-0.7", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(21/3)", "val": "0.8", "category": "cos_d2", "ops_used": ["cos", "/"]}
-{"expr": "cos(cos(exp(-1)))", "val": "0.6", "category": "cos_d3", "ops_used": ["cos", "exp", "-"]}
-{"expr": "tan(-3.8)", "val": "-0.8", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(sin((-30)-38))", "val": "1.3", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
-{"expr": "tan(sin(abs((-13)*13)))", "val": "-0.7", "category": "tan_d3", "ops_used": ["tan", "sin", "abs", "-", "*"]}
-{"expr": "log(12.4)", "val": "2.5", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(46+(-30))", "val": "2.8", "category": "log_d2", "ops_used": ["log", "+", "-"]}
-{"expr": "log(abs(15/(-7))+0.1)", "val": "0.8", "category": "log_d3", "ops_used": ["log", "abs", "/", "-", "+"]}
-{"expr": "ln(46.4)", "val": "3.8", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(tan(-4))+0.1)", "val": "0.2", "category": "ln_d2", "ops_used": ["ln", "abs", "tan", "-", "+"]}
-{"expr": "ln(exp(tan(3.1)))", "val": "0", "category": "ln_d3", "ops_used": ["ln", "exp", "tan"]}
-{"expr": "exp(-1)", "val": "0.4", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(cos(2.8))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "cos"]}
-{"expr": "exp(13/(-12))", "val": "0.3", "category": "exp_d3", "ops_used": ["exp", "/", "-"]}
-{"expr": "sqrt(35.1)", "val": "5.9", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(abs((-28)+(-44)))", "val": "8.5", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "-", "+"]}
-{"expr": "sqrt(14^1)", "val": "3.7", "category": "sqrt_d3", "ops_used": ["sqrt", "^"]}
-{"expr": "abs(94)", "val": "94", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(ln(24.4))", "val": "3.2", "category": "abs_d2", "ops_used": ["abs", "ln"]}
-{"expr": "abs(exp(sin(log(38.9))))", "val": "0.6", "category": "abs_d3", "ops_used": ["abs", "exp", "sin", "log"]}
-{"expr": "(-9)+(-6)", "val": "-15", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "20+(-16)", "val": "4", "category": "+_d2", "ops_used": ["+", "-"]}
-{"expr": "(-18)+(cos(log(18.5)))", "val": "-19", "category": "+_d3", "ops_used": ["-", "+", "cos", "log"]}
-{"expr": "(-3)-(-1)", "val": "-2", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "5-19", "val": "-14", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(-13)-(cos(49/2))", "val": "-13.8", "category": "-_d3", "ops_used": ["-", "cos", "/"]}
-{"expr": "16*20", "val": "320", "category": "*_d1", "ops_used": ["*"]}
-{"expr": "3*14", "val": "42", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "2*(log(19*19))", "val": "11.8", "category": "*_d3", "ops_used": ["*", "log"]}
-{"expr": "(-23)/(-2)", "val": "11.5", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "10/4", "val": "2.5", "category": "/_d2", "ops_used": ["/"]}
-{"expr": "(log(abs(89)))/(abs((-13)*19))", "val": "0", "category": "/_d3", "ops_used": ["log", "abs", "/", "-", "*"]}
-{"expr": "3^2", "val": "9", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-1)+0.1)^-1", "val": "0.9", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(exp(sin(6.1)))^3", "val": "0.6", "category": "^_d3", "ops_used": ["exp", "sin", "^"]}
-{"expr": "sin(-2.5)", "val": "-0.6", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(0+22)", "val": "0", "category": "sin_d2", "ops_used": ["sin", "+"]}
-{"expr": "2^3", "val": "8", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-2)+0.1)^2", "val": "4.4", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(1*20)^2", "val": "400", "category": "^_d3", "ops_used": ["*", "^"]}
-{"expr": "sin(-5.1)", "val": "0.9", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(tan(-5.8))", "val": "0.5", "category": "sin_d2", "ops_used": ["sin", "tan", "-"]}
-{"expr": "sin(19*15)", "val": "0.8", "category": "sin_d3", "ops_used": ["sin", "*"]}
-{"expr": "cos(1.3)", "val": "0.3", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(exp(2.4))", "val": "0", "category": "cos_d2", "ops_used": ["cos", "exp"]}
-{"expr": "cos(tan(tan(3.1)))", "val": "1", "category": "cos_d3", "ops_used": ["cos", "tan"]}
-{"expr": "tan(-3.8)", "val": "-0.8", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(cos(5.5))", "val": "0.9", "category": "tan_d2", "ops_used": ["tan", "cos"]}
-{"expr": "tan(sin(17^1))", "val": "-1.4", "category": "tan_d3", "ops_used": ["tan", "sin", "^"]}
-{"expr": "log(14.1)", "val": "2.6", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "tan(sin(ln(40.8)))", "val": "-0.6", "category": "tan_d2", "ops_used": ["tan", "sin", "ln"]}
+{"expr": "log(9.6)", "val": "2.3", "category": "log_d1", "ops_used": ["log"]}
 {"expr": "log(4^1)", "val": "1.4", "category": "log_d2", "ops_used": ["log", "^"]}
-{"expr": "log(5^-2)", "val": "-3.2", "category": "log_d3", "ops_used": ["log", "^", "-"]}
 {"expr": "ln(31.7)", "val": "3.5", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(sin(-2.4))+0.1)", "val": "-0.3", "category": "ln_d2", "ops_used": ["ln", "abs", "sin", "-", "+"]}
-{"expr": "ln((-2)*(-11))", "val": "3.1", "category": "ln_d3", "ops_used": ["ln", "-", "*"]}
-{"expr": "exp(0.9)", "val": "2.5", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(4^(-2))", "val": "1.1", "category": "exp_d2", "ops_used": ["exp", "^", "-"]}
-{"expr": "exp(16/(-14))", "val": "0.3", "category": "exp_d3", "ops_used": ["exp", "/", "-"]}
-{"expr": "sqrt(16)", "val": "4", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(tan(0.1))", "val": "0.3", "category": "sqrt_d2", "ops_used": ["sqrt", "tan"]}
-{"expr": "sqrt(17*20)", "val": "18.4", "category": "sqrt_d3", "ops_used": ["sqrt", "*"]}
-{"expr": "abs(-34)", "val": "34", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(47+3)", "val": "50", "category": "abs_d2", "ops_used": ["abs", "+"]}
-{"expr": "abs(exp(sin(47+(-31))))", "val": "0.7", "category": "abs_d3", "ops_used": ["abs", "exp", "sin", "+", "-"]}
-{"expr": "38+(-1)", "val": "37", "category": "+_d1", "ops_used": ["+", "-"]}
-{"expr": "17+(-2)", "val": "15", "category": "+_d2", "ops_used": ["+", "-"]}
-{"expr": "(sin(abs(-39)))+(18^3)", "val": "5833", "category": "+_d3", "ops_used": ["sin", "abs", "-", "+", "^"]}
-{"expr": "(-47)-(-16)", "val": "-31", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "10-(-10)", "val": "20", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(tan(sin((-8)-10)))-((-5)+(-18))", "val": "23.9", "category": "-_d3", "ops_used": ["tan", "sin", "-", "+"]}
-{"expr": "12*9", "val": "108", "category": "*_d1", "ops_used": ["*"]}
-{"expr": "(-20)*6", "val": "-120", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(sqrt(ln(22.2)))*(ln(cos(-5.3)))", "val": "-1", "category": "*_d3", "ops_used": ["sqrt", "ln", "*", "cos", "-"]}
-{"expr": "(-8)/1", "val": "-8", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-5)/(-7)", "val": "0.7", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(sqrt(abs((-12)+(-32))))/(abs(log(21.6)))", "val": "2.2", "category": "/_d3", "ops_used": ["sqrt", "abs", "-", "+", "/", "log"]}
-{"expr": "4^1", "val": "4", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-19)+0.1)^1", "val": "19.1", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(abs(-17)+0.1)^3", "val": "5000.2", "category": "^_d3", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "sin(0)", "val": "0", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(3^(-1))", "val": "0.3", "category": "sin_d2", "ops_used": ["sin", "^", "-"]}
-{"expr": "sin(ln(abs(sin(-0.5))+0.1))", "val": "-0.5", "category": "sin_d3", "ops_used": ["sin", "ln", "abs", "-", "+"]}
-{"expr": "(abs(-9)+0.1)^1", "val": "9.1", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(abs(-18)+0.1)^3", "val": "5929.7", "category": "^_d3", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "sin(-1.8)", "val": "-1", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin((-48)-(-42))", "val": "0.3", "category": "sin_d2", "ops_used": ["sin", "-"]}
-{"expr": "sin(sqrt(abs(31)))", "val": "-0.7", "category": "sin_d3", "ops_used": ["sin", "sqrt", "abs"]}
-{"expr": "cos(-3.9)", "val": "-0.7", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(37+46)", "val": "0.2", "category": "cos_d2", "ops_used": ["cos", "+"]}
-{"expr": "cos(17-10)", "val": "0.8", "category": "cos_d3", "ops_used": ["cos", "-"]}
-{"expr": "tan(5.6)", "val": "-0.8", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(cos(3.7))", "val": "-1.1", "category": "tan_d2", "ops_used": ["tan", "cos"]}
-{"expr": "tan(sin(abs(ln(14.6))))", "val": "0.5", "category": "tan_d3", "ops_used": ["tan", "sin", "abs", "ln"]}
-{"expr": "log(17.7)", "val": "2.9", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs(sin(3.9))+0.1)", "val": "-0.2", "category": "log_d2", "ops_used": ["log", "abs", "sin", "+"]}
-{"expr": "log(abs(cos((-26)/7))+0.1)", "val": "-0.1", "category": "log_d3", "ops_used": ["log", "abs", "cos", "-", "/", "+"]}
-{"expr": "ln(28.7)", "val": "3.4", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(ln(14.6))", "val": "1", "category": "ln_d2", "ops_used": ["ln"]}
-{"expr": "ln(exp(sin(sqrt(56.6))))", "val": "0.9", "category": "ln_d3", "ops_used": ["ln", "exp", "sin", "sqrt"]}
-{"expr": "exp(-0.7)", "val": "0.5", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(sin(ln(41.3)))", "val": "0.6", "category": "exp_d2", "ops_used": ["exp", "sin", "ln"]}
-{"expr": "exp(log(exp(1.1)))", "val": "3", "category": "exp_d3", "ops_used": ["exp", "log"]}
-{"expr": "sqrt(28.6)", "val": "5.3", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(tan(-5.6))", "val": "0.9", "category": "sqrt_d2", "ops_used": ["sqrt", "tan", "-"]}
-{"expr": "sqrt(abs((-7)*18))", "val": "11.2", "category": "sqrt_d3", "ops_used": ["sqrt", "abs", "-", "*"]}
-{"expr": "abs(36)", "val": "36", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(exp(-0.8))", "val": "0.4", "category": "abs_d2", "ops_used": ["abs", "exp", "-"]}
-{"expr": "abs(tan(sin(log(29.9))))", "val": "0.3", "category": "abs_d3", "ops_used": ["abs", "tan", "sin", "log"]}
-{"expr": "13+36", "val": "49", "category": "+_d1", "ops_used": ["+"]}
-{"expr": "14+4", "val": "18", "category": "+_d2", "ops_used": ["+"]}
-{"expr": "6+(abs(abs(-23)))", "val": "29", "category": "+_d3", "ops_used": ["+", "abs", "-"]}
-{"expr": "48-50", "val": "-2", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-2)-20", "val": "-22", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(sqrt(abs(cos(-4.4))))-(-9)", "val": "9.6", "category": "-_d3", "ops_used": ["sqrt", "abs", "cos", "-"]}
-{"expr": "(-3)*(-2)", "val": "6", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-6)*12", "val": "-72", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "((-15)*(-5))*(cos(abs(-43)))", "val": "41.6", "category": "*_d3", "ops_used": ["-", "*", "cos", "abs"]}
-{"expr": "(-4)/5", "val": "-0.8", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-13)/(-16)", "val": "0.8", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "((-17)*5)/((-14)-(-11))", "val": "28.3", "category": "/_d3", "ops_used": ["-", "*", "/"]}
-{"expr": "2^1", "val": "2", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-7)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(16/13)^2", "val": "1.5", "category": "^_d3", "ops_used": ["/", "^"]}
-{"expr": "sin(-4.1)", "val": "0.8", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(tan(-4.4))", "val": "0", "category": "sin_d2", "ops_used": ["sin", "tan", "-"]}
-{"expr": "sin((-7)/11)", "val": "-0.6", "category": "sin_d3", "ops_used": ["sin", "-", "/"]}
-{"expr": "cos(-4)", "val": "-0.7", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "(abs(10/(-7))+0.1)^3", "val": "3.6", "category": "^_d3", "ops_used": ["abs", "/", "-", "+", "^"]}
-{"expr": "sin(3.5)", "val": "-0.4", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(sin(4.2))", "val": "-0.8", "category": "sin_d2", "ops_used": ["sin"]}
-{"expr": "sin(abs(sin(-1.1)))", "val": "0.8", "category": "sin_d3", "ops_used": ["sin", "abs", "-"]}
-{"expr": "cos(-6)", "val": "1", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(ln(31.2))", "val": "-1", "category": "cos_d2", "ops_used": ["cos", "ln"]}
-{"expr": "cos(sqrt(10/8))", "val": "0.4", "category": "cos_d3", "ops_used": ["cos", "sqrt", "/"]}
-{"expr": "tan(-2.8)", "val": "0.4", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(sin(18*(-11)))", "val": "0.1", "category": "tan_d2", "ops_used": ["tan", "sin", "*", "-"]}
-{"expr": "tan(sin(sqrt(abs((-17)*12))))", "val": "1.5", "category": "tan_d3", "ops_used": ["tan", "sin", "sqrt", "abs", "-", "*"]}
-{"expr": "log(36.5)", "val": "3.6", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs(sin(4.6))+0.1)", "val": "0.1", "category": "log_d2", "ops_used": ["log", "abs", "sin", "+"]}
-{"expr": "log(abs(cos(-5)))", "val": "-1.3", "category": "log_d3", "ops_used": ["log", "abs", "cos", "-"]}
-{"expr": "ln(7.7)", "val": "2", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(cos(-4.4))+0.1)", "val": "-0.9", "category": "ln_d2", "ops_used": ["ln", "abs", "cos", "-", "+"]}
-{"expr": "ln(cos(25/4))", "val": "0", "category": "ln_d3", "ops_used": ["ln", "cos", "/"]}
-{"expr": "exp(0.5)", "val": "1.6", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp((-10)/(-6))", "val": "5.3", "category": "exp_d2", "ops_used": ["exp", "-", "/"]}
-{"expr": "exp(sin(20-2))", "val": "0.5", "category": "exp_d3", "ops_used": ["exp", "sin", "-"]}
-{"expr": "sqrt(6.4)", "val": "2.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(4^1)", "val": "2", "category": "sqrt_d2", "ops_used": ["sqrt", "^"]}
-{"expr": "sqrt((-1)/(-15))", "val": "0.3", "category": "sqrt_d3", "ops_used": ["sqrt", "-", "/"]}
-{"expr": "abs(37)", "val": "37", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(tan(6))", "val": "0.3", "category": "abs_d2", "ops_used": ["abs", "tan"]}
-{"expr": "abs(15/(-8))", "val": "1.9", "category": "abs_d3", "ops_used": ["abs", "/", "-"]}
-{"expr": "3+(-9)", "val": "-6", "category": "+_d1", "ops_used": ["+", "-"]}
-{"expr": "(-6)+(-16)", "val": "-22", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(cos(tan(4.9)))+(exp(cos(-2)))", "val": "1.2", "category": "+_d3", "ops_used": ["cos", "tan", "+", "exp", "-"]}
-{"expr": "3-28", "val": "-25", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-16)-18", "val": "-34", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(sin(abs(-21)))-(abs(ln(14.5)))", "val": "-1.8", "category": "-_d3", "ops_used": ["sin", "abs", "-", "ln"]}
-{"expr": "(-5)*(-17)", "val": "85", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "16*18", "val": "288", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "(tan(sin(abs(-94))))*(ln(abs(25+(-44))+0.1))", "val": "-0.7", "category": "*_d3", "ops_used": ["tan", "sin", "abs", "-", "*", "ln", "+"]}
-{"expr": "(-1)/(-7)", "val": "0.1", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-20)/17", "val": "-1.2", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(abs(sqrt(0.9)))/(exp(sin((-3)-(-32))))", "val": "1.8", "category": "/_d3", "ops_used": ["abs", "sqrt", "/", "exp", "sin", "-"]}
-{"expr": "1^(-2)", "val": "1", "category": "^_d1", "ops_used": ["^", "-"]}
-{"expr": "4^-1", "val": "0.2", "category": "^_d2", "ops_used": ["^", "-"]}
-{"expr": "(abs(10-18)+0.1)^-2", "val": "0", "category": "^_d3", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "sin(2.3)", "val": "0.7", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(sin(-4.8))", "val": "0.8", "category": "sin_d2", "ops_used": ["sin", "-"]}
-{"expr": "sin(sin(cos(5.5)))", "val": "0.6", "category": "sin_d3", "ops_used": ["sin", "cos"]}
-{"expr": "cos(-0.2)", "val": "1", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(exp(-1.8))", "val": "1", "category": "cos_d2", "ops_used": ["cos", "exp", "-"]}
-{"expr": "sin(4.9)", "val": "-1", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(13*(-4))", "val": "-1", "category": "sin_d2", "ops_used": ["sin", "*", "-"]}
-{"expr": "sin(abs(39+38))", "val": "1", "category": "sin_d3", "ops_used": ["sin", "abs", "+"]}
-{"expr": "cos(4.5)", "val": "-0.2", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(sqrt(86))", "val": "-1", "category": "cos_d2", "ops_used": ["cos", "sqrt"]}
-{"expr": "cos(cos(ln(8.1)))", "val": "0.9", "category": "cos_d3", "ops_used": ["cos", "ln"]}
-{"expr": "tan(5)", "val": "-3.4", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(ln(8.9)))", "val": "1.1", "category": "tan_d2", "ops_used": ["tan", "sin", "ln"]}
-{"expr": "tan(sin((-15)-(-10)))", "val": "1.4", "category": "tan_d3", "ops_used": ["tan", "sin", "-"]}
-{"expr": "log(11.8)", "val": "2.5", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(sqrt(13.8))", "val": "1.3", "category": "log_d2", "ops_used": ["log", "sqrt"]}
-{"expr": "log(log(tan(-4.9)))", "val": "0.5", "category": "log_d3", "ops_used": ["log", "tan", "-"]}
-{"expr": "ln(20.4)", "val": "3", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(tan(0.8))", "val": "0", "category": "ln_d2", "ops_used": ["ln", "tan"]}
-{"expr": "ln(log(abs(61)))", "val": "1.4", "category": "ln_d3", "ops_used": ["ln", "log", "abs"]}
-{"expr": "exp(1.3)", "val": "3.7", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(tan(4.3))", "val": "9.8", "category": "exp_d2", "ops_used": ["exp", "tan"]}
-{"expr": "exp(sin(sin(4.7)))", "val": "0.4", "category": "exp_d3", "ops_used": ["exp", "sin"]}
-{"expr": "sqrt(0.8)", "val": "0.9", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(abs(84))", "val": "9.2", "category": "sqrt_d2", "ops_used": ["sqrt", "abs"]}
-{"expr": "sqrt((abs(-13)+0.1)^3)", "val": "47.4", "category": "sqrt_d3", "ops_used": ["sqrt", "abs", "-", "+", "^"]}
-{"expr": "abs(-67)", "val": "67", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(sin(-1.6))", "val": "1", "category": "abs_d2", "ops_used": ["abs", "sin", "-"]}
-{"expr": "abs(sin(exp(0.7)))", "val": "0.9", "category": "abs_d3", "ops_used": ["abs", "sin", "exp"]}
-{"expr": "46+1", "val": "47", "category": "+_d1", "ops_used": ["+"]}
-{"expr": "20+(-13)", "val": "7", "category": "+_d2", "ops_used": ["+", "-"]}
-{"expr": "((abs(-11)+0.1)^-1)+(log(cos(6.2)))", "val": "0.1", "category": "+_d3", "ops_used": ["abs", "-", "+", "^", "log", "cos"]}
-{"expr": "49-8", "val": "41", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "17-(-17)", "val": "34", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(18+(-13))-(sin(sin(0.5)))", "val": "4.5", "category": "-_d3", "ops_used": ["+", "-", "sin"]}
-{"expr": "2*10", "val": "20", "category": "*_d1", "ops_used": ["*"]}
-{"expr": "(-17)*6", "val": "-102", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "((abs(-5)+0.1)^3)*14", "val": "1857.1", "category": "*_d3", "ops_used": ["abs", "-", "+", "^", "*"]}
-{"expr": "(-8)/(-10)", "val": "0.8", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-12)/3", "val": "-4", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "((abs(-2)+0.1)^3)/(cos(sin(-1)))", "val": "13.9", "category": "/_d3", "ops_used": ["abs", "-", "+", "^", "/", "cos", "sin"]}
+{"expr": "ln(46.6/6.2)", "val": "2", "category": "ln_d2", "ops_used": ["ln", "/"]}
+{"expr": "5.9+(-4)", "val": "1.9", "category": "+_d2", "ops_used": ["+", "-"]}
+{"expr": "(-34)-28", "val": "-62", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "13-11.2", "val": "1.8", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-19.1)*(-14)", "val": "267.4", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-0.2)*(-13)", "val": "2.6", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-44)/9.2", "val": "-4.8", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-20)/(-8.2)", "val": "2.4", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "1.6^1", "val": "1.6", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "20^-1", "val": "0.1", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(-0.8)", "val": "-0.7", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(log(48.6))", "val": "-0.7", "category": "sin_d2", "ops_used": ["sin", "log"]}
+{"expr": "cos(-0.1)", "val": "1", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(ln(5.2))", "val": "-0.1", "category": "cos_d2", "ops_used": ["cos", "ln"]}
+{"expr": "tan(-0.8)", "val": "-1", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(exp(0.7)))", "val": "1.3", "category": "tan_d2", "ops_used": ["tan", "sin", "exp"]}
+{"expr": "log(6.8)", "val": "1.9", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(28.2/5.1)", "val": "1.7", "category": "log_d2", "ops_used": ["log", "/"]}
+{"expr": "ln(35.8)", "val": "3.6", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(exp(0.7))", "val": "0.7", "category": "ln_d2", "ops_used": ["ln", "exp"]}
+{"expr": "exp(0.8)", "val": "2.2", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(log(2.9))", "val": "2.9", "category": "exp_d2", "ops_used": ["exp", "log"]}
+{"expr": "sqrt(25.4)", "val": "5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(15/3.4)", "val": "2.1", "category": "sqrt_d2", "ops_used": ["sqrt", "/"]}
+{"expr": "abs(92)", "val": "92", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(ln(23.7))", "val": "3.2", "category": "abs_d2", "ops_used": ["abs", "ln"]}
+{"expr": "(-14)+(-12.6)", "val": "-26.6", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-16.2)+9.2", "val": "-7", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "12.4-41", "val": "-28.6", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "16-(-1.7)", "val": "17.7", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "20*17", "val": "340", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "16.7*(-12.8)", "val": "-213.8", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "32/2", "val": "16", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "0.6/6", "val": "0.1", "category": "/_d2", "ops_used": ["/"]}
+{"expr": "2.3^1", "val": "2.3", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "7.6^-2", "val": "0", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(3.9)", "val": "-0.7", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(18+(-39.4))", "val": "-0.6", "category": "sin_d2", "ops_used": ["sin", "+", "-"]}
+{"expr": "cos(5.2)", "val": "0.5", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(exp(2.4))", "val": "0", "category": "cos_d2", "ops_used": ["cos", "exp"]}
+{"expr": "tan(-5.5)", "val": "1", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(33.5+(-38.6)))", "val": "1.3", "category": "tan_d2", "ops_used": ["tan", "sin", "+", "-"]}
+{"expr": "log(6.7)", "val": "1.9", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(abs((-39.3)-(-6.3))+0.1)", "val": "3.5", "category": "log_d2", "ops_used": ["log", "abs", "-", "+"]}
+{"expr": "ln(14.2)", "val": "2.7", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs((-49)-10.9)+0.1)", "val": "4.1", "category": "ln_d2", "ops_used": ["ln", "abs", "-", "+"]}
+{"expr": "exp(-1.3)", "val": "0.3", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "49.9-2", "val": "47.9", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-3.4)-(-1.2)", "val": "-2.2", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-18.8)*18", "val": "-338.4", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "4*(-0.5)", "val": "-2", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "(-36.1)/1.5", "val": "-24.1", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-3)/6", "val": "-0.5", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "1.9^(-1)", "val": "0.5", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "(abs(-13.3)+0.1)^2", "val": "179.6", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(-5.9)", "val": "0.4", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(tan(5.6))", "val": "-0.7", "category": "sin_d2", "ops_used": ["sin", "tan"]}
+{"expr": "cos(0.7)", "val": "0.8", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(cos(4.6))", "val": "1", "category": "cos_d2", "ops_used": ["cos"]}
+{"expr": "tan(0.3)", "val": "0.3", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(log(30.5)))", "val": "-0.3", "category": "tan_d2", "ops_used": ["tan", "sin", "log"]}
+{"expr": "log(15.1)", "val": "2.7", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(exp(1.1))", "val": "1.1", "category": "log_d2", "ops_used": ["log", "exp"]}
+{"expr": "ln(27.6)", "val": "3.3", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(tan(-1.6))", "val": "3.5", "category": "ln_d2", "ops_used": ["ln", "tan", "-"]}
+{"expr": "exp(-0.6)", "val": "0.5", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(25.7-3))", "val": "0.5", "category": "exp_d2", "ops_used": ["exp", "sin", "-"]}
+{"expr": "sqrt(24.9)", "val": "5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(43+8)", "val": "7.1", "category": "sqrt_d2", "ops_used": ["sqrt", "+"]}
+{"expr": "abs(-40.8)", "val": "40.8", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(tan(-6.1))", "val": "0.2", "category": "abs_d2", "ops_used": ["abs", "tan", "-"]}
+{"expr": "13+41.5", "val": "54.5", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-5)+2", "val": "-3", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "10.2-(-16)", "val": "26.2", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-13)-(-20)", "val": "7", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "8.7*0", "val": "0", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "(-8)*1", "val": "-8", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-31)/0.5", "val": "-62", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "9/(-10)", "val": "-0.9", "category": "/_d2", "ops_used": ["/", "-"]}
 {"expr": "5^2", "val": "25", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(0)+0.1)^-1", "val": "10", "category": "^_d2", "ops_used": ["abs", "+", "^", "-"]}
-{"expr": "(abs(0)+0.1)^-1", "val": "10", "category": "^_d3", "ops_used": ["abs", "+", "^", "-"]}
-{"expr": "sin(-4.8)", "val": "1", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(cos(4.3))", "val": "-0.4", "category": "sin_d2", "ops_used": ["sin", "cos"]}
-{"expr": "sin(sin(log(18.6)))", "val": "0.2", "category": "sin_d3", "ops_used": ["sin", "log"]}
-{"expr": "cos(-1.7)", "val": "-0.1", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos((-44)-(-23))", "val": "-0.5", "category": "cos_d2", "ops_used": ["cos", "-"]}
-{"expr": "cos((abs(-20)+0.1)^2)", "val": "-0.3", "category": "cos_d3", "ops_used": ["cos", "abs", "-", "+", "^"]}
-{"expr": "sin(1*19)", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "*"]}
-{"expr": "sin(cos(ln(13.5)))", "val": "-0.8", "category": "sin_d3", "ops_used": ["sin", "cos", "ln"]}
-{"expr": "cos(4)", "val": "-0.7", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(log(46.9))", "val": "-0.8", "category": "cos_d2", "ops_used": ["cos", "log"]}
-{"expr": "cos(ln(sqrt(98.5)))", "val": "-0.7", "category": "cos_d3", "ops_used": ["cos", "ln", "sqrt"]}
-{"expr": "tan(-1.4)", "val": "-5.8", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(sin((-24)/(-7)))", "val": "-0.3", "category": "tan_d2", "ops_used": ["tan", "sin", "-", "/"]}
-{"expr": "tan(sin(tan(2.7)))", "val": "-0.5", "category": "tan_d3", "ops_used": ["tan", "sin"]}
-{"expr": "log(5.8)", "val": "1.8", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(log(26))", "val": "1.2", "category": "log_d2", "ops_used": ["log"]}
-{"expr": "log(abs(ln(abs(sin(3.5))+0.1))+0.1)", "val": "-0.1", "category": "log_d3", "ops_used": ["log", "abs", "ln", "sin", "+"]}
-{"expr": "ln(33.2)", "val": "3.5", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(-15))", "val": "2.7", "category": "ln_d2", "ops_used": ["ln", "abs", "-"]}
-{"expr": "ln(exp(sin(3-(-36))))", "val": "1", "category": "ln_d3", "ops_used": ["ln", "exp", "sin", "-"]}
-{"expr": "exp(-2)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(exp(-2.2))", "val": "1.1", "category": "exp_d2", "ops_used": ["exp", "-"]}
-{"expr": "exp(log(sin(-4.9)))", "val": "1", "category": "exp_d3", "ops_used": ["exp", "log", "sin", "-"]}
-{"expr": "sqrt(59.1)", "val": "7.7", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt((-11)-(-40))", "val": "5.4", "category": "sqrt_d2", "ops_used": ["sqrt", "-"]}
-{"expr": "sqrt(abs(cos(abs(-48))))", "val": "0.8", "category": "sqrt_d3", "ops_used": ["sqrt", "abs", "cos", "-"]}
-{"expr": "abs(29)", "val": "29", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(abs(49))", "val": "49", "category": "abs_d2", "ops_used": ["abs"]}
-{"expr": "abs((-15)+14)", "val": "1", "category": "abs_d3", "ops_used": ["abs", "-", "+"]}
-{"expr": "(-8)+10", "val": "2", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "(-3)+(-10)", "val": "-13", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(7^-2)+((-19)*4)", "val": "-76", "category": "+_d3", "ops_used": ["^", "-", "+", "*"]}
-{"expr": "32-46", "val": "-14", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-8)-(-14)", "val": "6", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(log(abs(sin(4.4))+0.1))-(exp(sin(-2.6)))", "val": "-0.5", "category": "-_d3", "ops_used": ["log", "abs", "sin", "+", "-", "exp"]}
-{"expr": "18*(-14)", "val": "-252", "category": "*_d1", "ops_used": ["*", "-"]}
-{"expr": "16*14", "val": "224", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "(12/17)*(-6)", "val": "-4.2", "category": "*_d3", "ops_used": ["/", "*", "-"]}
-{"expr": "(-49)/5", "val": "-9.8", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-5)/(-17)", "val": "0.3", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(sin(log(27.2)))/(log(sqrt(9.2)))", "val": "-0.1", "category": "/_d3", "ops_used": ["sin", "log", "/", "sqrt"]}
-{"expr": "0^1", "val": "0", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-18)+0.1)^3", "val": "5929.7", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(7^-1)^3", "val": "0", "category": "^_d3", "ops_used": ["^", "-"]}
-{"expr": "sin(-5.4)", "val": "0.8", "category": "sin_d1", "ops_used": ["sin", "-"]}
-{"expr": "sin(sin(-5.2))", "val": "0.8", "category": "sin_d2", "ops_used": ["sin", "-"]}
-{"expr": "sin(log(abs((-37)+22)+0.1))", "val": "0.4", "category": "sin_d3", "ops_used": ["sin", "log", "abs", "-", "+"]}
-{"expr": "cos(3.1)", "val": "-1", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(7+(-14))", "val": "0.8", "category": "cos_d2", "ops_used": ["cos", "+", "-"]}
-{"expr": "cos(10-(-10))", "val": "0.4", "category": "cos_d3", "ops_used": ["cos", "-"]}
-{"expr": "tan(1)", "val": "1.6", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "sin(sin(sqrt(80.3)))", "val": "0.4", "category": "sin_d3", "ops_used": ["sin", "sqrt"]}
-{"expr": "cos(6.2)", "val": "1", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(1*(-20))", "val": "0.4", "category": "cos_d2", "ops_used": ["cos", "*", "-"]}
-{"expr": "cos(6^1)", "val": "1", "category": "cos_d3", "ops_used": ["cos", "^"]}
-{"expr": "tan(5)", "val": "-3.4", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(exp(-1))", "val": "0.4", "category": "tan_d2", "ops_used": ["tan", "exp", "-"]}
-{"expr": "tan(sin(abs(sqrt(35.2))))", "val": "-0.4", "category": "tan_d3", "ops_used": ["tan", "sin", "abs", "sqrt"]}
-{"expr": "log(11.2)", "val": "2.4", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs((-12)-0)+0.1)", "val": "2.5", "category": "log_d2", "ops_used": ["log", "abs", "-", "+"]}
-{"expr": "log(sqrt(cos(-1.1)))", "val": "-0.4", "category": "log_d3", "ops_used": ["log", "sqrt", "cos", "-"]}
-{"expr": "ln(14.1)", "val": "2.6", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs((-22)/2)+0.1)", "val": "2.4", "category": "ln_d2", "ops_used": ["ln", "abs", "-", "/", "+"]}
-{"expr": "ln(log(4-(-1)))", "val": "0.5", "category": "ln_d3", "ops_used": ["ln", "log", "-"]}
-{"expr": "exp(0)", "val": "1", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(5^(-2))", "val": "1", "category": "exp_d2", "ops_used": ["exp", "^", "-"]}
-{"expr": "exp(log(sqrt(36.4)))", "val": "6", "category": "exp_d3", "ops_used": ["exp", "log", "sqrt"]}
-{"expr": "sqrt(17.6)", "val": "4.2", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(abs(tan(-0.3)))", "val": "0.6", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "tan", "-"]}
-{"expr": "sqrt(abs(sin(abs(-11))))", "val": "1", "category": "sqrt_d3", "ops_used": ["sqrt", "abs", "sin", "-"]}
-{"expr": "abs(-17)", "val": "17", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(abs(-52))", "val": "52", "category": "abs_d2", "ops_used": ["abs", "-"]}
-{"expr": "abs(17*16)", "val": "272", "category": "abs_d3", "ops_used": ["abs", "*"]}
-{"expr": "(-38)+15", "val": "-23", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "(-2)+2", "val": "0", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(sin(cos(-2.5)))+(cos(abs(21)))", "val": "-1.3", "category": "+_d3", "ops_used": ["sin", "cos", "-", "+", "abs"]}
-{"expr": "11-14", "val": "-3", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-7)-15", "val": "-22", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "((-14)-5)-(8+(-15))", "val": "-12", "category": "-_d3", "ops_used": ["-", "+"]}
-{"expr": "17*6", "val": "102", "category": "*_d1", "ops_used": ["*"]}
-{"expr": "8*3", "val": "24", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "((-10)/(-10))*(cos(32-30))", "val": "-0.4", "category": "*_d3", "ops_used": ["-", "/", "*", "cos"]}
-{"expr": "(-15)/(-7)", "val": "2.1", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "(-4)/(1)", "val": "-4", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(abs(sin(-2.2)))/(sin((-4)/(-1)))", "val": "-1.1", "category": "/_d3", "ops_used": ["abs", "sin", "-", "/"]}
-{"expr": "1^2", "val": "1", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-7)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(abs(-20)+0.1)^-2", "val": "0", "category": "^_d3", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "sin(0.6)", "val": "0.6", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(sin(-1.2))", "val": "-0.8", "category": "sin_d2", "ops_used": ["sin", "-"]}
-{"expr": "sin(10^-1)", "val": "0.1", "category": "sin_d3", "ops_used": ["sin", "^", "-"]}
-{"expr": "cos(2.7)", "val": "-0.9", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(log(1.8))", "val": "0.8", "category": "cos_d2", "ops_used": ["cos", "log"]}
-{"expr": "cos(exp(sin((-30)/(-9))))", "val": "0.7", "category": "cos_d3", "ops_used": ["cos", "exp", "sin", "-", "/"]}
-{"expr": "tan(-4)", "val": "-1.2", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(sin((-10)*(-6)))", "val": "-0.3", "category": "tan_d2", "ops_used": ["tan", "sin", "-", "*"]}
-{"expr": "cos(4.1)", "val": "-0.6", "category": "cos_d1", "ops_used": ["cos"]}
-{"expr": "cos(sin(-0.8))", "val": "0.8", "category": "cos_d2", "ops_used": ["cos", "sin", "-"]}
-{"expr": "cos(exp(1^3))", "val": "-0.9", "category": "cos_d3", "ops_used": ["cos", "exp", "^"]}
-{"expr": "tan(-4.2)", "val": "-1.8", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(cos(1.9))", "val": "-0.3", "category": "tan_d2", "ops_used": ["tan", "cos"]}
-{"expr": "tan(sin(log(exp(1.9))))", "val": "1.4", "category": "tan_d3", "ops_used": ["tan", "sin", "log", "exp"]}
-{"expr": "log(38.7)", "val": "3.7", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(ln(8.8))", "val": "0.8", "category": "log_d2", "ops_used": ["log", "ln"]}
-{"expr": "log(log(abs((-4)*16)+0.1))", "val": "1.4", "category": "log_d3", "ops_used": ["log", "abs", "-", "*", "+"]}
-{"expr": "ln(0.8)", "val": "-0.2", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(abs(tan(2.2))+0.1)", "val": "0.4", "category": "ln_d2", "ops_used": ["ln", "abs", "tan", "+"]}
-{"expr": "ln((-19)/(-6))", "val": "1.2", "category": "ln_d3", "ops_used": ["ln", "-", "/"]}
+{"expr": "(abs(-10)+0.1)^-1", "val": "0.1", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(3.7)", "val": "-0.5", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(ln(25.8))", "val": "-0.1", "category": "sin_d2", "ops_used": ["sin", "ln"]}
+{"expr": "cos(-4.7)", "val": "0", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(7*(-7))", "val": "0.3", "category": "cos_d2", "ops_used": ["cos", "*", "-"]}
+{"expr": "tan(4.7)", "val": "80.7", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(exp(2.3)))", "val": "-0.6", "category": "tan_d2", "ops_used": ["tan", "sin", "exp"]}
+{"expr": "log(39.4)", "val": "3.7", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(ln(25.2))", "val": "1.2", "category": "log_d2", "ops_used": ["log", "ln"]}
+{"expr": "ln(15.9)", "val": "2.8", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(18-48)+0.1)", "val": "3.4", "category": "ln_d2", "ops_used": ["ln", "abs", "-", "+"]}
+{"expr": "exp(2.7)", "val": "14.9", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(sin(9*(-17.8)))", "val": "1", "category": "exp_d2", "ops_used": ["exp", "sin", "*", "-"]}
+{"expr": "1.7-9", "val": "-7.3", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-4)*9.1", "val": "-36.4", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-7)*(-4.7)", "val": "32.9", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "15/3.2", "val": "4.7", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "(-10)/(-7.5)", "val": "1.3", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "2.6^(-1)", "val": "0.4", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "(abs(-5)+0.1)^3", "val": "132.7", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(-1)", "val": "-0.8", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(log(20))", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "log"]}
+{"expr": "cos(3.9)", "val": "-0.7", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(log(47.8))", "val": "-0.7", "category": "cos_d2", "ops_used": ["cos", "log"]}
+{"expr": "tan(-5.3)", "val": "1.5", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(tan(-4.3)))", "val": "-0.9", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
+{"expr": "log(25.4)", "val": "3.2", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(tan(3.6))", "val": "-0.7", "category": "log_d2", "ops_used": ["log", "tan"]}
+{"expr": "ln(47.4)", "val": "3.9", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(sqrt(62))", "val": "2.1", "category": "ln_d2", "ops_used": ["ln", "sqrt"]}
 {"expr": "exp(1.3)", "val": "3.7", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(cos(4.1))", "val": "0.6", "category": "exp_d2", "ops_used": ["exp", "cos"]}
-{"expr": "exp(ln(abs((-50)/5)+0.1))", "val": "10.1", "category": "exp_d3", "ops_used": ["exp", "ln", "abs", "-", "/", "+"]}
-{"expr": "sqrt(55.3)", "val": "7.4", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(24-12)", "val": "3.5", "category": "sqrt_d2", "ops_used": ["sqrt", "-"]}
-{"expr": "sqrt(log(log(15.6)))", "val": "1", "category": "sqrt_d3", "ops_used": ["sqrt", "log"]}
-{"expr": "abs(-89)", "val": "89", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(ln(7.9))", "val": "2.1", "category": "abs_d2", "ops_used": ["abs", "ln"]}
-{"expr": "abs(exp(sin((-10)*15)))", "val": "2", "category": "abs_d3", "ops_used": ["abs", "exp", "sin", "-", "*"]}
-{"expr": "(-16)+(-28)", "val": "-44", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "(-5)+(-8)", "val": "-13", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(15-(-16))+19", "val": "50", "category": "+_d3", "ops_used": ["-", "+"]}
-{"expr": "25-(-27)", "val": "52", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-11)-(-20)", "val": "9", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(ln(abs((-30)/2)+0.1))-(sin(2^(-2)))", "val": "2.5", "category": "-_d3", "ops_used": ["ln", "abs", "-", "/", "+", "sin", "^"]}
-{"expr": "(-12)*(-12)", "val": "144", "category": "*_d1", "ops_used": ["-", "*"]}
-{"expr": "(-6)*(-11)", "val": "66", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(exp(3^1))*(sqrt(sqrt(89)))", "val": "61.7", "category": "*_d3", "ops_used": ["exp", "^", "*", "sqrt"]}
-{"expr": "(-49)/(-7)", "val": "7", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "19/(-15)", "val": "-1.3", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(2+(-15))/(exp(sin(log(29.8))))", "val": "-16.7", "category": "/_d3", "ops_used": ["+", "-", "/", "exp", "sin", "log"]}
-{"expr": "1^(-1)", "val": "1", "category": "^_d1", "ops_used": ["^", "-"]}
-{"expr": "(abs(-14)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(tan(sin(2^3)))^3", "val": "3.5", "category": "^_d3", "ops_used": ["tan", "sin", "^"]}
-{"expr": "sin(4.2)", "val": "-0.9", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(12/10)", "val": "0.9", "category": "sin_d2", "ops_used": ["sin", "/"]}
-{"expr": "sin(cos((-12)+25))", "val": "0.8", "category": "sin_d3", "ops_used": ["sin", "cos", "-", "+"]}
-{"expr": "cos(-4.5)", "val": "-0.2", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(sin(4))", "val": "0.7", "category": "cos_d2", "ops_used": ["cos", "sin"]}
-{"expr": "cos(11/20)", "val": "0.9", "category": "cos_d3", "ops_used": ["cos", "/"]}
-{"expr": "tan(0.4)", "val": "0.4", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(-3.8))", "val": "0.7", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
-{"expr": "tan(tan(sin(43/1)))", "val": "-2", "category": "tan_d3", "ops_used": ["tan", "sin", "/"]}
-{"expr": "cos(exp(0))", "val": "0.5", "category": "cos_d2", "ops_used": ["cos", "exp"]}
-{"expr": "cos(log(exp(2.1)))", "val": "-0.5", "category": "cos_d3", "ops_used": ["cos", "log", "exp"]}
-{"expr": "tan(4.2)", "val": "1.8", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin((-7)*15))", "val": "1.5", "category": "tan_d2", "ops_used": ["tan", "sin", "-", "*"]}
-{"expr": "tan((-20)/(-19))", "val": "1.8", "category": "tan_d3", "ops_used": ["tan", "-", "/"]}
-{"expr": "log(24.4)", "val": "3.2", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs(sin(6))+0.1)", "val": "-1", "category": "log_d2", "ops_used": ["log", "abs", "sin", "+"]}
-{"expr": "log(sin(abs(-28)))", "val": "-1.3", "category": "log_d3", "ops_used": ["log", "sin", "abs", "-"]}
-{"expr": "ln(34.5)", "val": "3.5", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(5*5)", "val": "3.2", "category": "ln_d2", "ops_used": ["ln", "*"]}
-{"expr": "ln(abs(sin(log(35.1)))+0.1)", "val": "-0.7", "category": "ln_d3", "ops_used": ["ln", "abs", "sin", "log", "+"]}
-{"expr": "exp(0.2)", "val": "1.2", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(sin(10*(-5)))", "val": "1.3", "category": "exp_d2", "ops_used": ["exp", "sin", "*", "-"]}
-{"expr": "exp(sqrt(27/7))", "val": "7.1", "category": "exp_d3", "ops_used": ["exp", "sqrt", "/"]}
-{"expr": "sqrt(56.3)", "val": "7.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(sqrt(49.1))", "val": "2.6", "category": "sqrt_d2", "ops_used": ["sqrt"]}
-{"expr": "sqrt(2*14)", "val": "5.3", "category": "sqrt_d3", "ops_used": ["sqrt", "*"]}
-{"expr": "abs(39)", "val": "39", "category": "abs_d1", "ops_used": ["abs"]}
-{"expr": "abs(sin(2.1))", "val": "0.9", "category": "abs_d2", "ops_used": ["abs", "sin"]}
-{"expr": "abs(sin(tan(4)))", "val": "0.9", "category": "abs_d3", "ops_used": ["abs", "sin", "tan"]}
-{"expr": "22+35", "val": "57", "category": "+_d1", "ops_used": ["+"]}
-{"expr": "12+(-15)", "val": "-3", "category": "+_d2", "ops_used": ["+", "-"]}
-{"expr": "(cos(5^3))+(exp(sin(41+(-5))))", "val": "1.2", "category": "+_d3", "ops_used": ["cos", "^", "+", "exp", "sin", "-"]}
-{"expr": "(-12)-(-7)", "val": "-5", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "15-18", "val": "-3", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(sin(34/3))-((-5)*16)", "val": "79.1", "category": "-_d3", "ops_used": ["sin", "/", "-", "*"]}
-{"expr": "7*(-16)", "val": "-112", "category": "*_d1", "ops_used": ["*", "-"]}
-{"expr": "19*14", "val": "266", "category": "*_d2", "ops_used": ["*"]}
-{"expr": "(8^3)*((-15)/(-11))", "val": "698.2", "category": "*_d3", "ops_used": ["^", "*", "-", "/"]}
-{"expr": "(-5)/9", "val": "-0.6", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "17/(-8)", "val": "-2.1", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "(ln(abs(cos(2.4))+0.1))/((abs(-18)+0.1)^1)", "val": "0", "category": "/_d3", "ops_used": ["ln", "abs", "cos", "+", "/", "-", "^"]}
+{"expr": "exp(sin(sqrt(57.1)))", "val": "2.6", "category": "exp_d2", "ops_used": ["exp", "sin", "sqrt"]}
+{"expr": "sqrt(11.3)", "val": "3.4", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(1.2^3)", "val": "1.3", "category": "sqrt_d2", "ops_used": ["sqrt", "^"]}
+{"expr": "abs(-99)", "val": "99", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(tan(5.9))", "val": "0.4", "category": "abs_d2", "ops_used": ["abs", "tan"]}
+{"expr": "1+(-47)", "val": "-46", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "17.7+19", "val": "36.7", "category": "+_d2", "ops_used": ["+"]}
+{"expr": "(-17.1)-(-25)", "val": "7.9", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-2)-(-6)", "val": "4", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-16.6)*(-14.5)", "val": "240.7", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-13)*(-5)", "val": "65", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "5/4", "val": "1.2", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "1/8", "val": "0.1", "category": "/_d2", "ops_used": ["/"]}
+{"expr": "2^3", "val": "8", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "18.7^1", "val": "18.7", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(-2.2)", "val": "-0.8", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin((-22.5)+31.1)", "val": "0.7", "category": "sin_d2", "ops_used": ["sin", "-", "+"]}
+{"expr": "cos(-6)", "val": "1", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(14+(-16))", "val": "-0.4", "category": "cos_d2", "ops_used": ["cos", "+", "-"]}
+{"expr": "tan(-6.2)", "val": "0.1", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(tan(-1.3)))", "val": "0.5", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
+{"expr": "log(41.5)", "val": "3.7", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(abs((-5)+0)+0.1)", "val": "1.6", "category": "log_d2", "ops_used": ["log", "abs", "-", "+"]}
+{"expr": "ln(17.2)", "val": "2.8", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(exp(2.4))", "val": "2.4", "category": "ln_d2", "ops_used": ["ln", "exp"]}
+{"expr": "exp(-2.4)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(14.1-42.2))", "val": "0.8", "category": "exp_d2", "ops_used": ["exp", "sin", "-"]}
+{"expr": "sqrt(78.9)", "val": "8.9", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "(-11)*(-4.2)", "val": "46.2", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-12.9)*6", "val": "-77.4", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-11)/6.3", "val": "-1.7", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-5.7)/(-7.5)", "val": "0.8", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "4.6^1", "val": "4.6", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "16.8^2", "val": "282.2", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(-1.5)", "val": "-1", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(4.3*(-12.6))", "val": "0.7", "category": "sin_d2", "ops_used": ["sin", "*", "-"]}
+{"expr": "cos(1.1)", "val": "0.5", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(0.9^2)", "val": "0.7", "category": "cos_d2", "ops_used": ["cos", "^"]}
+{"expr": "tan(4.9)", "val": "-5.3", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(5.1))", "val": "-1.3", "category": "tan_d2", "ops_used": ["tan", "sin"]}
+{"expr": "log(38.8)", "val": "3.7", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(sqrt(34.6))", "val": "1.8", "category": "log_d2", "ops_used": ["log", "sqrt"]}
+{"expr": "ln(37.2)", "val": "3.6", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(exp(-2.1))", "val": "-2.1", "category": "ln_d2", "ops_used": ["ln", "exp", "-"]}
+{"expr": "exp(0.6)", "val": "1.8", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(exp(-0.5))", "val": "1.8", "category": "exp_d2", "ops_used": ["exp", "-"]}
+{"expr": "sqrt(92)", "val": "9.6", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(sqrt(57.7))", "val": "2.8", "category": "sqrt_d2", "ops_used": ["sqrt"]}
+{"expr": "abs(-51.6)", "val": "51.6", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(4.7*(-6))", "val": "28.2", "category": "abs_d2", "ops_used": ["abs", "*", "-"]}
+{"expr": "(-44)+1", "val": "-43", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-10.3)+(-3)", "val": "-13.3", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-2.7)-48", "val": "-50.7", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-3.6)-3.2", "val": "-6.8", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-18)*(-4.2)", "val": "75.6", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-12.2)*11", "val": "-134.2", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-7.7)/(-1)", "val": "7.7", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "7.4/(-18.4)", "val": "-0.4", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "3^(-1)", "val": "0.3", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "4.8^3", "val": "110.6", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(3)", "val": "0.1", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(exp(2.1))", "val": "1", "category": "sin_d2", "ops_used": ["sin", "exp"]}
+{"expr": "cos(-4)", "val": "-0.7", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(2.1^3)", "val": "-1", "category": "cos_d2", "ops_used": ["cos", "^"]}
+{"expr": "tan(-0.8)", "val": "-1", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin((-14)+(-12.7)))", "val": "-1.6", "category": "tan_d2", "ops_used": ["tan", "sin", "-", "+"]}
+{"expr": "log(9.3)", "val": "2.2", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(exp(-0.1))", "val": "-0.1", "category": "log_d2", "ops_used": ["log", "exp", "-"]}
+{"expr": "ln(21.2)", "val": "3.1", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln((-15.3)/(-2))", "val": "2", "category": "ln_d2", "ops_used": ["ln", "-", "/"]}
+{"expr": "exp(-0.4)", "val": "0.7", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(cos(2.7))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "cos"]}
+{"expr": "sqrt(9.5)", "val": "3.1", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(12.5-9.2)", "val": "1.8", "category": "sqrt_d2", "ops_used": ["sqrt", "-"]}
+{"expr": "(-10)*9.8", "val": "-98", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-6.1)/(-1)", "val": "6.1", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "2.9/(-20)", "val": "-0.1", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "2^3", "val": "8", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "2^1", "val": "2", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(0.1)", "val": "0.1", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(tan(-1.5))", "val": "-1", "category": "sin_d2", "ops_used": ["sin", "tan", "-"]}
+{"expr": "cos(-5.9)", "val": "0.9", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(sqrt(49.2))", "val": "0.7", "category": "cos_d2", "ops_used": ["cos", "sqrt"]}
+{"expr": "tan(1.6)", "val": "-34.2", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(2^2))", "val": "-0.9", "category": "tan_d2", "ops_used": ["tan", "sin", "^"]}
+{"expr": "log(33.5)", "val": "3.5", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(exp(-0.7))", "val": "-0.7", "category": "log_d2", "ops_used": ["log", "exp", "-"]}
+{"expr": "ln(49.4)", "val": "3.9", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(tan(2.1))+0.1)", "val": "0.6", "category": "ln_d2", "ops_used": ["ln", "abs", "tan", "+"]}
+{"expr": "exp(-0.4)", "val": "0.7", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(ln(34)))", "val": "0.7", "category": "exp_d2", "ops_used": ["exp", "sin", "ln"]}
+{"expr": "sqrt(80.2)", "val": "9", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt((-28.8)-(-29.3))", "val": "0.7", "category": "sqrt_d2", "ops_used": ["sqrt", "-"]}
+{"expr": "abs(-17.7)", "val": "17.7", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(exp(-2.1))", "val": "0.1", "category": "abs_d2", "ops_used": ["abs", "exp", "-"]}
+{"expr": "4.6+(-1.8)", "val": "2.8", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "(-12.3)+(-16)", "val": "-28.3", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "22.3-(-23)", "val": "45.3", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-18.1)-(-19)", "val": "0.9", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-1)*11.7", "val": "-11.7", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-11)*(-19.8)", "val": "217.8", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-42)/3", "val": "-14", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-9.4)/0.2", "val": "-47", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "1^1", "val": "1", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "(abs(-7.6)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(-4.5)", "val": "1", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(exp(-1.3))", "val": "0.3", "category": "sin_d2", "ops_used": ["sin", "exp", "-"]}
+{"expr": "cos(3.4)", "val": "-1", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(abs(-50.7))", "val": "0.9", "category": "cos_d2", "ops_used": ["cos", "abs", "-"]}
+{"expr": "tan(1.7)", "val": "-7.7", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(3^3))", "val": "1.4", "category": "tan_d2", "ops_used": ["tan", "sin", "^"]}
+{"expr": "log(19.7)", "val": "3", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(exp(1.5))", "val": "1.5", "category": "log_d2", "ops_used": ["log", "exp"]}
+{"expr": "ln(27.7)", "val": "3.3", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(tan(-5.4))", "val": "0.2", "category": "ln_d2", "ops_used": ["ln", "tan", "-"]}
+{"expr": "exp(-0.4)", "val": "0.7", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(abs(80.6)))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "sin", "abs"]}
+{"expr": "sqrt(6.5)", "val": "2.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(25))", "val": "5", "category": "sqrt_d2", "ops_used": ["sqrt", "abs"]}
+{"expr": "abs(90)", "val": "90", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "50/8", "val": "6.2", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "(-18.4)/(-7)", "val": "2.6", "category": "/_d2", "ops_used": ["-", "/"]}
 {"expr": "0^3", "val": "0", "category": "^_d1", "ops_used": ["^"]}
-{"expr": "(abs(-7)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(ln(exp(1.9)))^3", "val": "6.9", "category": "^_d3", "ops_used": ["ln", "exp", "^"]}
-{"expr": "sin(4.7)", "val": "-1", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(tan(3.8))", "val": "0.7", "category": "sin_d2", "ops_used": ["sin", "tan"]}
-{"expr": "sin(17^1)", "val": "-1", "category": "sin_d3", "ops_used": ["sin", "^"]}
-{"expr": "cos(-4.2)", "val": "-0.5", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(cos(6.1))", "val": "0.6", "category": "cos_d2", "ops_used": ["cos"]}
-{"expr": "cos(tan(exp(-1.5)))", "val": "1", "category": "cos_d3", "ops_used": ["cos", "tan", "exp", "-"]}
-{"expr": "tan(5)", "val": "-3.4", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(cos(2.1))", "val": "-0.6", "category": "tan_d2", "ops_used": ["tan", "cos"]}
-{"expr": "tan(sin(9/(1)))", "val": "0.4", "category": "tan_d3", "ops_used": ["tan", "sin", "/"]}
-{"expr": "log(29.8)", "val": "3.4", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "cos(2*16)", "val": "0.8", "category": "cos_d3", "ops_used": ["cos", "*"]}
-{"expr": "tan(4.2)", "val": "1.8", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(3.8))", "val": "-0.7", "category": "tan_d2", "ops_used": ["tan", "sin"]}
-{"expr": "tan((-7)/(-17))", "val": "0.4", "category": "tan_d3", "ops_used": ["tan", "-", "/"]}
-{"expr": "log(10.9)", "val": "2.4", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs(cos(-2.3))+0.1)", "val": "-0.3", "category": "log_d2", "ops_used": ["log", "abs", "cos", "-", "+"]}
-{"expr": "log(5+5)", "val": "2.3", "category": "log_d3", "ops_used": ["log", "+"]}
-{"expr": "ln(16.7)", "val": "2.8", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(48-30)", "val": "2.9", "category": "ln_d2", "ops_used": ["ln", "-"]}
-{"expr": "ln(0+18)", "val": "2.9", "category": "ln_d3", "ops_used": ["ln", "+"]}
+{"expr": "(abs(-13.2)+0.1)^-1", "val": "0.1", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(4.5)", "val": "-1", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(exp(1.8))", "val": "-0.2", "category": "sin_d2", "ops_used": ["sin", "exp"]}
+{"expr": "cos(-0.9)", "val": "0.6", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(tan(0.2))", "val": "1", "category": "cos_d2", "ops_used": ["cos", "tan"]}
+{"expr": "tan(-4.1)", "val": "-1.4", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(16.6+4.9))", "val": "0.5", "category": "tan_d2", "ops_used": ["tan", "sin", "+"]}
+{"expr": "log(24.1)", "val": "3.2", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(abs(66))", "val": "4.2", "category": "log_d2", "ops_used": ["log", "abs"]}
+{"expr": "ln(10.5)", "val": "2.4", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(sqrt(48.8))", "val": "1.9", "category": "ln_d2", "ops_used": ["ln", "sqrt"]}
+{"expr": "exp(-0.8)", "val": "0.4", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(sqrt(56.7)))", "val": "2.6", "category": "exp_d2", "ops_used": ["exp", "sin", "sqrt"]}
+{"expr": "sqrt(96.2)", "val": "9.8", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(28.6/(-10)))", "val": "1.7", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "/", "-"]}
+{"expr": "abs(67)", "val": "67", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(log(42.5))", "val": "3.7", "category": "abs_d2", "ops_used": ["abs", "log"]}
+{"expr": "27.6+(-28.3)", "val": "-0.7", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "(-12.2)+(-8.7)", "val": "-20.9", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-36)-12", "val": "-48", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "16-0.6", "val": "15.4", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "6.8*11.6", "val": "78.9", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "1.7*(-7)", "val": "-11.9", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "(-45)/(-7)", "val": "6.4", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-5)/(-20)", "val": "0.2", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "3.6^2", "val": "13", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "17.9^-1", "val": "0.1", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(5.5)", "val": "-0.7", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(cos(1.1))", "val": "0.4", "category": "sin_d2", "ops_used": ["sin", "cos"]}
+{"expr": "cos(4.7)", "val": "0", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(log(17.4))", "val": "-1", "category": "cos_d2", "ops_used": ["cos", "log"]}
+{"expr": "tan(-1.8)", "val": "4.3", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(log(12.2)))", "val": "0.7", "category": "tan_d2", "ops_used": ["tan", "sin", "log"]}
+{"expr": "log(13.5)", "val": "2.6", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(sqrt(46))", "val": "1.9", "category": "log_d2", "ops_used": ["log", "sqrt"]}
+{"expr": "ln(34.2)", "val": "3.5", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(sqrt(29))", "val": "1.7", "category": "ln_d2", "ops_used": ["ln", "sqrt"]}
+{"expr": "exp(1.7)", "val": "5.5", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(sin((-9.8)+(-29.4)))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "sin", "-", "+"]}
+{"expr": "sqrt(9.7)", "val": "3.1", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(sqrt(88.7))", "val": "3.1", "category": "sqrt_d2", "ops_used": ["sqrt"]}
+{"expr": "abs(-74)", "val": "74", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(ln(34.3))", "val": "3.5", "category": "abs_d2", "ops_used": ["abs", "ln"]}
+{"expr": "17.7/3", "val": "5.9", "category": "/_d2", "ops_used": ["/"]}
+{"expr": "4^(-2)", "val": "0.1", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "9^3", "val": "729", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(-4.5)", "val": "1", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(exp(-2.3))", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "exp", "-"]}
+{"expr": "cos(-4.5)", "val": "-0.2", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(exp(-1))", "val": "0.9", "category": "cos_d2", "ops_used": ["cos", "exp", "-"]}
+{"expr": "tan(-2.2)", "val": "1.4", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(tan(-4.3)))", "val": "-0.9", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
+{"expr": "log(5.9)", "val": "1.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log((-7.9)+40)", "val": "3.5", "category": "log_d2", "ops_used": ["log", "-", "+"]}
+{"expr": "ln(0.9)", "val": "-0.1", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(8-(-36.3))", "val": "3.8", "category": "ln_d2", "ops_used": ["ln", "-"]}
+{"expr": "exp(-0.4)", "val": "0.7", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(abs(5.9)))", "val": "0.7", "category": "exp_d2", "ops_used": ["exp", "sin", "abs"]}
+{"expr": "sqrt(78.5)", "val": "8.9", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(tan(3)))", "val": "0.4", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "tan"]}
+{"expr": "abs(80)", "val": "80", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(1.6^1)", "val": "1.6", "category": "abs_d2", "ops_used": ["abs", "^"]}
+{"expr": "(-32.6)+(-48)", "val": "-80.6", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "10.4+17", "val": "27.4", "category": "+_d2", "ops_used": ["+"]}
+{"expr": "48-(-26.1)", "val": "74.1", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "2-10", "val": "-8", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-8.6)*(-8.2)", "val": "70.5", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-4)*14", "val": "-56", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-37.5)/3.4", "val": "-11", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "13/16", "val": "0.8", "category": "/_d2", "ops_used": ["/"]}
+{"expr": "2.6^(-2)", "val": "0.1", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "5.2^-2", "val": "0", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(-4.4)", "val": "1", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(cos(-4.3))", "val": "-0.4", "category": "sin_d2", "ops_used": ["sin", "cos", "-"]}
+{"expr": "cos(4.9)", "val": "0.2", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(ln(5.3))", "val": "-0.1", "category": "cos_d2", "ops_used": ["cos", "ln"]}
+{"expr": "tan(0.4)", "val": "0.4", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(19+20))", "val": "1.4", "category": "tan_d2", "ops_used": ["tan", "sin", "+"]}
+{"expr": "log(49.7)", "val": "3.9", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(abs((-41.1)/6)+0.1)", "val": "1.9", "category": "log_d2", "ops_used": ["log", "abs", "-", "/", "+"]}
+{"expr": "ln(24.8)", "val": "3.2", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(ln(17.6))", "val": "1.1", "category": "ln_d2", "ops_used": ["ln"]}
+{"expr": "exp(-2)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin((-5.4)*5.1))", "val": "0.5", "category": "exp_d2", "ops_used": ["exp", "sin", "-", "*"]}
+{"expr": "sqrt(19.3)", "val": "4.4", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(tan(2.9)))", "val": "0.5", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "tan"]}
+{"expr": "abs(81)", "val": "81", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(2.6^(-1))", "val": "0.4", "category": "abs_d2", "ops_used": ["abs", "^", "-"]}
+{"expr": "(-3.5)+(-35)", "val": "-38.5", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "3.7^3", "val": "50.7", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "13^-1", "val": "0.1", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(-1.2)", "val": "-0.9", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(ln(37.1))", "val": "-0.5", "category": "sin_d2", "ops_used": ["sin", "ln"]}
+{"expr": "cos(-3.3)", "val": "-1", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(abs(-5.9))", "val": "0.9", "category": "cos_d2", "ops_used": ["cos", "abs", "-"]}
+{"expr": "tan(2.5)", "val": "-0.7", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(30.5-(-47.4)))", "val": "0.7", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
+{"expr": "log(6.5)", "val": "1.9", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(cos(5.2))", "val": "-0.8", "category": "log_d2", "ops_used": ["log", "cos"]}
+{"expr": "ln(19.4)", "val": "3", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(log(19.2))", "val": "1.1", "category": "ln_d2", "ops_used": ["ln", "log"]}
+{"expr": "exp(2.8)", "val": "16.4", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(ln(19.7))", "val": "19.7", "category": "exp_d2", "ops_used": ["exp", "ln"]}
+{"expr": "sqrt(88.3)", "val": "9.4", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt((-26)/(-2))", "val": "3.6", "category": "sqrt_d2", "ops_used": ["sqrt", "-", "/"]}
+{"expr": "abs(-71.9)", "val": "71.9", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(sin(-2))", "val": "0.9", "category": "abs_d2", "ops_used": ["abs", "sin", "-"]}
+{"expr": "(-47)+(-16.8)", "val": "-63.8", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-3.2)+(-11.8)", "val": "-15", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-7.8)-(-7.1)", "val": "-0.7", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-13.4)-9.8", "val": "-23.2", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-17)*4.5", "val": "-76.5", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-13.9)*(-6)", "val": "83.4", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "27/4.5", "val": "6", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "(-2)/(-18)", "val": "0.1", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "3.3^2", "val": "10.9", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "16.3^-2", "val": "0", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(5)", "val": "-1", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(abs(93.4))", "val": "-0.7", "category": "sin_d2", "ops_used": ["sin", "abs"]}
+{"expr": "cos(-1)", "val": "0.5", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos((-43)/7)", "val": "1", "category": "cos_d2", "ops_used": ["cos", "-", "/"]}
+{"expr": "tan(1.9)", "val": "-2.9", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin((-14)*1))", "val": "-1.5", "category": "tan_d2", "ops_used": ["tan", "sin", "-", "*"]}
+{"expr": "log(35.7)", "val": "3.6", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(abs(6+(-9.2))+0.1)", "val": "1.2", "category": "log_d2", "ops_used": ["log", "abs", "+", "-"]}
+{"expr": "ln(33.9)", "val": "3.5", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(log(30.4))", "val": "1.2", "category": "ln_d2", "ops_used": ["ln", "log"]}
+{"expr": "exp(-1.4)", "val": "0.2", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(cos(1.5))", "val": "1.1", "category": "exp_d2", "ops_used": ["exp", "cos"]}
+{"expr": "sqrt(94.1)", "val": "9.7", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(2^3)", "val": "2.8", "category": "sqrt_d2", "ops_used": ["sqrt", "^"]}
+{"expr": "abs(-48)", "val": "48", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(sqrt(97.1))", "val": "9.9", "category": "abs_d2", "ops_used": ["abs", "sqrt"]}
+{"expr": "2+6", "val": "8", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-15.8)+8.5", "val": "-7.3", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(abs(-16.4)+0.1)^-2", "val": "0", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(0.6)", "val": "0.6", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(3^(-2))", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "^", "-"]}
+{"expr": "cos(3.9)", "val": "-0.7", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos((-49.9)-(-19.5))", "val": "0.5", "category": "cos_d2", "ops_used": ["cos", "-"]}
+{"expr": "tan(5.5)", "val": "-1", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(3^(-2))", "val": "0.1", "category": "tan_d2", "ops_used": ["tan", "^", "-"]}
+{"expr": "log(40.5)", "val": "3.7", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(2.9^3)", "val": "3.2", "category": "log_d2", "ops_used": ["log", "^"]}
+{"expr": "ln(26.6)", "val": "3.3", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(cos(-4.7))+0.1)", "val": "-2.2", "category": "ln_d2", "ops_used": ["ln", "abs", "cos", "-", "+"]}
+{"expr": "exp(0.4)", "val": "1.5", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(exp(0.1))", "val": "3", "category": "exp_d2", "ops_used": ["exp"]}
+{"expr": "sqrt(6.4)", "val": "2.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(sin(5.3)))", "val": "0.9", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "sin"]}
+{"expr": "abs(21.1)", "val": "21.1", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(log(42))", "val": "3.7", "category": "abs_d2", "ops_used": ["abs", "log"]}
+{"expr": "18.9+(-10)", "val": "8.9", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "(-15)+3.7", "val": "-11.3", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "19-(-46.9)", "val": "65.9", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "4-9.8", "val": "-5.8", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-3)*17", "val": "-51", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-4.3)*19", "val": "-81.7", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "32/9.4", "val": "3.4", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "1.5/(-8)", "val": "-0.2", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "4.6^(-1)", "val": "0.2", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "14.3^-2", "val": "0", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(5.8)", "val": "-0.5", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(30.6/(-1))", "val": "0.7", "category": "sin_d2", "ops_used": ["sin", "/", "-"]}
+{"expr": "cos(3.6)", "val": "-0.9", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(1*(-12))", "val": "0.8", "category": "cos_d2", "ops_used": ["cos", "*", "-"]}
+{"expr": "tan(-3.1)", "val": "0", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(sqrt(94)))", "val": "-0.3", "category": "tan_d2", "ops_used": ["tan", "sin", "sqrt"]}
+{"expr": "log(27.6)", "val": "3.3", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(ln(24.6))", "val": "1.2", "category": "log_d2", "ops_used": ["log", "ln"]}
+{"expr": "ln(39.4)", "val": "3.7", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs((-49.6)-47)+0.1)", "val": "4.6", "category": "ln_d2", "ops_used": ["ln", "abs", "-", "+"]}
+{"expr": "exp(-1.4)", "val": "0.2", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin((-30.7)-31))", "val": "2.5", "category": "exp_d2", "ops_used": ["exp", "sin", "-"]}
+{"expr": "sqrt(32.8)", "val": "5.7", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(2^3)", "val": "2.8", "category": "sqrt_d2", "ops_used": ["sqrt", "^"]}
+{"expr": "abs(-33)", "val": "33", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(48.6-41.2)", "val": "7.4", "category": "abs_d2", "ops_used": ["abs", "-"]}
+{"expr": "43.1+13.9", "val": "57", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-9.8)+(-20)", "val": "-29.8", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-23)-(-22)", "val": "-1", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "sin(0.4)", "val": "0.4", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(abs(92))", "val": "-0.8", "category": "sin_d2", "ops_used": ["sin", "abs"]}
+{"expr": "cos(-2.6)", "val": "-0.9", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos((-25)/(-6))", "val": "-0.5", "category": "cos_d2", "ops_used": ["cos", "-", "/"]}
+{"expr": "tan(-5.4)", "val": "1.2", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(tan(3.9))", "val": "1.4", "category": "tan_d2", "ops_used": ["tan"]}
+{"expr": "log(46.7)", "val": "3.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(abs(sin(-2.7))+0.1)", "val": "-0.6", "category": "log_d2", "ops_used": ["log", "abs", "sin", "-", "+"]}
+{"expr": "ln(40.6)", "val": "3.7", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(log(28.4))", "val": "1.2", "category": "ln_d2", "ops_used": ["ln", "log"]}
+{"expr": "exp(-1.2)", "val": "0.3", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(exp(-1.9))", "val": "1.2", "category": "exp_d2", "ops_used": ["exp", "-"]}
+{"expr": "sqrt(31.6)", "val": "5.6", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(ln(22.9))", "val": "1.8", "category": "sqrt_d2", "ops_used": ["sqrt", "ln"]}
+{"expr": "abs(-70.8)", "val": "70.8", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(sin(2.7))", "val": "0.4", "category": "abs_d2", "ops_used": ["abs", "sin"]}
+{"expr": "11+(-44)", "val": "-33", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "10.6+4", "val": "14.6", "category": "+_d2", "ops_used": ["+"]}
+{"expr": "(-32)-47", "val": "-79", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-17)-(-10)", "val": "-7", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-1.4)*17.3", "val": "-24.2", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "7*18", "val": "126", "category": "*_d2", "ops_used": ["*"]}
+{"expr": "(-20)/2.7", "val": "-7.4", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "3/19", "val": "0.2", "category": "/_d2", "ops_used": ["/"]}
+{"expr": "2^2", "val": "4", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "(abs(-4.3)+0.1)^2", "val": "19.4", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(-4.8)", "val": "1", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(ln(22))", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "ln"]}
+{"expr": "cos(-0.7)", "val": "0.8", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(sqrt(6.3))", "val": "-0.8", "category": "cos_d2", "ops_used": ["cos", "sqrt"]}
+{"expr": "tan(2.4)", "val": "-0.9", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(abs(79)))", "val": "-0.5", "category": "tan_d2", "ops_used": ["tan", "sin", "abs"]}
+{"expr": "log(1.5)", "val": "0.4", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(sqrt(96.4))", "val": "2.3", "category": "log_d2", "ops_used": ["log", "sqrt"]}
+{"expr": "ln(42.8)", "val": "3.8", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln((-15)/(-8.6))", "val": "0.6", "category": "ln_d2", "ops_used": ["ln", "-", "/"]}
+{"expr": "exp(2.8)", "val": "16.4", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(log(10))", "val": "10", "category": "exp_d2", "ops_used": ["exp", "log"]}
+{"expr": "sqrt(69.2)", "val": "8.3", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(log(9.2))", "val": "1.5", "category": "sqrt_d2", "ops_used": ["sqrt", "log"]}
+{"expr": "abs(-60)", "val": "60", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(cos(3.8))", "val": "0.8", "category": "abs_d2", "ops_used": ["abs", "cos"]}
+{"expr": "12.1+(-5.9)", "val": "6.2", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "(-11.6)+(-6)", "val": "-17.6", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "0.3-32.7", "val": "-32.4", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "sin(2^3)", "val": "1", "category": "sin_d2", "ops_used": ["sin", "^"]}
+{"expr": "cos(6.1)", "val": "1", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(tan(-5.6))", "val": "0.7", "category": "cos_d2", "ops_used": ["cos", "tan", "-"]}
+{"expr": "tan(6.2)", "val": "-0.1", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(log(13.2)))", "val": "0.6", "category": "tan_d2", "ops_used": ["tan", "sin", "log"]}
+{"expr": "log(21.3)", "val": "3.1", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(abs(cos(-4.4))+0.1)", "val": "-0.9", "category": "log_d2", "ops_used": ["log", "abs", "cos", "-", "+"]}
+{"expr": "ln(28)", "val": "3.3", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(-67))", "val": "4.2", "category": "ln_d2", "ops_used": ["ln", "abs", "-"]}
+{"expr": "exp(-1)", "val": "0.4", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(15*7))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "sin", "*"]}
+{"expr": "sqrt(58.1)", "val": "7.6", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(22.9+(-32)))", "val": "3", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "+", "-"]}
+{"expr": "abs(-15.2)", "val": "15.2", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(24-(-1.4))", "val": "25.4", "category": "abs_d2", "ops_used": ["abs", "-"]}
+{"expr": "36.6+7.9", "val": "44.5", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-1)+11.4", "val": "10.4", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "9-18.4", "val": "-9.4", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "5-(-17.3)", "val": "22.3", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "1.4*19.4", "val": "27.2", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "9.3*(-0.4)", "val": "-3.7", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "(-49)/(-6)", "val": "8.2", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-2.9)/(-15)", "val": "0.2", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "3.9^(-2)", "val": "0.1", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "16^2", "val": "256", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(-5.8)", "val": "0.5", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(exp(-2.5))", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "exp", "-"]}
+{"expr": "cos(-4.1)", "val": "-0.6", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos((-3)-(-3.4))", "val": "0.9", "category": "cos_d2", "ops_used": ["cos", "-"]}
+{"expr": "tan(3.1)", "val": "0", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(abs(30.5)))", "val": "-1", "category": "tan_d2", "ops_used": ["tan", "sin", "abs"]}
+{"expr": "log(49.2)", "val": "3.9", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(29+48.4)", "val": "4.3", "category": "log_d2", "ops_used": ["log", "+"]}
+{"expr": "ln(11.1)", "val": "2.4", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(log(23.5))", "val": "1.1", "category": "ln_d2", "ops_used": ["ln", "log"]}
+{"expr": "exp(0.5)", "val": "1.6", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(sin(tan(-4.8)))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "sin", "tan", "-"]}
+{"expr": "sqrt(88.8)", "val": "9.4", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(exp(-1.1))", "val": "0.6", "category": "sqrt_d2", "ops_used": ["sqrt", "exp", "-"]}
+{"expr": "abs(67.5)", "val": "67.5", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(5*13.1)", "val": "65.5", "category": "abs_d2", "ops_used": ["abs", "*"]}
+{"expr": "45+17.1", "val": "62.1", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-20)+(-12)", "val": "-32", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "13.9-(-10.3)", "val": "24.2", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "11.5-4.1", "val": "7.4", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "cos(-5.6)", "val": "0.8", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(0^3)", "val": "1", "category": "cos_d2", "ops_used": ["cos", "^"]}
+{"expr": "tan(0.3)", "val": "0.3", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(sqrt(99.4)))", "val": "-0.6", "category": "tan_d2", "ops_used": ["tan", "sin", "sqrt"]}
+{"expr": "log(45.6)", "val": "3.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(sqrt(94.2))", "val": "2.3", "category": "log_d2", "ops_used": ["log", "sqrt"]}
+{"expr": "ln(24)", "val": "3.2", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(4.2^1)", "val": "1.4", "category": "ln_d2", "ops_used": ["ln", "^"]}
+{"expr": "exp(0.1)", "val": "1.1", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(cos(-1.8))", "val": "0.8", "category": "exp_d2", "ops_used": ["exp", "cos", "-"]}
+{"expr": "sqrt(46.8)", "val": "6.8", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(4.7^(-1))", "val": "0.5", "category": "sqrt_d2", "ops_used": ["sqrt", "^", "-"]}
+{"expr": "abs(-43)", "val": "43", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(sin(-0.8))", "val": "0.7", "category": "abs_d2", "ops_used": ["abs", "sin", "-"]}
+{"expr": "(-2)+(-10.2)", "val": "-12.2", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "14+7", "val": "21", "category": "+_d2", "ops_used": ["+"]}
+{"expr": "(-6.2)-10", "val": "-16.2", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "6-14", "val": "-8", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-6)*0.9", "val": "-5.4", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "15.3*(-10.5)", "val": "-160.7", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "(-47)/(-5.7)", "val": "8.2", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-1.7)/(-10)", "val": "0.2", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "1^(-2)", "val": "1", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "(abs(-1.2)+0.1)^3", "val": "2.2", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(3)", "val": "0.1", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(log(13.6))", "val": "0.5", "category": "sin_d2", "ops_used": ["sin", "log"]}
+{"expr": "cos(0.5)", "val": "0.9", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(sqrt(56.7))", "val": "0.3", "category": "cos_d2", "ops_used": ["cos", "sqrt"]}
+{"expr": "tan(0.5)", "val": "0.5", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin((-14.6)+1))", "val": "-1.2", "category": "tan_d2", "ops_used": ["tan", "sin", "-", "+"]}
+{"expr": "log(47.5)", "val": "3.9", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(3.9^(-1))", "val": "-1.4", "category": "log_d2", "ops_used": ["log", "^", "-"]}
+{"expr": "ln(6.8)", "val": "1.9", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(sin(4.2))+0.1)", "val": "0", "category": "ln_d2", "ops_used": ["ln", "abs", "sin", "+"]}
+{"expr": "exp(2.7)", "val": "14.9", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(sin((-26)+44))", "val": "0.5", "category": "exp_d2", "ops_used": ["exp", "sin", "-", "+"]}
+{"expr": "sqrt(38.8)", "val": "6.2", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(exp(-0.3))", "val": "0.9", "category": "sqrt_d2", "ops_used": ["sqrt", "exp", "-"]}
+{"expr": "abs(-32)", "val": "32", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs((-35)/(-3.2))", "val": "10.9", "category": "abs_d2", "ops_used": ["abs", "-", "/"]}
+{"expr": "(-14.4)+43", "val": "28.6", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-0.8)+(-1)", "val": "-1.8", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "30-(-21.5)", "val": "51.5", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "15-(-9)", "val": "24", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "12.4*12.4", "val": "153.8", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "cos(abs(-84.3))", "val": "-0.9", "category": "cos_d2", "ops_used": ["cos", "abs", "-"]}
+{"expr": "tan(-5.3)", "val": "1.5", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(tan(0.7))", "val": "1.1", "category": "tan_d2", "ops_used": ["tan"]}
+{"expr": "log(31.6)", "val": "3.5", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(ln(26.3))", "val": "1.2", "category": "log_d2", "ops_used": ["log", "ln"]}
+{"expr": "ln(43.1)", "val": "3.8", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(-17))", "val": "2.8", "category": "ln_d2", "ops_used": ["ln", "abs", "-"]}
+{"expr": "exp(-2.3)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(18.9*(-10)))", "val": "0.6", "category": "exp_d2", "ops_used": ["exp", "sin", "*", "-"]}
+{"expr": "sqrt(58.3)", "val": "7.6", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(2^1)", "val": "1.4", "category": "sqrt_d2", "ops_used": ["sqrt", "^"]}
+{"expr": "abs(-48)", "val": "48", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(18-(-45.3))", "val": "63.3", "category": "abs_d2", "ops_used": ["abs", "-"]}
+{"expr": "(-48)+20", "val": "-28", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-13)+10", "val": "-3", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-28.7)-(-25)", "val": "-3.7", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "19.7-(-5)", "val": "24.7", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-19)*16.5", "val": "-313.5", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-7)*(-10.7)", "val": "74.9", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-1.1)/6.1", "val": "-0.2", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "14/(-1.3)", "val": "-10.8", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "2.1^3", "val": "9.3", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "7^-2", "val": "0", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(0.5)", "val": "0.5", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(31.1-4)", "val": "0.9", "category": "sin_d2", "ops_used": ["sin", "-"]}
+{"expr": "cos(4.6)", "val": "-0.1", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(3^(-1))", "val": "0.9", "category": "cos_d2", "ops_used": ["cos", "^", "-"]}
+{"expr": "tan(1.7)", "val": "-7.7", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(log(14.1)))", "val": "0.5", "category": "tan_d2", "ops_used": ["tan", "sin", "log"]}
+{"expr": "log(16.1)", "val": "2.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(ln(38.1))", "val": "1.3", "category": "log_d2", "ops_used": ["log", "ln"]}
+{"expr": "ln(42.8)", "val": "3.8", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(log(45.9))", "val": "1.3", "category": "ln_d2", "ops_used": ["ln", "log"]}
+{"expr": "exp(-2.1)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin((-31)-(-46)))", "val": "1.9", "category": "exp_d2", "ops_used": ["exp", "sin", "-"]}
+{"expr": "sqrt(31.2)", "val": "5.6", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(ln(47.6))", "val": "2", "category": "sqrt_d2", "ops_used": ["sqrt", "ln"]}
+{"expr": "abs(100)", "val": "100", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(sin(5.2))", "val": "0.9", "category": "abs_d2", "ops_used": ["abs", "sin"]}
+{"expr": "(-11.7)+9", "val": "-2.7", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-8)+(-20)", "val": "-28", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "14-4.9", "val": "9.1", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-4.1)-15", "val": "-19.1", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-14.3)*(-20)", "val": "286", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "6*16", "val": "96", "category": "*_d2", "ops_used": ["*"]}
+{"expr": "tan(-5.3)", "val": "1.5", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(15.3/(-7)))", "val": "-1.1", "category": "tan_d2", "ops_used": ["tan", "sin", "/", "-"]}
+{"expr": "log(13)", "val": "2.6", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(tan(3.6))", "val": "-0.7", "category": "log_d2", "ops_used": ["log", "tan"]}
+{"expr": "ln(20.4)", "val": "3", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(4.2^(-2))", "val": "-2.9", "category": "ln_d2", "ops_used": ["ln", "^", "-"]}
+{"expr": "exp(2.2)", "val": "9", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(sin(-0.8))", "val": "0.5", "category": "exp_d2", "ops_used": ["exp", "sin", "-"]}
+{"expr": "sqrt(80.1)", "val": "8.9", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(cos(5.7))", "val": "0.9", "category": "sqrt_d2", "ops_used": ["sqrt", "cos"]}
+{"expr": "abs(6.3)", "val": "6.3", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(ln(4.9))", "val": "1.6", "category": "abs_d2", "ops_used": ["abs", "ln"]}
+{"expr": "47.4+30.2", "val": "77.6", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-3)+19.9", "val": "16.9", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "48.2-(-3)", "val": "51.2", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "15-20", "val": "-5", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "4*(-12.3)", "val": "-49.2", "category": "*_d1", "ops_used": ["*", "-"]}
+{"expr": "5*(-19.3)", "val": "-96.5", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "(-36.9)/(-3)", "val": "12.3", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-12)/17", "val": "-0.7", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "2.2^2", "val": "4.8", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "(abs(-15.9)+0.1)^-1", "val": "0.1", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(2)", "val": "0.9", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(tan(0.1))", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "tan"]}
+{"expr": "cos(-5.1)", "val": "0.4", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(tan(-1.2))", "val": "-0.8", "category": "cos_d2", "ops_used": ["cos", "tan", "-"]}
+{"expr": "tan(1.9)", "val": "-2.9", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(ln(24.6)))", "val": "-0.1", "category": "tan_d2", "ops_used": ["tan", "sin", "ln"]}
+{"expr": "log(46.4)", "val": "3.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(abs(-70))", "val": "4.2", "category": "log_d2", "ops_used": ["log", "abs", "-"]}
+{"expr": "ln(5.7)", "val": "1.7", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(26.4-(-4))", "val": "3.4", "category": "ln_d2", "ops_used": ["ln", "-"]}
+{"expr": "exp(-2.6)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(2.1*12))", "val": "1.1", "category": "exp_d2", "ops_used": ["exp", "sin", "*"]}
+{"expr": "sqrt(23.1)", "val": "4.8", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(ln(17.7))", "val": "1.7", "category": "sqrt_d2", "ops_used": ["sqrt", "ln"]}
+{"expr": "abs(-45)", "val": "45", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(ln(38.8))", "val": "3.7", "category": "abs_d2", "ops_used": ["abs", "ln"]}
+{"expr": "28+23.8", "val": "51.8", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-15.8)+(-20)", "val": "-35.8", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-12)-(-41)", "val": "29", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-15.7)-(-15)", "val": "-0.7", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "5.8*(-4.5)", "val": "-26.1", "category": "*_d1", "ops_used": ["*", "-"]}
+{"expr": "(-3.9)*17.2", "val": "-67.1", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-2)/(-9.8)", "val": "0.2", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "tan(exp(-2.9))", "val": "0.1", "category": "tan_d2", "ops_used": ["tan", "exp", "-"]}
+{"expr": "log(7.1)", "val": "2", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(tan(3.3))", "val": "-1.8", "category": "log_d2", "ops_used": ["log", "tan"]}
+{"expr": "ln(16.6)", "val": "2.8", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(-99))", "val": "4.6", "category": "ln_d2", "ops_used": ["ln", "abs", "-"]}
+{"expr": "exp(2.6)", "val": "13.5", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(ln(14))", "val": "14", "category": "exp_d2", "ops_used": ["exp", "ln"]}
+{"expr": "sqrt(63.3)", "val": "8", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(cos(-2.1)))", "val": "0.7", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "cos", "-"]}
+{"expr": "abs(56)", "val": "56", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(sqrt(31.2))", "val": "5.6", "category": "abs_d2", "ops_used": ["abs", "sqrt"]}
+{"expr": "47+22", "val": "69", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-10)+4", "val": "-6", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "9.2-(-45.9)", "val": "55.1", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "10-(-5)", "val": "15", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "11*18", "val": "198", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "3*(-14)", "val": "-42", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "(-6)/6", "val": "-1", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-2)/16.7", "val": "-0.1", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "3^3", "val": "27", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "6.7^2", "val": "44.9", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(5.3)", "val": "-0.8", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(sqrt(95.3))", "val": "-0.3", "category": "sin_d2", "ops_used": ["sin", "sqrt"]}
+{"expr": "cos(1.1)", "val": "0.5", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(abs(-7))", "val": "0.8", "category": "cos_d2", "ops_used": ["cos", "abs", "-"]}
+{"expr": "tan(1.5)", "val": "14.1", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(5*6.8))", "val": "0.6", "category": "tan_d2", "ops_used": ["tan", "sin", "*"]}
+{"expr": "log(46.4)", "val": "3.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(2^1)", "val": "0.7", "category": "log_d2", "ops_used": ["log", "^"]}
+{"expr": "ln(32.2)", "val": "3.5", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs((-47)-12.7)+0.1)", "val": "4.1", "category": "ln_d2", "ops_used": ["ln", "abs", "-", "+"]}
+{"expr": "exp(-0.5)", "val": "0.6", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(sqrt(87.9)))", "val": "1.1", "category": "exp_d2", "ops_used": ["exp", "sin", "sqrt"]}
+{"expr": "sqrt(66.8)", "val": "8.2", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(sqrt(45.4))", "val": "2.6", "category": "sqrt_d2", "ops_used": ["sqrt"]}
+{"expr": "abs(-10.5)", "val": "10.5", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(tan(5.2))", "val": "1.9", "category": "abs_d2", "ops_used": ["abs", "tan"]}
+{"expr": "(-24.5)+(-18)", "val": "-42.5", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-4)+(-0.1)", "val": "-4.1", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "45-(-48.2)", "val": "93.2", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-4)-1.4", "val": "-5.4", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "2.2*9.9", "val": "21.8", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "(-12.5)*18.9", "val": "-236.2", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "29.4/(-4)", "val": "-7.3", "category": "/_d1", "ops_used": ["/", "-"]}
+{"expr": "6.7/5", "val": "1.3", "category": "/_d2", "ops_used": ["/"]}
+{"expr": "log(46.4)", "val": "3.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log((-3)-(-6.2))", "val": "1.2", "category": "log_d2", "ops_used": ["log", "-"]}
+{"expr": "ln(32.3)", "val": "3.5", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(log(25.9))", "val": "1.2", "category": "ln_d2", "ops_used": ["ln", "log"]}
+{"expr": "exp(0.4)", "val": "1.5", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(sin(-3.4))", "val": "1.3", "category": "exp_d2", "ops_used": ["exp", "sin", "-"]}
+{"expr": "sqrt(44.7)", "val": "6.7", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(23))", "val": "4.8", "category": "sqrt_d2", "ops_used": ["sqrt", "abs"]}
+{"expr": "abs(-43.7)", "val": "43.7", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(sin(-5.2))", "val": "0.9", "category": "abs_d2", "ops_used": ["abs", "sin", "-"]}
+{"expr": "(-0.5)+(-1)", "val": "-1.5", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "11+13", "val": "24", "category": "+_d2", "ops_used": ["+"]}
+{"expr": "43-44.5", "val": "-1.5", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-2)-(-4)", "val": "2", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "18.1*(-14)", "val": "-253.4", "category": "*_d1", "ops_used": ["*", "-"]}
+{"expr": "(-16)*(-15)", "val": "240", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "11/(-6)", "val": "-1.8", "category": "/_d1", "ops_used": ["/", "-"]}
+{"expr": "(-1.5)/(-3)", "val": "0.5", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "3.4^3", "val": "39.3", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "(abs(-19.2)+0.1)^-1", "val": "0.1", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(-0.9)", "val": "-0.8", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(cos(-4.8))", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "cos", "-"]}
+{"expr": "cos(2.9)", "val": "-1", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(abs(-37))", "val": "0.8", "category": "cos_d2", "ops_used": ["cos", "abs", "-"]}
+{"expr": "tan(4.9)", "val": "-5.3", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(abs(57.1)))", "val": "0.6", "category": "tan_d2", "ops_used": ["tan", "sin", "abs"]}
+{"expr": "log(15.3)", "val": "2.7", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log((-4)+6.7)", "val": "1", "category": "log_d2", "ops_used": ["log", "-", "+"]}
+{"expr": "ln(47.3)", "val": "3.9", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(4^2)", "val": "2.8", "category": "ln_d2", "ops_used": ["ln", "^"]}
+{"expr": "exp(-1.1)", "val": "0.3", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(4^2))", "val": "0.7", "category": "exp_d2", "ops_used": ["exp", "sin", "^"]}
+{"expr": "sqrt(33.4)", "val": "5.8", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(ln(8.9))", "val": "1.5", "category": "sqrt_d2", "ops_used": ["sqrt", "ln"]}
+{"expr": "abs(-16.7)", "val": "16.7", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(tan(1.2))", "val": "2.6", "category": "abs_d2", "ops_used": ["abs", "tan"]}
+{"expr": "42+(-44)", "val": "-2", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "3+14", "val": "17", "category": "+_d2", "ops_used": ["+"]}
+{"expr": "(-48)-(-23.2)", "val": "-24.8", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "13-8", "val": "5", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-6)*(-14)", "val": "84", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-13)*1", "val": "-13", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "29/7", "val": "4.1", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "8/9", "val": "0.9", "category": "/_d2", "ops_used": ["/"]}
+{"expr": "1.9^(-2)", "val": "0.3", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "log(exp(-1))", "val": "-1", "category": "log_d2", "ops_used": ["log", "exp", "-"]}
+{"expr": "ln(3.1)", "val": "1.1", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(tan(-0.3))+0.1)", "val": "-0.9", "category": "ln_d2", "ops_used": ["ln", "abs", "tan", "-", "+"]}
 {"expr": "exp(-1.7)", "val": "0.2", "category": "exp_d1", "ops_used": ["exp", "-"]}
-{"expr": "exp(sin((-8)*13))", "val": "1.4", "category": "exp_d2", "ops_used": ["exp", "sin", "-", "*"]}
-{"expr": "exp(sin((-5)*(-2)))", "val": "0.6", "category": "exp_d3", "ops_used": ["exp", "sin", "-", "*"]}
-{"expr": "sqrt(28.7)", "val": "5.4", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(3^(-1))", "val": "0.6", "category": "sqrt_d2", "ops_used": ["sqrt", "^", "-"]}
-{"expr": "sqrt(sqrt(log(49.3)))", "val": "1.4", "category": "sqrt_d3", "ops_used": ["sqrt", "log"]}
-{"expr": "abs(-9)", "val": "9", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(log(18.5))", "val": "2.9", "category": "abs_d2", "ops_used": ["abs", "log"]}
-{"expr": "abs((-15)/(-4))", "val": "3.8", "category": "abs_d3", "ops_used": ["abs", "-", "/"]}
-{"expr": "(-32)+(-50)", "val": "-82", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "(-4)+17", "val": "13", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(sqrt(sin(-5.8)))+(sin((-7)*11))", "val": "-0.3", "category": "+_d3", "ops_used": ["sqrt", "sin", "-", "+", "*"]}
-{"expr": "1-(-31)", "val": "32", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "9-(-12)", "val": "21", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(sin(1^2))-((-7)-20)", "val": "27.8", "category": "-_d3", "ops_used": ["sin", "^", "-"]}
-{"expr": "4*(-10)", "val": "-40", "category": "*_d1", "ops_used": ["*", "-"]}
-{"expr": "(-18)*7", "val": "-126", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(abs(sqrt(46.6)))*(exp(cos(-2)))", "val": "4.5", "category": "*_d3", "ops_used": ["abs", "sqrt", "*", "exp", "cos", "-"]}
-{"expr": "21/(-6)", "val": "-3.5", "category": "/_d1", "ops_used": ["/", "-"]}
-{"expr": "(-1)/(-9)", "val": "0.1", "category": "/_d2", "ops_used": ["-", "/"]}
-{"expr": "(-20)/(exp(4^(-1)))", "val": "-15.6", "category": "/_d3", "ops_used": ["-", "/", "exp", "^"]}
-{"expr": "3^(-2)", "val": "0.1", "category": "^_d1", "ops_used": ["^", "-"]}
-{"expr": "(abs(-4)+0.1)^2", "val": "16.8", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(log(abs(91)))^3", "val": "91.8", "category": "^_d3", "ops_used": ["log", "abs", "^"]}
-{"expr": "sin(6.3)", "val": "0", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(10+(-14))", "val": "0.8", "category": "sin_d2", "ops_used": ["sin", "+", "-"]}
-{"expr": "sin((abs(-2)+0.1)^2)", "val": "-1", "category": "sin_d3", "ops_used": ["sin", "abs", "-", "+", "^"]}
+{"expr": "exp(sin((-50)+(-9)))", "val": "0.5", "category": "exp_d2", "ops_used": ["exp", "sin", "-", "+"]}
+{"expr": "sqrt(9.4)", "val": "3.1", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(exp(-0.9))", "val": "0.6", "category": "sqrt_d2", "ops_used": ["sqrt", "exp", "-"]}
+{"expr": "abs(95.8)", "val": "95.8", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(log(41.9))", "val": "3.7", "category": "abs_d2", "ops_used": ["abs", "log"]}
+{"expr": "34+14", "val": "48", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "1+(-8)", "val": "-7", "category": "+_d2", "ops_used": ["+", "-"]}
+{"expr": "46.6-(-11.7)", "val": "58.3", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-10)-4", "val": "-14", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-4)*(-5.3)", "val": "21.2", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-13)*(-16)", "val": "208", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-26)/(-9)", "val": "2.9", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-11.1)/3.5", "val": "-3.2", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "4.1^2", "val": "16.8", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "7^1", "val": "7", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(-1.6)", "val": "-1", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin((-21)-49.1)", "val": "-0.8", "category": "sin_d2", "ops_used": ["sin", "-"]}
+{"expr": "cos(-0.5)", "val": "0.9", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(23-31.3)", "val": "-0.4", "category": "cos_d2", "ops_used": ["cos", "-"]}
+{"expr": "tan(-3.7)", "val": "-0.6", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin((-8.3)-21.3))", "val": "1.5", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
+{"expr": "log(26.4)", "val": "3.3", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(4*17)", "val": "4.2", "category": "log_d2", "ops_used": ["log", "*"]}
+{"expr": "ln(37.7)", "val": "3.6", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(ln(11.7))", "val": "0.9", "category": "ln_d2", "ops_used": ["ln"]}
+{"expr": "exp(2.6)", "val": "13.5", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(sin(ln(37.8)))", "val": "0.6", "category": "exp_d2", "ops_used": ["exp", "sin", "ln"]}
+{"expr": "sqrt(98.6)", "val": "9.9", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(5.1*3.9)", "val": "4.5", "category": "sqrt_d2", "ops_used": ["sqrt", "*"]}
+{"expr": "abs(30)", "val": "30", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs((-1)*16)", "val": "16", "category": "abs_d2", "ops_used": ["abs", "-", "*"]}
+{"expr": "22.6+37.8", "val": "60.4", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "7+8.9", "val": "15.9", "category": "+_d2", "ops_used": ["+"]}
+{"expr": "(-10)-(-1.9)", "val": "-8.1", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-19.9)-7", "val": "-26.9", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "8*13", "val": "104", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "(-20)*(-0.6)", "val": "12", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "7/(-5)", "val": "-1.4", "category": "/_d1", "ops_used": ["/", "-"]}
+{"expr": "(-3)/(-7)", "val": "0.4", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "0^1", "val": "0", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "19^3", "val": "6859", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "ln(28.5)", "val": "3.3", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(-11.3))", "val": "2.4", "category": "ln_d2", "ops_used": ["ln", "abs", "-"]}
+{"expr": "exp(-2.7)", "val": "0.1", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(cos(4.1))", "val": "0.6", "category": "exp_d2", "ops_used": ["exp", "cos"]}
+{"expr": "sqrt(67.3)", "val": "8.2", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(sin(-0.1)))", "val": "0.3", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "sin", "-"]}
+{"expr": "abs(92.9)", "val": "92.9", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(12*(-18.4))", "val": "220.8", "category": "abs_d2", "ops_used": ["abs", "*", "-"]}
+{"expr": "(-43.6)+(-33)", "val": "-76.6", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "12.5+19", "val": "31.5", "category": "+_d2", "ops_used": ["+"]}
+{"expr": "(-15.8)-20.4", "val": "-36.2", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "4-4.7", "val": "-0.7", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-17.1)*9.1", "val": "-155.6", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-4.5)*11", "val": "-49.5", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-47.2)/9.6", "val": "-4.9", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "0/8", "val": "0", "category": "/_d2", "ops_used": ["/"]}
+{"expr": "4.8^2", "val": "23", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "0.8^-1", "val": "1.2", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(-3)", "val": "-0.1", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(3^1)", "val": "0.1", "category": "sin_d2", "ops_used": ["sin", "^"]}
 {"expr": "cos(-0.8)", "val": "0.7", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(cos(3.1))", "val": "0.5", "category": "cos_d2", "ops_used": ["cos"]}
-{"expr": "cos(ln(47-31))", "val": "-0.9", "category": "cos_d3", "ops_used": ["cos", "ln", "-"]}
-{"expr": "tan(3.9)", "val": "0.9", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(23/10))", "val": "0.9", "category": "tan_d2", "ops_used": ["tan", "sin", "/"]}
-{"expr": "tan(sin(ln(abs((-22)-42)+0.1)))", "val": "-1.1", "category": "tan_d3", "ops_used": ["tan", "sin", "ln", "abs", "-", "+"]}
-{"expr": "log(18.7)", "val": "2.9", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(45-(-2))", "val": "3.9", "category": "log_d2", "ops_used": ["log", "-"]}
-{"expr": "tan(-3.8)", "val": "-0.8", "category": "tan_d1", "ops_used": ["tan", "-"]}
-{"expr": "tan(log(2.8))", "val": "1.7", "category": "tan_d2", "ops_used": ["tan", "log"]}
-{"expr": "tan(sin(2^1))", "val": "1.3", "category": "tan_d3", "ops_used": ["tan", "sin", "^"]}
-{"expr": "log(38.7)", "val": "3.7", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs(sin(-0.8))+0.1)", "val": "-0.2", "category": "log_d2", "ops_used": ["log", "abs", "sin", "-", "+"]}
-{"expr": "log(abs(3^(-1)))", "val": "-1.1", "category": "log_d3", "ops_used": ["log", "abs", "^", "-"]}
-{"expr": "ln(1.5)", "val": "0.4", "category": "ln_d1", "ops_used": ["ln"]}
-{"expr": "ln(exp(0.1))", "val": "0.1", "category": "ln_d2", "ops_used": ["ln", "exp"]}
-{"expr": "ln(sin(cos(0.3)))", "val": "-0.2", "category": "ln_d3", "ops_used": ["ln", "sin", "cos"]}
-{"expr": "exp(0.7)", "val": "2", "category": "exp_d1", "ops_used": ["exp"]}
-{"expr": "exp(sin(13*12))", "val": "0.4", "category": "exp_d2", "ops_used": ["exp", "sin", "*"]}
-{"expr": "exp(sin((abs(-11)+0.1)^1))", "val": "0.4", "category": "exp_d3", "ops_used": ["exp", "sin", "abs", "-", "+", "^"]}
-{"expr": "sqrt(64.9)", "val": "8.1", "category": "sqrt_d1", "ops_used": ["sqrt"]}
-{"expr": "sqrt(50-(-19))", "val": "8.3", "category": "sqrt_d2", "ops_used": ["sqrt", "-"]}
-{"expr": "sqrt(exp(sin(14*17)))", "val": "0.7", "category": "sqrt_d3", "ops_used": ["sqrt", "exp", "sin", "*"]}
-{"expr": "abs(-42)", "val": "42", "category": "abs_d1", "ops_used": ["abs", "-"]}
-{"expr": "abs(exp(-0.8))", "val": "0.4", "category": "abs_d2", "ops_used": ["abs", "exp", "-"]}
-{"expr": "abs((-4)-(-11))", "val": "7", "category": "abs_d3", "ops_used": ["abs", "-"]}
-{"expr": "(-1)+17", "val": "16", "category": "+_d1", "ops_used": ["-", "+"]}
-{"expr": "(-5)+16", "val": "11", "category": "+_d2", "ops_used": ["-", "+"]}
-{"expr": "(log(abs(26+(-43))+0.1))+(-6)", "val": "-3.2", "category": "+_d3", "ops_used": ["log", "abs", "+", "-"]}
-{"expr": "(-32)-1", "val": "-33", "category": "-_d1", "ops_used": ["-"]}
-{"expr": "(-8)-(-5)", "val": "-3", "category": "-_d2", "ops_used": ["-"]}
-{"expr": "(log(tan(-5.6)))-(exp(sin(sqrt(78.5))))", "val": "-1.9", "category": "-_d3", "ops_used": ["log", "tan", "-", "exp", "sin", "sqrt"]}
-{"expr": "18*12", "val": "216", "category": "*_d1", "ops_used": ["*"]}
-{"expr": "(-8)*(-8)", "val": "64", "category": "*_d2", "ops_used": ["-", "*"]}
-{"expr": "(sqrt(8*6))*((abs(-6)+0.1)^1)", "val": "42.3", "category": "*_d3", "ops_used": ["sqrt", "*", "abs", "-", "+", "^"]}
-{"expr": "(-19)/(-10)", "val": "1.9", "category": "/_d1", "ops_used": ["-", "/"]}
-{"expr": "18/(-17)", "val": "-1.1", "category": "/_d2", "ops_used": ["/", "-"]}
-{"expr": "((-14)/1)/(abs(sin(-0.8)))", "val": "-19.5", "category": "/_d3", "ops_used": ["-", "/", "abs", "sin"]}
-{"expr": "5^(-1)", "val": "0.2", "category": "^_d1", "ops_used": ["^", "-"]}
-{"expr": "(abs(-7)+0.1)^2", "val": "50.4", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
-{"expr": "(abs(tan(sin(46/(-3))))+0.1)^-2", "val": "4.3", "category": "^_d3", "ops_used": ["abs", "tan", "sin", "/", "-", "+", "^"]}
-{"expr": "sin(1.1)", "val": "0.9", "category": "sin_d1", "ops_used": ["sin"]}
-{"expr": "sin(tan(0.6))", "val": "0.6", "category": "sin_d2", "ops_used": ["sin", "tan"]}
-{"expr": "sin(tan(tan(-0.2)))", "val": "-0.2", "category": "sin_d3", "ops_used": ["sin", "tan", "-"]}
-{"expr": "cos(-4.4)", "val": "-0.3", "category": "cos_d1", "ops_used": ["cos", "-"]}
-{"expr": "cos(sin(3))", "val": "1", "category": "cos_d2", "ops_used": ["cos", "sin"]}
-{"expr": "cos((abs(-14)+0.1)^-2)", "val": "1", "category": "cos_d3", "ops_used": ["cos", "abs", "-", "+", "^"]}
-{"expr": "tan(3.7)", "val": "0.6", "category": "tan_d1", "ops_used": ["tan"]}
-{"expr": "tan(sin(ln(37.6)))", "val": "-0.5", "category": "tan_d2", "ops_used": ["tan", "sin", "ln"]}
-{"expr": "tan(sin((-18)-(-7)))", "val": "1.6", "category": "tan_d3", "ops_used": ["tan", "sin", "-"]}
-{"expr": "log(14.5)", "val": "2.7", "category": "log_d1", "ops_used": ["log"]}
-{"expr": "log(abs((-28)-15)+0.1)", "val": "3.8", "category": "log_d2", "ops_used": ["log", "abs", "-", "+"]}
-{"expr": "log(abs(sin(0^3))+0.1)", "val": "-2.3", "category": "log_d3", "ops_used": ["log", "abs", "sin", "^", "+"]}
+{"expr": "cos(sin(3.1))", "val": "1", "category": "cos_d2", "ops_used": ["cos", "sin"]}
+{"expr": "tan(-6)", "val": "0.3", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(29-47))", "val": "0.9", "category": "tan_d2", "ops_used": ["tan", "sin", "-"]}
+{"expr": "log(45.7)", "val": "3.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(sqrt(14.3))", "val": "1.3", "category": "log_d2", "ops_used": ["log", "sqrt"]}
+{"expr": "ln(4.5)", "val": "1.5", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(21.4+(-36))+0.1)", "val": "2.7", "category": "ln_d2", "ops_used": ["ln", "abs", "+", "-"]}
+{"expr": "exp(-1.8)", "val": "0.2", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin(-0.1))", "val": "0.9", "category": "exp_d2", "ops_used": ["exp", "sin", "-"]}
+{"expr": "sqrt(57.5)", "val": "7.6", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(sqrt(17.1))", "val": "2", "category": "sqrt_d2", "ops_used": ["sqrt"]}
+{"expr": "abs(93)", "val": "93", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(log(30.8))", "val": "3.4", "category": "abs_d2", "ops_used": ["abs", "log"]}
+{"expr": "48+44", "val": "92", "category": "+_d1", "ops_used": ["+"]}
+{"expr": "(-3.3)+1", "val": "-2.3", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-48)-35.7", "val": "-83.7", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-18)-(-12.1)", "val": "-5.9", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "8*6", "val": "48", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "(-19)*16", "val": "-304", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "44.9/(-7)", "val": "-6.4", "category": "/_d1", "ops_used": ["/", "-"]}
+{"expr": "8/(-14)", "val": "-0.6", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "2.7^2", "val": "7.3", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "(abs(-12.1)+0.1)^3", "val": "1815.8", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(6)", "val": "-0.3", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "ln(ln(39.6))", "val": "1.3", "category": "ln_d2", "ops_used": ["ln"]}
+{"expr": "exp(2.1)", "val": "8.2", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(3^(-1))", "val": "1.4", "category": "exp_d2", "ops_used": ["exp", "^", "-"]}
+{"expr": "sqrt(64.4)", "val": "8", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(ln(20.2))", "val": "1.7", "category": "sqrt_d2", "ops_used": ["sqrt", "ln"]}
+{"expr": "abs(17.1)", "val": "17.1", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(sqrt(84))", "val": "9.2", "category": "abs_d2", "ops_used": ["abs", "sqrt"]}
+{"expr": "(-43.4)+15", "val": "-28.4", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-16.9)+(-8.3)", "val": "-25.2", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-7.8)-(-6)", "val": "-1.8", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "17-13", "val": "4", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "4.3*1", "val": "4.3", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "11*12", "val": "132", "category": "*_d2", "ops_used": ["*"]}
+{"expr": "(-36)/(-5)", "val": "7.2", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "12/(-15.1)", "val": "-0.8", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "5^(-2)", "val": "0", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "20^-1", "val": "0.1", "category": "^_d2", "ops_used": ["^", "-"]}
+{"expr": "sin(-2.7)", "val": "-0.4", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(ln(45.5))", "val": "-0.6", "category": "sin_d2", "ops_used": ["sin", "ln"]}
+{"expr": "cos(-6.1)", "val": "1", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(ln(41.9))", "val": "-0.8", "category": "cos_d2", "ops_used": ["cos", "ln"]}
+{"expr": "tan(1.2)", "val": "2.6", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(sin(abs(-48)))", "val": "-1", "category": "tan_d2", "ops_used": ["tan", "sin", "abs", "-"]}
+{"expr": "log(45.8)", "val": "3.8", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(1.6^1)", "val": "0.5", "category": "log_d2", "ops_used": ["log", "^"]}
+{"expr": "ln(26)", "val": "3.3", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(41.8))", "val": "3.7", "category": "ln_d2", "ops_used": ["ln", "abs"]}
+{"expr": "exp(0.5)", "val": "1.6", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(exp(0.6))", "val": "6.2", "category": "exp_d2", "ops_used": ["exp"]}
+{"expr": "sqrt(90.9)", "val": "9.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(sqrt(56.8))", "val": "2.7", "category": "sqrt_d2", "ops_used": ["sqrt"]}
+{"expr": "abs(-64)", "val": "64", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(sin(3))", "val": "0.1", "category": "abs_d2", "ops_used": ["abs", "sin"]}
+{"expr": "(-40.1)+25", "val": "-15.1", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-5)+6", "val": "1", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "37-33", "val": "4", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-3.3)-(-7)", "val": "3.7", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-10)*15", "val": "-150", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "7.3*(-10.8)", "val": "-78.8", "category": "*_d2", "ops_used": ["*", "-"]}
+{"expr": "7/2.5", "val": "2.8", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "19/(-6.2)", "val": "-3.1", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "3.6^(-1)", "val": "0.3", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "(abs(-2.7)+0.1)^-1", "val": "0.4", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(-4.3)", "val": "0.9", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin((-17)+18)", "val": "0.8", "category": "sin_d2", "ops_used": ["sin", "-", "+"]}
+{"expr": "exp(-1.3)", "val": "0.3", "category": "exp_d1", "ops_used": ["exp", "-"]}
+{"expr": "exp(sin((-47)-(-18.4)))", "val": "1.4", "category": "exp_d2", "ops_used": ["exp", "sin", "-"]}
+{"expr": "sqrt(20.4)", "val": "4.5", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(sqrt(89.5))", "val": "3.1", "category": "sqrt_d2", "ops_used": ["sqrt"]}
+{"expr": "abs(-85.9)", "val": "85.9", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(abs(53))", "val": "53", "category": "abs_d2", "ops_used": ["abs"]}
+{"expr": "34.8+(-27.6)", "val": "7.2", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "9+(-6.6)", "val": "2.4", "category": "+_d2", "ops_used": ["+", "-"]}
+{"expr": "(-34.5)-(-46.2)", "val": "11.7", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-2)-(-15)", "val": "13", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-8)*14.4", "val": "-115.2", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-19.1)*(-19)", "val": "362.9", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "(-16.7)/6.3", "val": "-2.7", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "19/(-7.7)", "val": "-2.5", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "3^2", "val": "9", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "(abs(-9)+0.1)^2", "val": "82.8", "category": "^_d2", "ops_used": ["abs", "-", "+", "^"]}
+{"expr": "sin(-2.5)", "val": "-0.6", "category": "sin_d1", "ops_used": ["sin", "-"]}
+{"expr": "sin(21.5/(-8.7))", "val": "-0.6", "category": "sin_d2", "ops_used": ["sin", "/", "-"]}
+{"expr": "cos(-3.5)", "val": "-0.9", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(sin(5.3))", "val": "0.7", "category": "cos_d2", "ops_used": ["cos", "sin"]}
+{"expr": "tan(-2.8)", "val": "0.4", "category": "tan_d1", "ops_used": ["tan", "-"]}
+{"expr": "tan(sin(log(25.5)))", "val": "-0.1", "category": "tan_d2", "ops_used": ["tan", "sin", "log"]}
+{"expr": "log(15.5)", "val": "2.7", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(25.4+43)", "val": "4.2", "category": "log_d2", "ops_used": ["log", "+"]}
+{"expr": "ln(1.7)", "val": "0.5", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(abs(tan(2.2))+0.1)", "val": "0.4", "category": "ln_d2", "ops_used": ["ln", "abs", "tan", "+"]}
+{"expr": "exp(0.5)", "val": "1.6", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(8/(-5))", "val": "0.2", "category": "exp_d2", "ops_used": ["exp", "/", "-"]}
+{"expr": "sqrt(9.4)", "val": "3.1", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(4^3)", "val": "8", "category": "sqrt_d2", "ops_used": ["sqrt", "^"]}
+{"expr": "abs(20.4)", "val": "20.4", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(10*19.7)", "val": "197", "category": "abs_d2", "ops_used": ["abs", "*"]}
+{"expr": "(-14)+44", "val": "30", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "18.9+(-17.2)", "val": "1.7", "category": "+_d2", "ops_used": ["+", "-"]}
+{"expr": "(-41)-(-11.1)", "val": "-29.9", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "9.7-19", "val": "-9.3", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-4.4)*(-8)", "val": "35.2", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "12*1.6", "val": "19.2", "category": "*_d2", "ops_used": ["*"]}
+{"expr": "(-38)/(-7)", "val": "5.4", "category": "/_d1", "ops_used": ["-", "/"]}
+{"expr": "(-5.5)/17", "val": "-0.3", "category": "/_d2", "ops_used": ["-", "/"]}
+{"expr": "1.1^(-1)", "val": "0.9", "category": "^_d1", "ops_used": ["^", "-"]}
+{"expr": "2.5^1", "val": "2.5", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(0.7)", "val": "0.6", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(cos(1.2))", "val": "0.4", "category": "sin_d2", "ops_used": ["sin", "cos"]}
+{"expr": "cos(-3.3)", "val": "-1", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "exp(sin(sqrt(13.7)))", "val": "0.6", "category": "exp_d2", "ops_used": ["exp", "sin", "sqrt"]}
+{"expr": "sqrt(39.2)", "val": "6.3", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(68.2))", "val": "8.3", "category": "sqrt_d2", "ops_used": ["sqrt", "abs"]}
+{"expr": "abs(-78.1)", "val": "78.1", "category": "abs_d1", "ops_used": ["abs", "-"]}
+{"expr": "abs(cos(0))", "val": "1", "category": "abs_d2", "ops_used": ["abs", "cos"]}
+{"expr": "(-22.5)+49.2", "val": "26.7", "category": "+_d1", "ops_used": ["-", "+"]}
+{"expr": "(-2.2)+(-17)", "val": "-19.2", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-19.1)-(-21)", "val": "1.9", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-9.3)-4.9", "val": "-14.2", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "(-12.4)*(-17.3)", "val": "214.5", "category": "*_d1", "ops_used": ["-", "*"]}
+{"expr": "(-10)*(-3)", "val": "30", "category": "*_d2", "ops_used": ["-", "*"]}
+{"expr": "0/(-8)", "val": "0", "category": "/_d1", "ops_used": ["/", "-"]}
+{"expr": "7.6/(-1)", "val": "-7.6", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "1.7^1", "val": "1.7", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "16^1", "val": "16", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(2.4)", "val": "0.7", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin(ln(48.7))", "val": "-0.7", "category": "sin_d2", "ops_used": ["sin", "ln"]}
+{"expr": "cos(-2.1)", "val": "-0.5", "category": "cos_d1", "ops_used": ["cos", "-"]}
+{"expr": "cos(cos(5.4))", "val": "0.8", "category": "cos_d2", "ops_used": ["cos"]}
+{"expr": "tan(3.6)", "val": "0.5", "category": "tan_d1", "ops_used": ["tan"]}
+{"expr": "tan(exp(0.3))", "val": "4.5", "category": "tan_d2", "ops_used": ["tan", "exp"]}
+{"expr": "log(7.9)", "val": "2.1", "category": "log_d1", "ops_used": ["log"]}
+{"expr": "log(36-4)", "val": "3.5", "category": "log_d2", "ops_used": ["log", "-"]}
+{"expr": "ln(21.7)", "val": "3.1", "category": "ln_d1", "ops_used": ["ln"]}
+{"expr": "ln(ln(14.5))", "val": "1", "category": "ln_d2", "ops_used": ["ln"]}
+{"expr": "exp(0.3)", "val": "1.3", "category": "exp_d1", "ops_used": ["exp"]}
+{"expr": "exp(cos(5.3))", "val": "1.7", "category": "exp_d2", "ops_used": ["exp", "cos"]}
+{"expr": "sqrt(59.1)", "val": "7.7", "category": "sqrt_d1", "ops_used": ["sqrt"]}
+{"expr": "sqrt(abs(-43.3))", "val": "6.6", "category": "sqrt_d2", "ops_used": ["sqrt", "abs", "-"]}
+{"expr": "abs(58)", "val": "58", "category": "abs_d1", "ops_used": ["abs"]}
+{"expr": "abs(4.1^1)", "val": "4.1", "category": "abs_d2", "ops_used": ["abs", "^"]}
+{"expr": "18+(-45.2)", "val": "-27.2", "category": "+_d1", "ops_used": ["+", "-"]}
+{"expr": "(-9.1)+16", "val": "6.9", "category": "+_d2", "ops_used": ["-", "+"]}
+{"expr": "(-44.8)-(-4)", "val": "-40.8", "category": "-_d1", "ops_used": ["-"]}
+{"expr": "(-19)-19", "val": "-38", "category": "-_d2", "ops_used": ["-"]}
+{"expr": "18.4*0.8", "val": "14.7", "category": "*_d1", "ops_used": ["*"]}
+{"expr": "15.7*7", "val": "109.9", "category": "*_d2", "ops_used": ["*"]}
+{"expr": "8/3", "val": "2.7", "category": "/_d1", "ops_used": ["/"]}
+{"expr": "11.6/(-8)", "val": "-1.4", "category": "/_d2", "ops_used": ["/", "-"]}
+{"expr": "0.5^3", "val": "0.1", "category": "^_d1", "ops_used": ["^"]}
+{"expr": "11^1", "val": "11", "category": "^_d2", "ops_used": ["^"]}
+{"expr": "sin(1.6)", "val": "1", "category": "sin_d1", "ops_used": ["sin"]}
+{"expr": "sin((-31.8)/1)", "val": "-0.4", "category": "sin_d2", "ops_used": ["sin", "-", "/"]}
+{"expr": "cos(1.7)", "val": "-0.1", "category": "cos_d1", "ops_used": ["cos"]}
+{"expr": "cos(abs(-70))", "val": "0.6", "category": "cos_d2", "ops_used": ["cos", "abs", "-"]}

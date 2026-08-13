@@ -80,7 +80,7 @@ def _worker_generate_chunk(args_tuple: Tuple[int, List[str], int, int, int, floa
 class DatasetGeneratorManager:
     """
     Manages high-throughput parallel generation of large math transformer datasets,
-    sharding into JSONL files, and uploading to Hugging Face Hub.
+    sharding into JSONL files, auto-resuming from Hugging Face, and batch uploading.
     """
     def __init__(
         self,
@@ -95,7 +95,9 @@ class DatasetGeneratorManager:
         min_depth: int = 1,
         max_depth: Optional[int] = None,
         int_ratio: float = 0.5,
-        shard_offset: int = 0
+        shard_offset: int = 0,
+        auto_resume: bool = True,
+        upload_interval: int = 300
     ):
         self.num_samples = num_samples
         self.shard_size = shard_size
@@ -109,6 +111,9 @@ class DatasetGeneratorManager:
         self.max_depth = max_depth if max_depth is not None else (3 if not debug_mode else 2)
         self.int_ratio = int_ratio
         self.shard_offset = shard_offset
+        self.auto_resume = auto_resume
+        self.upload_interval = upload_interval
+        self.last_upload_time = time.time()
         self.float_precision = 1
         
         os.makedirs(self.output_dir, exist_ok=True)
@@ -124,6 +129,11 @@ class DatasetGeneratorManager:
         self.api = None
         if not self.skip_upload:
             self._init_huggingface()
+            if self.auto_resume:
+                remote_offset = self._detect_remote_shards()
+                if remote_offset > self.shard_offset:
+                    print(f"[HF RESUME] Auto-resuming shard_offset from {self.shard_offset} -> {remote_offset}")
+                    self.shard_offset = remote_offset
 
     def _load_manifest(self) -> set:
         if os.path.exists(self.manifest_path):
@@ -160,6 +170,32 @@ class DatasetGeneratorManager:
             self._upload_dataset_card()
         except Exception as e:
             print(f"Warning during HF repo initialization: {e}")
+
+    def _detect_remote_shards(self) -> int:
+        """
+        Queries Hugging Face repository to find existing remote dataset shards.
+        Returns the next available shard index.
+        """
+        if not self.api:
+            return 0
+        try:
+            files = self.api.list_repo_files(repo_id=self.repo_id, repo_type="dataset")
+            shard_indices = []
+            for f in files:
+                basename = os.path.basename(f)
+                if basename.startswith("shard_") and basename.endswith(".jsonl"):
+                    try:
+                        idx_str = basename.replace("shard_", "").replace(".jsonl", "")
+                        shard_indices.append(int(idx_str))
+                    except ValueError:
+                        pass
+            if shard_indices:
+                max_remote = max(shard_indices)
+                print(f"[HF RESUME] Detected {len(shard_indices)} existing remote shard(s). Max remote shard index: {max_remote}.")
+                return max_remote + 1
+        except Exception as e:
+            print(f"[HF RESUME] Info inspecting remote repo files: {e}")
+        return 0
 
     def _upload_dataset_card(self):
         """
@@ -230,6 +266,48 @@ for sample in dataset["train"]:
             except Exception as e:
                 print(f"Warning uploading README.md: {e}")
 
+    def _flush_batch_upload(self, force: bool = False):
+        """
+        Uploads accumulated local JSONL shards in batches using upload_folder
+        to avoid Hugging Face rate limits (HTTP 429).
+        """
+        if not self.api or self.skip_upload:
+            return
+            
+        now = time.time()
+        if not force and (now - self.last_upload_time < self.upload_interval):
+            return
+
+        unuploaded = [
+            f for f in os.listdir(self.output_dir)
+            if f.startswith("shard_") and f.endswith(".jsonl") and f not in self.uploaded_shards
+        ]
+        
+        if not unuploaded and not force:
+            return
+
+        print(f"\n[HF BATCH UPLOAD] Syncing {len(unuploaded)} pending shard(s) to {self.repo_id}...", flush=True)
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                self.api.upload_folder(
+                    folder_path=self.output_dir,
+                    path_in_repo="data",
+                    repo_id=self.repo_id,
+                    repo_type="dataset",
+                    allow_patterns="shard_*.jsonl",
+                    commit_message=f"Batch upload {len(unuploaded)} shard(s) ({time.strftime('%Y-%m-%d %H:%M:%S')})"
+                )
+                for shard_name in unuploaded:
+                    self._record_uploaded_shard(shard_name)
+                self.last_upload_time = time.time()
+                print(f"[HF BATCH UPLOAD OK] Successfully synced batch to Hugging Face Hub!")
+                break
+            except Exception as e:
+                print(f"[HF BATCH UPLOAD WARNING] Attempt {attempt+1}/{max_retries} failed ({e}).")
+                if attempt < max_retries - 1:
+                    time.sleep(15)
+
     def generate_and_upload(self):
         total_shards = (self.num_samples + self.shard_size - 1) // self.shard_size
         print("=========================================================================")
@@ -242,7 +320,8 @@ for sample in dataset["train"]:
         print(f"- CPU Worker Processes: {self.num_workers}")
         print(f"- Output Directory: {self.output_dir}")
         print(f"- Hugging Face Repo: {self.repo_id}")
-        print(f"- Upload Enabled: {not self.skip_upload}")
+        print(f"- Upload Interval: {self.upload_interval}s (5-min batching)")
+        print(f"- Auto-Resume: {self.auto_resume}")
         print("=========================================================================\n")
         
         start_time = time.time()
@@ -290,27 +369,11 @@ for sample in dataset["train"]:
                 
                 print(f"[SHARD] [Shard {shard_idx+1}/{total_shards}] Created {shard_name} ({len(shard_samples):,} samples) | Speed: {rate:,.0f} samples/sec | ETA: {eta_sec/60:.1f} min")
                 
-                # Upload shard to Hugging Face Hub with retry
-                if self.api and not self.skip_upload:
-                    max_retries = 3
-                    for attempt in range(max_retries):
-                        try:
-                            print(f"[UPLOAD] Uploading {shard_name} to Hugging Face ({self.repo_id})...", flush=True)
-                            self.api.upload_file(
-                                path_or_fileobj=shard_path,
-                                path_in_repo=f"data/{shard_name}",
-                                repo_id=self.repo_id,
-                                repo_type="dataset"
-                            )
-                            self._record_uploaded_shard(shard_name)
-                            print(f"[OK] Successfully uploaded {shard_name} to Hugging Face.")
-                            break
-                        except Exception as e:
-                            if attempt < max_retries - 1:
-                                print(f"[RETRY] Upload {shard_name} failed ({e}). Retrying in 2s...")
-                                time.sleep(2)
-                            else:
-                                print(f"[ERROR] Failed to upload {shard_name} after {max_retries} retries: {e}")
+                # Periodic 5-minute batch upload to avoid Hugging Face rate limits
+                self._flush_batch_upload(force=False)
+
+        # Flush final remaining shards at the end
+        self._flush_batch_upload(force=True)
 
         total_elapsed = time.time() - start_time
         print("\n=========================================================================")
@@ -355,6 +418,24 @@ def main():
         type=int,
         default=0,
         help="Starting index offset for shard filenames (e.g., 1500 produces shard_01500.jsonl)."
+    )
+    parser.add_argument(
+        "--auto-resume",
+        action="store_true",
+        default=True,
+        help="Auto-detect existing remote dataset shards on Hugging Face and resume from highest shard index."
+    )
+    parser.add_argument(
+        "--no-auto-resume",
+        action="store_false",
+        dest="auto_resume",
+        help="Disable auto-detecting remote shards on Hugging Face."
+    )
+    parser.add_argument(
+        "--upload-interval",
+        type=int,
+        default=300,
+        help="Batch upload interval in seconds to avoid Hugging Face rate limits (default: 300s = 5 mins)."
     )
     parser.add_argument(
         "--min-depth",
@@ -441,7 +522,9 @@ def main():
         min_depth=args.min_depth,
         max_depth=args.max_depth,
         int_ratio=int_ratio,
-        shard_offset=args.shard_offset
+        shard_offset=args.shard_offset,
+        auto_resume=args.auto_resume,
+        upload_interval=args.upload_interval
     )
     
     manager.generate_and_upload()
